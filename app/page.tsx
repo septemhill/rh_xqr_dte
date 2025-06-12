@@ -8,7 +8,7 @@ import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 import { ThemeToggle } from "@/components/theme-toggle"
 
 interface FinancialData {
-  ex_date: string
+  date: string
   dividend: number
   price: number
 }
@@ -33,18 +33,22 @@ export default function FinancialDashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const financialData = require('./data/financial_data.json');
+        const promises = stockSymbols.map(async (stock) => {
+          const response = await fetch(`./data/${stock.symbol}.json`)
+          const data = await response.json()
+          return {
+            symbol: stock.symbol,
+            name: stock.name,
+            data: data,
+          }
+        })
 
-        const results = [
-          {symbol: "AAPL", name: "Apple Inc.", data: financialData},
-          {symbol: "GOOGL", name: "Alphabet Inc.", data: financialData},
-          {symbol: "MSFT", name: "Microsoft Corp.", data: financialData}
-        ]
+        const results = await Promise.all(promises)
         setStocksData(results)
 
         // 準備圖表資料 - 合併所有股票的資料
         const combinedData = results[0].data.map((item: FinancialData, index: number) => ({
-          date: item.ex_date,
+          date: item.date,
           [`${results[0].symbol}_price`]: item.price,
           [`${results[0].symbol}_dividend`]: item.dividend,
           [`${results[1].symbol}_price`]: results[1].data[index]?.price || 0,
@@ -145,7 +149,7 @@ export default function FinancialDashboard() {
                     <TableBody>
                       {stock.data.map((item, index) => (
                         <TableRow key={index} className="hover:bg-muted/50">
-                          <TableCell className="text-xs sm:text-sm font-medium">{formatDate(item.ex_date)}</TableCell>
+                          <TableCell className="text-xs sm:text-sm font-medium">{formatDate(item.date)}</TableCell>
                           <TableCell className="text-xs sm:text-sm">{formatCurrency(item.price)}</TableCell>
                           <TableCell className="text-xs sm:text-sm">{formatCurrency(item.dividend)}</TableCell>
                         </TableRow>
