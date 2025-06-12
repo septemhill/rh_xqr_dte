@@ -11,6 +11,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: '/rh_xqr_dte',
+  assetPrefix: '/rh_xqr_dte/',
 }
 
 module.exports = nextConfig
