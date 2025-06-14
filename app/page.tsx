@@ -81,7 +81,7 @@ export default function FinancialDashboard() {
     return new Intl.NumberFormat("zh-TW", {
       style: "currency",
       currency: "USD",
-      minimumFractionDigits: 2,
+      minimumFractionDigits: 6,
     }).format(value)
   }
 
