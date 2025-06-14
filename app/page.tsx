@@ -25,9 +25,9 @@ export default function FinancialDashboard() {
   const [loading, setLoading] = useState(true)
 
   const stockSymbols = [
-    { symbol: "AAPL", name: "Apple Inc." },
-    { symbol: "GOOGL", name: "Alphabet Inc." },
-    { symbol: "MSFT", name: "Microsoft Corp." },
+    { symbol: "XDTE", name: "S&P 500 0DTE Covered Call" },
+    { symbol: "QDTE", name: "Innovation 100 0DTE Covered Call" },
+    { symbol: "RDTE", name: "Small Cap 0DTE Covered Call" },
   ]
 
   useEffect(() => {
