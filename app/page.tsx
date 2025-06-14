@@ -211,6 +211,19 @@ export default function FinancialDashboard() {
                         `${symbol}`,
                       ];
                     }}
+                    labelFormatter={(label) => `📅 ${formatDate(label)}`}
+                    contentStyle={{
+                      backgroundColor: "hsl(var(--background))",
+                      border: "1px solid hsl(var(--border))",
+                      borderRadius: "6px",
+                      boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+                    }}
+                    labelStyle={{
+                      color: "hsl(var(--foreground))",
+                      fontWeight: "bold",
+                      marginBottom: "4px",
+                      fontSize: "14px",
+                    }}                    
                   />
                   <Legend />
 
