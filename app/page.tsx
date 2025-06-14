@@ -206,10 +206,9 @@ export default function FinancialDashboard() {
                   <Tooltip
                     formatter={(value: any, name: string) => {
                       const symbol = name.split('_')[0];
-                      const valueType = name.includes("price") ? "股價" : "股息";
                       return [
                         formatCurrency(Number(value)),
-                        `${symbol} ${valueType}`,
+                        `${symbol}`,
                       ];
                     }}
                   />
