@@ -1693,6 +1693,9 @@ async function fetchData() {
                 price: dailyPriceAPIData['Time Series (Daily)']?.[item.ex_dividend_date]?.['4. close'],
             }));
 
+            // Sort the dividend data by date in ascending order
+            dividendData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
             // Save the data in the map
             m.set(symbol, dividendData);
 
