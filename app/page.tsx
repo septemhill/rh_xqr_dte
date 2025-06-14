@@ -39,7 +39,7 @@ export default function FinancialDashboard() {
           return {
             symbol: stock.symbol,
             name: stock.name,
-            data: data,
+            data: data.sort((a: FinancialData, b: FinancialData) => new Date(b.date).getTime() - new Date(a.date).getTime()),
           }
         })
 
@@ -49,7 +49,7 @@ export default function FinancialDashboard() {
         // 準備圖表資料 - 處理不同起始日期的資料合併
         const allDates = new Set<string>()
         results.forEach((stock) => {
-          stock.data.forEach((item) => allDates.add(item.date))
+          stock.data.forEach((item: FinancialData) => allDates.add(item.date))
         })
 
         const sortedDates = Array.from(allDates).sort()
@@ -58,7 +58,7 @@ export default function FinancialDashboard() {
           const dataPoint: any = { date }
 
           results.forEach((stock) => {
-            const stockDataForDate = stock.data.find((item) => item.date === date)
+            const stockDataForDate = stock.data.find((item: FinancialData) => item.date === date)
             dataPoint[`${stock.symbol}_price`] = stockDataForDate?.price || null
             dataPoint[`${stock.symbol}_dividend`] = stockDataForDate?.dividend || null
           })
