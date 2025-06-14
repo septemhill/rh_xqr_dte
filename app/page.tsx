@@ -140,6 +140,34 @@ export default function FinancialDashboard() {
     return new Date(dateString).toLocaleDateString("zh-TW")
   }
 
+  // 新增處理 Legend 點擊事件的函式
+  const handleLegendClick = (dataKey: any) => {
+    // 判斷點擊的是哪個 legend item 並切換其可見性
+    switch (dataKey.dataKey) {
+      case "XDTE_price":
+        setXdtePriceVisible(!xdtePriceVisible);
+        break;
+      case "XDTE_dividend":
+        setXdteDividendVisible(!xdteDividendVisible);
+        break;
+      case "QDTE_price":
+        setQdtePriceVisible(!qdtePriceVisible);
+        break;
+      case "QDTE_dividend":
+        setQdteDividendVisible(!qdteDividendVisible);
+        break;
+      case "RDTE_price":
+        setRdtePriceVisible(!rdtePriceVisible);
+        break;
+      case "RDTE_dividend":
+        setRdteDividendVisible(!rdteDividendVisible);
+        break;
+      default:
+        break;
+    }
+  };
+
+
   if (loading) {
     return (
       <div className="container mx-auto p-4 space-y-6">
@@ -222,8 +250,8 @@ export default function FinancialDashboard() {
           ))}
         </div>
 
-        {/* Chart Toggles */}
-        <div className="flex flex-wrap gap-2">
+        {/* Chart Toggles - 這些 Checkbox 現在可以移除，因為 Legend 將處理可見性 */}
+        {/* <div className="flex flex-wrap gap-2">
           <label>
             <input
               type="checkbox"
@@ -272,7 +300,7 @@ export default function FinancialDashboard() {
             />
             RDTE 股息
           </label>
-        </div>
+        </div> */}
 
         {/* 組合圖表 */}
         <Card className="w-full">
@@ -328,65 +356,68 @@ export default function FinancialDashboard() {
                       fontSize: "14px",
                     }}                    
                   />
-                  <Legend />
+                  <Legend
+                    onClick={handleLegendClick} // 添加 onClick 事件處理器
+                    wrapperStyle={{ cursor: "pointer" }} // 添加鼠標樣式以提示可點擊
+                  />
 
                   {/* 股息柱狀圖 */}
-                  {xdteDividendVisible && <Bar
+                  <Bar
                       key="XDTE_dividend"
                       yAxisId="dividend"
                       dataKey="XDTE_dividend"
                       name="XDTE 股息"
-                      fill={`hsl(0, 70%, 50%)`}
-                      opacity={0.7}
-                    />}
-                  {qdteDividendVisible && <Bar
+                      fill={xdteDividendVisible ? `hsl(0, 70%, 50%)` : `hsl(0, 0%, 70%)`}
+                      opacity={xdteDividendVisible ? 0.7 : 0.4}
+                    />
+                  <Bar
                       key="QDTE_dividend"
                       yAxisId="dividend"
                       dataKey="QDTE_dividend"
                       name="QDTE 股息"
-                      fill={`hsl(120, 70%, 50%)`}
-                      opacity={0.7}
-                    />}
-                  {rdteDividendVisible && <Bar
+                      fill={qdteDividendVisible ? `hsl(120, 70%, 50%)` : `hsl(0, 0%, 70%)`}
+                      opacity={qdteDividendVisible ? 0.7 : 0.4}
+                    />
+                  <Bar
                       key="RDTE_dividend"
                       yAxisId="dividend"
                       dataKey="RDTE_dividend"
                       name="RDTE 股息"
-                      fill={`hsl(240, 70%, 50%)`}
-                      opacity={0.7}
-                    />}
+                      fill={rdteDividendVisible ? `hsl(240, 70%, 50%)` : `hsl(0, 0%, 70%)`}
+                      opacity={rdteDividendVisible ? 0.7 : 0.4}
+                    />
 
                   {/* 股價折線圖 */}
-                  {xdtePriceVisible && <Line
+                  <Line
                       key="XDTE_price"
                       yAxisId="price"
                       type="monotone"
                       dataKey="XDTE_price"
                       name="XDTE 股價"
-                      stroke={`hsl(0, 70%, 40%)`}
+                      stroke={xdtePriceVisible ? `hsl(0, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
-                    />}
-                  {qdtePriceVisible && <Line
+                    />
+                  <Line
                       key="QDTE_price"
                       yAxisId="price"
                       type="monotone"
                       dataKey="QDTE_price"
                       name="QDTE 股價"
-                      stroke={`hsl(120, 70%, 40%)`}
+                      stroke={qdtePriceVisible ? `hsl(120, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
-                    />}
-                  {rdtePriceVisible && <Line
+                    />
+                  <Line
                       key="RDTE_price"
                       yAxisId="price"
                       type="monotone"
                       dataKey="RDTE_price"
                       name="RDTE 股價"
-                      stroke={`hsl(240, 70%, 40%)`}
+                      stroke={rdtePriceVisible ? `hsl(240, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
-                    />}
+                    />
                 </ComposedChart>
               </ResponsiveContainer>
             </div>
