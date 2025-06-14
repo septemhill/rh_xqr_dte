@@ -204,11 +204,14 @@ export default function FinancialDashboard() {
                     tickFormatter={(value) => `$${value}`}
                   />
                   <Tooltip
-                    formatter={(value: any, name: string) => [
-                      formatCurrency(Number(value)),
-                      name.includes("price") ? "股價" : "股息",
-                    ]}
-                    labelFormatter={(label) => `日期: ${formatDate(label)}`}
+                    formatter={(value: any, name: string) => {
+                      const symbol = name.split('_')[0];
+                      const valueType = name.includes("price") ? "股價" : "股息";
+                      return [
+                        formatCurrency(Number(value)),
+                        `${symbol} ${valueType}`,
+                      ];
+                    }}
                   />
                   <Legend />
 
