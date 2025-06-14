@@ -19,16 +19,31 @@ interface StockData {
   data: FinancialData[]
 }
 
+interface DividendStats {
+  symbol: string
+  avg3Months: number
+  avg6Months: number
+  avg9Months: number
+}
+
 export default function FinancialDashboard() {
   const [stocksData, setStocksData] = useState<StockData[]>([])
   const [chartData, setChartData] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
+  const [dividendStats, setDividendStats] = useState<DividendStats[]>([])
 
   const stockSymbols = [
     { symbol: "XDTE", name: "S&P 500 0DTE Covered Call" },
     { symbol: "QDTE", name: "Innovation 100 0DTE Covered Call" },
     { symbol: "RDTE", name: "Small Cap 0DTE Covered Call" },
   ]
+
+  const [xdtePriceVisible, setXdtePriceVisible] = useState(true);
+  const [xdteDividendVisible, setXdteDividendVisible] = useState(true);
+  const [qdtePriceVisible, setQdtePriceVisible] = useState(true);
+  const [qdteDividendVisible, setQdteDividendVisible] = useState(true);
+  const [rdtePriceVisible, setRdtePriceVisible] = useState(true);
+  const [rdteDividendVisible, setRdteDividendVisible] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,6 +82,28 @@ export default function FinancialDashboard() {
         })
 
         setChartData(combinedData)        
+
+        // 計算股息統計
+        const stats = results.map((stock) => {
+          const now = new Date()
+          const threeMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 3, now.getDate())
+          const sixMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 6, now.getDate())
+          const nineMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 9, now.getDate())
+
+          const dividendData = stock.data.filter((item) => item.dividend > 0)
+
+          const avg3Months = calculateAverageDividend(dividendData, threeMonthsAgo)
+          const avg6Months = calculateAverageDividend(dividendData, sixMonthsAgo)
+          const avg9Months = calculateAverageDividend(dividendData, nineMonthsAgo)
+
+          return {
+            symbol: stock.symbol,
+            avg3Months,
+            avg6Months,
+            avg9Months,
+          }
+        })
+        setDividendStats(stats)
       } catch (error) {
         console.error("Error fetching data:", error)
       } finally {
@@ -83,6 +120,20 @@ export default function FinancialDashboard() {
       currency: "USD",
       minimumFractionDigits: 6,
     }).format(value)
+  }
+
+  const calculateAverageDividend = (dividendData: FinancialData[], fromDate: Date) => {
+    const filteredData = dividendData.filter((item) => {
+      const itemDate = new Date(item.date)
+      return itemDate >= fromDate && item.dividend > 0
+    })
+
+    if (filteredData.length === 0) return 0
+
+    const total = filteredData.reduce((sum, item) => sum + Number(item.dividend), 0)
+
+    console.log(total)
+    return total / filteredData.length
   }
 
   const formatDate = (dateString: string) => {
@@ -171,6 +222,58 @@ export default function FinancialDashboard() {
           ))}
         </div>
 
+        {/* Chart Toggles */}
+        <div className="flex flex-wrap gap-2">
+          <label>
+            <input
+              type="checkbox"
+              checked={xdtePriceVisible}
+              onChange={(e) => setXdtePriceVisible(e.target.checked)}
+            />
+            XDTE 股價
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={xdteDividendVisible}
+              onChange={(e) => setXdteDividendVisible(e.target.checked)}
+            />
+            XDTE 股息
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={qdtePriceVisible}
+              onChange={(e) => setQdtePriceVisible(e.target.checked)}
+            />
+            QDTE 股價
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={qdteDividendVisible}
+              onChange={(e) => setQdteDividendVisible(e.target.checked)}
+            />
+            QDTE 股息
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={rdtePriceVisible}
+              onChange={(e) => setRdtePriceVisible(e.target.checked)}
+            />
+            RDTE 股價
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={rdteDividendVisible}
+              onChange={(e) => setRdteDividendVisible(e.target.checked)}
+            />
+            RDTE 股息
+          </label>
+        </div>
+
         {/* 組合圖表 */}
         <Card className="w-full">
           <CardHeader>
@@ -228,32 +331,96 @@ export default function FinancialDashboard() {
                   <Legend />
 
                   {/* 股息柱狀圖 */}
-                  {stockSymbols.map((stock, index) => (
-                    <Bar
-                      key={`${stock.symbol}_dividend`}
+                  {xdteDividendVisible && <Bar
+                      key="XDTE_dividend"
                       yAxisId="dividend"
-                      dataKey={`${stock.symbol}_dividend`}
-                      name={`${stock.symbol} 股息`}
-                      fill={`hsl(${index * 120}, 70%, 50%)`}
+                      dataKey="XDTE_dividend"
+                      name="XDTE 股息"
+                      fill={`hsl(0, 70%, 50%)`}
                       opacity={0.7}
-                    />
-                  ))}
+                    />}
+                  {qdteDividendVisible && <Bar
+                      key="QDTE_dividend"
+                      yAxisId="dividend"
+                      dataKey="QDTE_dividend"
+                      name="QDTE 股息"
+                      fill={`hsl(120, 70%, 50%)`}
+                      opacity={0.7}
+                    />}
+                  {rdteDividendVisible && <Bar
+                      key="RDTE_dividend"
+                      yAxisId="dividend"
+                      dataKey="RDTE_dividend"
+                      name="RDTE 股息"
+                      fill={`hsl(240, 70%, 50%)`}
+                      opacity={0.7}
+                    />}
 
                   {/* 股價折線圖 */}
-                  {stockSymbols.map((stock, index) => (
-                    <Line
-                      key={`${stock.symbol}_price`}
+                  {xdtePriceVisible && <Line
+                      key="XDTE_price"
                       yAxisId="price"
                       type="monotone"
-                      dataKey={`${stock.symbol}_price`}
-                      name={`${stock.symbol} 股價`}
-                      stroke={`hsl(${index * 120}, 70%, 40%)`}
+                      dataKey="XDTE_price"
+                      name="XDTE 股價"
+                      stroke={`hsl(0, 70%, 40%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
-                    />
-                  ))}
+                    />}
+                  {qdtePriceVisible && <Line
+                      key="QDTE_price"
+                      yAxisId="price"
+                      type="monotone"
+                      dataKey="QDTE_price"
+                      name="QDTE 股價"
+                      stroke={`hsl(120, 70%, 40%)`}
+                      strokeWidth={2}
+                      dot={{ r: 3 }}
+                    />}
+                  {rdtePriceVisible && <Line
+                      key="RDTE_price"
+                      yAxisId="price"
+                      type="monotone"
+                      dataKey="RDTE_price"
+                      name="RDTE 股價"
+                      stroke={`hsl(240, 70%, 40%)`}
+                      strokeWidth={2}
+                      dot={{ r: 3 }}
+                    />}
                 </ComposedChart>
               </ResponsiveContainer>
+            </div>
+          </CardContent>
+        </Card>
+
+                {/* 股息統計 */}
+        <Card>
+          <CardHeader>
+            <CardTitle>股息統計分析</CardTitle>
+            <CardDescription>各股票近期平均股息表現</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>股票代號</TableHead>
+                    <TableHead>近3個月平均股息</TableHead>
+                    <TableHead>近6個月平均股息</TableHead>
+                    <TableHead>近9個月平均股息</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {dividendStats.map((stat) => (
+                    <TableRow key={stat.symbol}>
+                      <TableCell className="font-medium">{stat.symbol}</TableCell>
+                      <TableCell>{formatCurrency(stat.avg3Months)}</TableCell>
+                      <TableCell>{formatCurrency(stat.avg6Months)}</TableCell>
+                      <TableCell>{formatCurrency(stat.avg9Months)}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </div>
           </CardContent>
         </Card>
