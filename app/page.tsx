@@ -123,7 +123,7 @@ export default function FinancialDashboard() {
   }
 
   const calculateAverageDividend = (dividendData: FinancialData[], fromDate: Date) => {
-    const filteredData = dividendData.filter((item) => {
+    const filteredData = dividendData.filter((item: FinancialData) => {
       const itemDate = new Date(item.date)
       return itemDate >= fromDate && item.dividend > 0
     })
@@ -172,8 +172,8 @@ export default function FinancialDashboard() {
     return (
       <div className="container mx-auto p-4 space-y-6">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-2">金融資訊瀏覽</h1>
-          <p className="text-muted-foreground">載入中...</p>
+          <h1 className="text-3xl font-bold mb-2">Roundhill 0DTE Covered Call Dashboard</h1>
+          <p className="text-muted-foreground">Loading...</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
@@ -211,8 +211,8 @@ export default function FinancialDashboard() {
       <ThemeToggle />
       <div className="container mx-auto p-4 pt-16 space-y-6">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-2">金融資訊瀏覽</h1>
-          <p className="text-muted-foreground">股價與股息資訊總覽</p>
+          <h1 className="text-3xl font-bold mb-2">Roundhill 0DTE Covered Call Dashboard</h1>
+          <p className="text-muted-foreground">Stock Price and Dividend Overview</p>
         </div>
 
         {/* 三張資料表格 */}
@@ -229,9 +229,9 @@ export default function FinancialDashboard() {
                   <Table>
                     <TableHeader className="sticky top-0 bg-background z-10">
                       <TableRow>
-                        <TableHead className="text-xs sm:text-sm border-b">日期</TableHead>
-                        <TableHead className="text-xs sm:text-sm border-b">股價</TableHead>
-                        <TableHead className="text-xs sm:text-sm border-b">股息</TableHead>
+                        <TableHead className="text-xs sm:text-sm border-b">Date</TableHead>
+                        <TableHead className="text-xs sm:text-sm border-b">Price</TableHead>
+                        <TableHead className="text-xs sm:text-sm border-b">Dividend</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -250,63 +250,11 @@ export default function FinancialDashboard() {
           ))}
         </div>
 
-        {/* Chart Toggles - 這些 Checkbox 現在可以移除，因為 Legend 將處理可見性 */}
-        {/* <div className="flex flex-wrap gap-2">
-          <label>
-            <input
-              type="checkbox"
-              checked={xdtePriceVisible}
-              onChange={(e) => setXdtePriceVisible(e.target.checked)}
-            />
-            XDTE 股價
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={xdteDividendVisible}
-              onChange={(e) => setXdteDividendVisible(e.target.checked)}
-            />
-            XDTE 股息
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={qdtePriceVisible}
-              onChange={(e) => setQdtePriceVisible(e.target.checked)}
-            />
-            QDTE 股價
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={qdteDividendVisible}
-              onChange={(e) => setQdteDividendVisible(e.target.checked)}
-            />
-            QDTE 股息
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={rdtePriceVisible}
-              onChange={(e) => setRdtePriceVisible(e.target.checked)}
-            />
-            RDTE 股價
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={rdteDividendVisible}
-              onChange={(e) => setRdteDividendVisible(e.target.checked)}
-            />
-            RDTE 股息
-          </label>
-        </div> */}
-
         {/* 組合圖表 */}
         <Card className="w-full">
           <CardHeader>
-            <CardTitle>股價與股息趨勢圖</CardTitle>
-            <CardDescription>折線圖顯示股價，柱狀圖顯示股息</CardDescription>
+            <CardTitle>Price and Dividend Trends</CardTitle>
+            <CardDescription>Line chart shows price, bar chart shows dividend</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="w-full h-80 sm:h-96">
@@ -366,7 +314,7 @@ export default function FinancialDashboard() {
                       key="XDTE_dividend"
                       yAxisId="dividend"
                       dataKey="XDTE_dividend"
-                      name="XDTE 股息"
+                      name="XDTE Dividend"
                       fill={xdteDividendVisible ? `hsl(0, 70%, 50%)` : `hsl(0, 0%, 70%)`}
                       opacity={xdteDividendVisible ? 0.7 : 0.4}
                     />
@@ -374,7 +322,7 @@ export default function FinancialDashboard() {
                       key="QDTE_dividend"
                       yAxisId="dividend"
                       dataKey="QDTE_dividend"
-                      name="QDTE 股息"
+                      name="QDTE Dividend"
                       fill={qdteDividendVisible ? `hsl(120, 70%, 50%)` : `hsl(0, 0%, 70%)`}
                       opacity={qdteDividendVisible ? 0.7 : 0.4}
                     />
@@ -382,7 +330,7 @@ export default function FinancialDashboard() {
                       key="RDTE_dividend"
                       yAxisId="dividend"
                       dataKey="RDTE_dividend"
-                      name="RDTE 股息"
+                      name="RDTE Dividend"
                       fill={rdteDividendVisible ? `hsl(240, 70%, 50%)` : `hsl(0, 0%, 70%)`}
                       opacity={rdteDividendVisible ? 0.7 : 0.4}
                     />
@@ -393,7 +341,7 @@ export default function FinancialDashboard() {
                       yAxisId="price"
                       type="monotone"
                       dataKey="XDTE_price"
-                      name="XDTE 股價"
+                      name="XDTE Price"
                       stroke={xdtePriceVisible ? `hsl(0, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
@@ -403,7 +351,7 @@ export default function FinancialDashboard() {
                       yAxisId="price"
                       type="monotone"
                       dataKey="QDTE_price"
-                      name="QDTE 股價"
+                      name="QDTE Price"
                       stroke={qdtePriceVisible ? `hsl(120, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
@@ -413,7 +361,7 @@ export default function FinancialDashboard() {
                       yAxisId="price"
                       type="monotone"
                       dataKey="RDTE_price"
-                      name="RDTE 股價"
+                      name="RDTE Price"
                       stroke={rdtePriceVisible ? `hsl(240, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
@@ -427,18 +375,18 @@ export default function FinancialDashboard() {
                 {/* 股息統計 */}
         <Card>
           <CardHeader>
-            <CardTitle>股息統計分析</CardTitle>
-            <CardDescription>各股票近期平均股息表現</CardDescription>
+            <CardTitle>Dividend Statistics</CardTitle>
+            <CardDescription>Recent average dividend performance of each stock</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>股票代號</TableHead>
-                    <TableHead>近3個月平均股息</TableHead>
-                    <TableHead>近6個月平均股息</TableHead>
-                    <TableHead>近9個月平均股息</TableHead>
+                    <TableHead>Stock Symbol</TableHead>
+                    <TableHead>Avg. Dividend (3 Months)</TableHead>
+                    <TableHead>Avg. Dividend (6 Months)</TableHead>
+                    <TableHead>Avg. Dividend (9 Months)</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
