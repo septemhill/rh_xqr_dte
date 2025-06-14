@@ -46,18 +46,27 @@ export default function FinancialDashboard() {
         const results = await Promise.all(promises)
         setStocksData(results)
 
-        // 準備圖表資料 - 合併所有股票的資料
-        const combinedData = results[0].data.map((item: FinancialData, index: number) => ({
-          date: item.date,
-          [`${results[0].symbol}_price`]: item.price,
-          [`${results[0].symbol}_dividend`]: item.dividend,
-          [`${results[1].symbol}_price`]: results[1].data[index]?.price || 0,
-          [`${results[1].symbol}_dividend`]: results[1].data[index]?.dividend || 0,
-          [`${results[2].symbol}_price`]: results[2].data[index]?.price || 0,
-          [`${results[2].symbol}_dividend`]: results[2].data[index]?.dividend || 0,
-        }))
+        // 準備圖表資料 - 處理不同起始日期的資料合併
+        const allDates = new Set<string>()
+        results.forEach((stock) => {
+          stock.data.forEach((item) => allDates.add(item.date))
+        })
 
-        setChartData(combinedData)
+        const sortedDates = Array.from(allDates).sort()
+
+        const combinedData = sortedDates.map((date) => {
+          const dataPoint: any = { date }
+
+          results.forEach((stock) => {
+            const stockDataForDate = stock.data.find((item) => item.date === date)
+            dataPoint[`${stock.symbol}_price`] = stockDataForDate?.price || null
+            dataPoint[`${stock.symbol}_dividend`] = stockDataForDate?.dividend || null
+          })
+
+          return dataPoint
+        })
+
+        setChartData(combinedData)        
       } catch (error) {
         console.error("Error fetching data:", error)
       } finally {
