@@ -114,11 +114,11 @@ export default function FinancialDashboard() {
     fetchData()
   }, [])
 
-  const formatCurrency = (value: number) => {
+  const formatCurrency = (value: number, fractionDigits: number) => {
     return new Intl.NumberFormat("zh-TW", {
       style: "currency",
       currency: "USD",
-      minimumFractionDigits: 6,
+      minimumFractionDigits: fractionDigits,
     }).format(value)
   }
 
@@ -238,8 +238,8 @@ export default function FinancialDashboard() {
                       {stock.data.map((item, index) => (
                         <TableRow key={index} className="hover:bg-muted/50">
                           <TableCell className="text-xs sm:text-sm font-medium">{formatDate(item.date)}</TableCell>
-                          <TableCell className="text-xs sm:text-sm">{formatCurrency(item.price)}</TableCell>
-                          <TableCell className="text-xs sm:text-sm">{formatCurrency(item.dividend)}</TableCell>
+                          <TableCell className="text-xs sm:text-sm">{formatCurrency(item.price, 2)}</TableCell>
+                          <TableCell className="text-xs sm:text-sm">{formatCurrency(item.dividend, 6)}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
@@ -286,7 +286,7 @@ export default function FinancialDashboard() {
                     formatter={(value: any, name: string) => {
                       const symbol = name.split('_')[0];
                       return [
-                        formatCurrency(Number(value)),
+                        formatCurrency(Number(value), 6),
                         `${symbol}`,
                       ];
                     }}
@@ -393,9 +393,9 @@ export default function FinancialDashboard() {
                   {dividendStats.map((stat) => (
                     <TableRow key={stat.symbol}>
                       <TableCell className="font-medium">{stat.symbol}</TableCell>
-                      <TableCell>{formatCurrency(stat.avg3Months)}</TableCell>
-                      <TableCell>{formatCurrency(stat.avg6Months)}</TableCell>
-                      <TableCell>{formatCurrency(stat.avg9Months)}</TableCell>
+                      <TableCell>{formatCurrency(stat.avg3Months, 6)}</TableCell>
+                      <TableCell>{formatCurrency(stat.avg6Months, 6)}</TableCell>
+                      <TableCell>{formatCurrency(stat.avg9Months, 6)}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
