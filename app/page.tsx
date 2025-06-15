@@ -425,7 +425,7 @@ export default function FinancialDashboard() {
                       name="XDTE Price"
                       stroke={xdtePriceVisible ? `hsl(0, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
-                      dot={{ r: 3 }}
+                      dot={{ r: 1 }}
                     />
                   <Line
                       key="QDTE_price"
@@ -435,7 +435,7 @@ export default function FinancialDashboard() {
                       name="QDTE Price"
                       stroke={qdtePriceVisible ? `hsl(120, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
-                      dot={{ r: 3 }}
+                      dot={{ r: 1 }}
                     />
                   <Line
                       key="RDTE_price"
@@ -445,7 +445,7 @@ export default function FinancialDashboard() {
                       name="RDTE Price"
                       stroke={rdtePriceVisible ? `hsl(240, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
-                      dot={{ r: 3 }}
+                      dot={{ r: 1 }}
                     />
                 </ComposedChart>
               </ResponsiveContainer>
