@@ -19,22 +19,31 @@ interface StockData {
   data: FinancialData[]
 }
 
-// 更新 DividendStats 介面
+// 更新 DividendStats 介面以包含股價平均
 interface DividendStats {
   XDTE: {
     avg3Months: number;
     avg6Months: number;
     avg9Months: number;
+    avg3MonthsPrice: number;
+    avg6MonthsPrice: number;
+    avg9MonthsPrice: number;
   };
   QDTE: {
     avg3Months: number;
     avg6Months: number;
     avg9Months: number;
+    avg3MonthsPrice: number;
+    avg6MonthsPrice: number;
+    avg9MonthsPrice: number;
   };
   RDTE: {
     avg3Months: number;
     avg6Months: number;
     avg9Months: number;
+    avg3MonthsPrice: number;
+    avg6MonthsPrice: number;
+    avg9MonthsPrice: number;
   };
 }
 
@@ -44,9 +53,9 @@ export default function FinancialDashboard() {
   const [loading, setLoading] = useState(true)
   // 更新 dividendStats 的初始狀態
   const [dividendStats, setDividendStats] = useState<DividendStats>({
-    XDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0 },
-    QDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0 },
-    RDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0 },
+    XDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0, avg3MonthsPrice: 0, avg6MonthsPrice: 0, avg9MonthsPrice: 0 },
+    QDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0, avg3MonthsPrice: 0, avg6MonthsPrice: 0, avg9MonthsPrice: 0 },
+    RDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0, avg3MonthsPrice: 0, avg6MonthsPrice: 0, avg9MonthsPrice: 0 },
   });
 
   const stockSymbols = [
@@ -100,11 +109,11 @@ export default function FinancialDashboard() {
 
         setChartData(combinedData)        
 
-        // 計算股息統計 (修改後的邏輯)
+        // 計算股息和股價統計 (修改後的邏輯)
         const newDividendStats: DividendStats = {
-          XDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0 },
-          QDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0 },
-          RDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0 },
+          XDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0, avg3MonthsPrice: 0, avg6MonthsPrice: 0, avg9MonthsPrice: 0 },
+          QDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0, avg3MonthsPrice: 0, avg6MonthsPrice: 0, avg9MonthsPrice: 0 },
+          RDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0, avg3MonthsPrice: 0, avg6MonthsPrice: 0, avg9MonthsPrice: 0 },
         };
 
         results.forEach((stock) => {
@@ -114,22 +123,47 @@ export default function FinancialDashboard() {
           const nineMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 9, now.getDate());
 
           const dividendData = stock.data.filter((item) => item.dividend > 0);
+          const priceData = stock.data.filter((item) => item.price > 0); // 用於股價計算的數據
 
-          const avg3Months = calculateAverageDividend(dividendData, threeMonthsAgo);
-          const avg6Months = calculateAverageDividend(dividendData, sixMonthsAgo);
-          const avg9Months = calculateAverageDividend(dividendData, nineMonthsAgo);
+          const avg3MonthsDividend = calculateAverageDividend(dividendData, threeMonthsAgo);
+          const avg6MonthsDividend = calculateAverageDividend(dividendData, sixMonthsAgo);
+          const avg9MonthsDividend = calculateAverageDividend(dividendData, nineMonthsAgo);
+
+          const avg3MonthsPrice = calculateAveragePrice(priceData, threeMonthsAgo); // 計算股價平均
+          const avg6MonthsPrice = calculateAveragePrice(priceData, sixMonthsAgo);
+          const avg9MonthsPrice = calculateAveragePrice(priceData, nineMonthsAgo);
 
           // 根據 symbol 將計算結果賦值到對應的屬性
           if (stock.symbol === "XDTE") {
-            newDividendStats.XDTE = { avg3Months, avg6Months, avg9Months };
+            newDividendStats.XDTE = { 
+              avg3Months: avg3MonthsDividend, 
+              avg6Months: avg6MonthsDividend, 
+              avg9Months: avg9MonthsDividend,
+              avg3MonthsPrice, 
+              avg6MonthsPrice,
+              avg9MonthsPrice,
+            };
           } else if (stock.symbol === "QDTE") {
-            newDividendStats.QDTE = { avg3Months, avg6Months, avg9Months };
+            newDividendStats.QDTE = { 
+              avg3Months: avg3MonthsDividend, 
+              avg6Months: avg6MonthsDividend, 
+              avg9Months: avg9MonthsDividend,
+              avg3MonthsPrice,
+              avg6MonthsPrice,
+              avg9MonthsPrice,
+            };
           } else if (stock.symbol === "RDTE") {
-            newDividendStats.RDTE = { avg3Months, avg6Months, avg9Months };
+            newDividendStats.RDTE = { 
+              avg3Months: avg3MonthsDividend, 
+              avg6Months: avg6MonthsDividend, 
+              avg9Months: avg9MonthsDividend,
+              avg3MonthsPrice,
+              avg6MonthsPrice,
+              avg9MonthsPrice,
+            };
           }
         });
         setDividendStats(newDividendStats);
-
       } catch (error) {
         console.error("Error fetching data:", error)
       } finally {
@@ -148,7 +182,7 @@ export default function FinancialDashboard() {
     }).format(value)
   }
 
-  const calculateAverageDividend = (dividendData: FinancialData[], fromDate: Date) => {
+  const calculateAverageDividend = (dividendData: FinancialData[], fromDate: Date): number => {
     const filteredData = dividendData.filter((item) => {
       const itemDate = new Date(item.date)
       return itemDate >= fromDate && item.dividend > 0
@@ -161,13 +195,25 @@ export default function FinancialDashboard() {
     return total / filteredData.length
   }
 
+  // 新增 calculateAveragePrice 函式
+  const calculateAveragePrice = (priceData: FinancialData[], fromDate: Date): number => {
+    const filteredData = priceData.filter((item) => {
+      const itemDate = new Date(item.date)
+      return itemDate >= fromDate && item.price > 0
+    })
+
+    if (filteredData.length === 0) return 0
+
+    const total = filteredData.reduce((sum, item) => sum + Number(item.price), 0)
+    return total / filteredData.length
+  }
+
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("zh-TW")
   }
 
-  // 新增處理 Legend 點擊事件的函式
   const handleLegendClick = (dataKey: any) => {
-    // 判斷點擊的是哪個 legend item 並切換其可見性
     switch (dataKey.dataKey) {
       case "XDTE_price":
         setXdtePriceVisible(!xdtePriceVisible);
@@ -197,8 +243,8 @@ export default function FinancialDashboard() {
     return (
       <div className="container mx-auto p-4 space-y-6">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-2">金融資訊瀏覽</h1>
-          <p className="text-muted-foreground">載入中...</p>
+          <h1 className="text-3xl font-bold mb-2">Financial Dashboard</h1>
+          <p className="text-muted-foreground">Loading...</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
@@ -236,8 +282,8 @@ export default function FinancialDashboard() {
       <ThemeToggle />
       <div className="container mx-auto p-4 pt-16 space-y-6">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-2">金融資訊瀏覽</h1>
-          <p className="text-muted-foreground">股價與股息資訊總覽</p>
+          <h1 className="text-3xl font-bold mb-2">Financial Dashboard</h1>
+          <p className="text-muted-foreground">Overview of stock prices and dividend information</p>
         </div>
 
         {/* 三張資料表格 */}
@@ -254,9 +300,9 @@ export default function FinancialDashboard() {
                   <Table>
                     <TableHeader className="sticky top-0 bg-background z-10">
                       <TableRow>
-                        <TableHead className="text-xs sm:text-sm border-b">日期</TableHead>
-                        <TableHead className="text-xs sm:text-sm border-b">股價</TableHead>
-                        <TableHead className="text-xs sm:text-sm border-b">股息</TableHead>
+                        <TableHead className="text-xs sm:text-sm border-b">Date</TableHead>
+                        <TableHead className="text-xs sm:text-sm border-b">Price</TableHead>
+                        <TableHead className="text-xs sm:text-sm border-b">Dividend</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -278,8 +324,8 @@ export default function FinancialDashboard() {
         {/* 組合圖表 */}
         <Card className="w-full">
           <CardHeader>
-            <CardTitle>股價與股息趨勢圖</CardTitle>
-            <CardDescription>折線圖顯示股價，柱狀圖顯示股息</CardDescription>
+            <CardTitle>Stock Price and Dividend Trend Chart</CardTitle>
+            <CardDescription>Line chart shows stock price, bar chart shows dividend</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="w-full h-80 sm:h-96">
@@ -330,8 +376,8 @@ export default function FinancialDashboard() {
                     }}                    
                   />
                   <Legend
-                    onClick={handleLegendClick} // 添加 onClick 事件處理器
-                    wrapperStyle={{ cursor: "pointer" }} // 添加鼠標樣式以提示可點擊
+                    onClick={handleLegendClick}
+                    wrapperStyle={{ cursor: "pointer" }}
                   />
 
                   {/* 股息柱狀圖 */}
@@ -339,7 +385,7 @@ export default function FinancialDashboard() {
                       key="XDTE_dividend"
                       yAxisId="dividend"
                       dataKey="XDTE_dividend"
-                      name="XDTE 股息"
+                      name="XDTE Dividend"
                       fill={xdteDividendVisible ? `hsl(0, 70%, 50%)` : `hsl(0, 0%, 70%)`}
                       opacity={xdteDividendVisible ? 0.7 : 0.4}
                     />
@@ -347,7 +393,7 @@ export default function FinancialDashboard() {
                       key="QDTE_dividend"
                       yAxisId="dividend"
                       dataKey="QDTE_dividend"
-                      name="QDTE 股息"
+                      name="QDTE Dividend"
                       fill={qdteDividendVisible ? `hsl(120, 70%, 50%)` : `hsl(0, 0%, 70%)`}
                       opacity={qdteDividendVisible ? 0.7 : 0.4}
                     />
@@ -355,7 +401,7 @@ export default function FinancialDashboard() {
                       key="RDTE_dividend"
                       yAxisId="dividend"
                       dataKey="RDTE_dividend"
-                      name="RDTE 股息"
+                      name="RDTE Dividend"
                       fill={rdteDividendVisible ? `hsl(240, 70%, 50%)` : `hsl(0, 0%, 70%)`}
                       opacity={rdteDividendVisible ? 0.7 : 0.4}
                     />
@@ -366,7 +412,7 @@ export default function FinancialDashboard() {
                       yAxisId="price"
                       type="monotone"
                       dataKey="XDTE_price"
-                      name="XDTE 股價"
+                      name="XDTE Price"
                       stroke={xdtePriceVisible ? `hsl(0, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
@@ -376,7 +422,7 @@ export default function FinancialDashboard() {
                       yAxisId="price"
                       type="monotone"
                       dataKey="QDTE_price"
-                      name="QDTE 股價"
+                      name="QDTE Price"
                       stroke={qdtePriceVisible ? `hsl(120, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
@@ -386,7 +432,7 @@ export default function FinancialDashboard() {
                       yAxisId="price"
                       type="monotone"
                       dataKey="RDTE_price"
-                      name="RDTE 股價"
+                      name="RDTE Price"
                       stroke={rdtePriceVisible ? `hsl(240, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 3 }}
@@ -397,41 +443,60 @@ export default function FinancialDashboard() {
           </CardContent>
         </Card>
 
-        {/* 股息統計 (修改後的渲染) */}
+        {/* Financial Statistics Analysis (Modified rendering and titles) */}
         <Card>
           <CardHeader>
-            <CardTitle>股息統計分析</CardTitle>
-            <CardDescription>各股票近期平均股息表現</CardDescription>
+            <CardTitle>Financial Statistics Analysis</CardTitle>
+            <CardDescription>Recent average dividend and stock price performance of each stock</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>統計項目</TableHead> {/* 新增統計項目表頭 */}
+                    <TableHead>Statistics</TableHead>
                     {stockSymbols.map((stock) => (
-                      <TableHead key={stock.symbol}>{stock.symbol}</TableHead> // 將股票代號作為表頭
+                      <TableHead key={stock.symbol}>{stock.symbol}</TableHead>
                     ))}
                   </TableRow>
                 </TableHeader>
                 <TableBody>
+                  {/* Dividend Statistics Row */}
                   <TableRow>
-                    <TableCell className="font-medium">近3個月平均股息</TableCell>
+                    <TableCell className="font-medium">3M Div Avg</TableCell>
                     {stockSymbols.map((stock) => (
-                      // 使用 keyof DividendStats 進行類型斷言，以符合介面
                       <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg3Months)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">近6個月平均股息</TableCell>
+                    <TableCell className="font-medium">6M Div Avg</TableCell>
                     {stockSymbols.map((stock) => (
                       <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg6Months)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">近9個月平均股息</TableCell>
+                    <TableCell className="font-medium">9M Div Avg</TableCell>
                     {stockSymbols.map((stock) => (
                       <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg9Months)}</TableCell>
+                    ))}
+                  </TableRow>
+                  {/* Stock Price Statistics Row */}
+                  <TableRow>
+                    <TableCell className="font-medium">3M Price Avg</TableCell>
+                    {stockSymbols.map((stock) => (
+                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg3MonthsPrice)}</TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">6M Price Avg</TableCell>
+                    {stockSymbols.map((stock) => (
+                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg6MonthsPrice)}</TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">9M Price Avg</TableCell>
+                    {stockSymbols.map((stock) => (
+                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg9MonthsPrice)}</TableCell>
                     ))}
                   </TableRow>
                 </TableBody>
