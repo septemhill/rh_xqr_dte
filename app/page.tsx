@@ -6,6 +6,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Skeleton } from "@/components/ui/skeleton"
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { LanguageToggle } from "@/components/language-toggle"
+import { translations, type Language } from "@/lib/translations"
 
 interface FinancialData {
   date: string
@@ -51,12 +53,15 @@ export default function FinancialDashboard() {
   const [stocksData, setStocksData] = useState<StockData[]>([])
   const [chartData, setChartData] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
+  const [language, setLanguage] = useState<Language>("en")
   // 更新 dividendStats 的初始狀態
   const [dividendStats, setDividendStats] = useState<DividendStats>({
     XDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0, avg3MonthsPrice: 0, avg6MonthsPrice: 0, avg9MonthsPrice: 0 },
     QDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0, avg3MonthsPrice: 0, avg6MonthsPrice: 0, avg9MonthsPrice: 0 },
     RDTE: { avg3Months: 0, avg6Months: 0, avg9Months: 0, avg3MonthsPrice: 0, avg6MonthsPrice: 0, avg9MonthsPrice: 0 },
   });
+
+  const t = translations[language];
 
   const stockSymbols = [
     { symbol: "XDTE", name: "S&P 500 0DTE Covered Call" },
@@ -79,7 +84,7 @@ export default function FinancialDashboard() {
           const data = await response.json()
           return {
             symbol: stock.symbol,
-            name: stock.name,
+            name: t.companies[stock.symbol],
             data: data.sort((a: FinancialData, b: FinancialData) => new Date(b.date).getTime() - new Date(a.date).getTime()),
           }
         })
@@ -174,6 +179,10 @@ export default function FinancialDashboard() {
     fetchData()
   }, [])
 
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "zh" ? "en" : "zh"))
+  }
+
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("zh-TW", {
       style: "currency",
@@ -243,8 +252,8 @@ export default function FinancialDashboard() {
     return (
       <div className="container mx-auto p-4 space-y-6">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-2">Financial Dashboard</h1>
-          <p className="text-muted-foreground">Loading...</p>
+          <h1 className="text-3xl font-bold mb-2">{t.pageTitle}</h1>
+          <p className="text-muted-foreground">{t.loading}</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
@@ -280,10 +289,11 @@ export default function FinancialDashboard() {
   return (
     <>
       <ThemeToggle />
+      <LanguageToggle language={language} onToggle={toggleLanguage} />
       <div className="container mx-auto p-4 pt-16 space-y-6">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-2">Financial Dashboard</h1>
-          <p className="text-muted-foreground">Overview of stock prices and dividend information</p>
+          <h1 className="text-3xl font-bold mb-2">{t.pageTitle}</h1>
+          <p className="text-muted-foreground">{t.pageDescription}</p>
         </div>
 
         {/* 三張資料表格 */}
@@ -300,9 +310,9 @@ export default function FinancialDashboard() {
                   <Table>
                     <TableHeader className="sticky top-0 bg-background z-10">
                       <TableRow>
-                        <TableHead className="text-xs sm:text-sm border-b">Date</TableHead>
-                        <TableHead className="text-xs sm:text-sm border-b">Price</TableHead>
-                        <TableHead className="text-xs sm:text-sm border-b">Dividend</TableHead>
+                        <TableHead className="text-xs sm:text-sm border-b">{t.date}</TableHead>
+                        <TableHead className="text-xs sm:text-sm border-b">{t.price}</TableHead>
+                        <TableHead className="text-xs sm:text-sm border-b">{t.dividend}</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -324,8 +334,8 @@ export default function FinancialDashboard() {
         {/* 組合圖表 */}
         <Card className="w-full">
           <CardHeader>
-            <CardTitle>Stock Price and Dividend Trend Chart</CardTitle>
-            <CardDescription>Line chart shows stock price, bar chart shows dividend</CardDescription>
+            <CardTitle>{t.chartTitle}</CardTitle>
+            <CardDescription>{t.chartDescription}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="w-full h-80 sm:h-96">
@@ -446,8 +456,8 @@ export default function FinancialDashboard() {
         {/* Financial Statistics Analysis (Modified rendering and titles) */}
         <Card>
           <CardHeader>
-            <CardTitle>Financial Statistics Analysis</CardTitle>
-            <CardDescription>Recent average dividend and stock price performance of each stock</CardDescription>
+            <CardTitle>{t.statsTitle}</CardTitle>
+            <CardDescription>{t.statsDescription}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
@@ -463,38 +473,38 @@ export default function FinancialDashboard() {
                 <TableBody>
                   {/* Dividend Statistics Row */}
                   <TableRow>
-                    <TableCell className="font-medium">3M Div Avg</TableCell>
+                    <TableCell className="font-medium">{t.avg3DivMonths}</TableCell>
                     {stockSymbols.map((stock) => (
                       <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg3Months)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">6M Div Avg</TableCell>
+                    <TableCell className="font-medium">{t.avg6DivMonths}</TableCell>
                     {stockSymbols.map((stock) => (
                       <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg6Months)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">9M Div Avg</TableCell>
+                    <TableCell className="font-medium">{t.avg9DivMonths}</TableCell>
                     {stockSymbols.map((stock) => (
                       <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg9Months)}</TableCell>
                     ))}
                   </TableRow>
                   {/* Stock Price Statistics Row */}
                   <TableRow>
-                    <TableCell className="font-medium">3M Price Avg</TableCell>
+                    <TableCell className="font-medium">{t.avg3PriceMonths}</TableCell>
                     {stockSymbols.map((stock) => (
                       <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg3MonthsPrice)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">6M Price Avg</TableCell>
+                    <TableCell className="font-medium">{t.avg6PriceMonths}</TableCell>
                     {stockSymbols.map((stock) => (
                       <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg6MonthsPrice)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">9M Price Avg</TableCell>
+                    <TableCell className="font-medium">{t.avg9PriceMonths}</TableCell>
                     {stockSymbols.map((stock) => (
                       <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg9MonthsPrice)}</TableCell>
                     ))}
