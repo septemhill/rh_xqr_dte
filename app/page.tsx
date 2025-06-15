@@ -127,8 +127,8 @@ export default function FinancialDashboard() {
           const sixMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 6, now.getDate());
           const nineMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 9, now.getDate());
 
-          const dividendData = stock.data.filter((item) => item.dividend > 0);
-          const priceData = stock.data.filter((item) => item.price > 0); // 用於股價計算的數據
+          const dividendData = stock.data.filter((item: FinancialData) => item.dividend > 0);
+          const priceData = stock.data.filter((item: FinancialData) => item.price > 0); // 用於股價計算的數據
 
           const avg3MonthsDividend = calculateAverageDividend(dividendData, threeMonthsAgo);
           const avg6MonthsDividend = calculateAverageDividend(dividendData, sixMonthsAgo);

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "schedule": "ts-node scripts/schedule.ts"
+    "schedule": "npx ts-node scripts/schedule.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

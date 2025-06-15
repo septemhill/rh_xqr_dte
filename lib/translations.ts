@@ -15,8 +15,8 @@ export const translations = {
         chartDescription: "折線圖顯示股價，柱狀圖顯示股息",
 
         // 統計
-        statsTitle: "股息統計分析",
-        statsDescription: "各股票近期平均股息表現",
+        statsTitle: "數據統計分析",
+        statsDescription: "各股票近期平均股息和價格表現",
         stockSymbol: "股票代號",
         avg3DivMonths: "近3個月平均股息",
         avg6DivMonths: "近6個月平均股息",
