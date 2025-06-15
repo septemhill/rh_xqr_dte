@@ -356,12 +356,14 @@ export default function FinancialDashboard() {
                     orientation="left"
                     tick={{ fontSize: 12 }}
                     tickFormatter={(value) => `$${value}`}
+                    tickCount={8}
                   />
                   <YAxis
                     yAxisId="dividend"
                     orientation="right"
                     tick={{ fontSize: 12 }}
                     tickFormatter={(value) => `$${value}`}
+                    tickCount={8}
                   />
                   <Tooltip
                     formatter={(value: any, name: string) => {
