@@ -183,11 +183,11 @@ export default function FinancialDashboard() {
     setLanguage((prev) => (prev === "zh" ? "en" : "zh"))
   }
 
-  const formatCurrency = (value: number) => {
+  const formatCurrency = (value: number, digits: number) => {
     return new Intl.NumberFormat("zh-TW", {
       style: "currency",
       currency: "USD",
-      minimumFractionDigits: 6,
+      minimumFractionDigits: digits,
     }).format(value)
   }
 
@@ -319,8 +319,8 @@ export default function FinancialDashboard() {
                       {stock.data.map((item, index) => (
                         <TableRow key={index} className="hover:bg-muted/50">
                           <TableCell className="text-xs sm:text-sm font-medium">{formatDate(item.date)}</TableCell>
-                          <TableCell className="text-xs sm:text-sm">{formatCurrency(item.price)}</TableCell>
-                          <TableCell className="text-xs sm:text-sm">{formatCurrency(item.dividend)}</TableCell>
+                          <TableCell className="text-xs sm:text-sm">{formatCurrency(item.price, 2)}</TableCell>
+                          <TableCell className="text-xs sm:text-sm">{formatCurrency(item.dividend, 6)}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
@@ -369,7 +369,7 @@ export default function FinancialDashboard() {
                     formatter={(value: any, name: string) => {
                       const symbol = name.split('_')[0];
                       return [
-                        formatCurrency(Number(value)),
+                        formatCurrency(Number(value), 6),
                         `${symbol}`,
                       ];
                     }}
@@ -483,38 +483,38 @@ export default function FinancialDashboard() {
                   <TableRow>
                     <TableCell className="font-medium">{t.avg3DivMonths}</TableCell>
                     {stockSymbols.map((stock) => (
-                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg3Months)}</TableCell>
+                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg3Months, 6)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">{t.avg6DivMonths}</TableCell>
                     {stockSymbols.map((stock) => (
-                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg6Months)}</TableCell>
+                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg6Months, 6)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">{t.avg9DivMonths}</TableCell>
                     {stockSymbols.map((stock) => (
-                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg9Months)}</TableCell>
+                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg9Months, 6)}</TableCell>
                     ))}
                   </TableRow>
                   {/* Stock Price Statistics Row */}
                   <TableRow>
                     <TableCell className="font-medium">{t.avg3PriceMonths}</TableCell>
                     {stockSymbols.map((stock) => (
-                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg3MonthsPrice)}</TableCell>
+                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg3MonthsPrice, 2)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">{t.avg6PriceMonths}</TableCell>
                     {stockSymbols.map((stock) => (
-                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg6MonthsPrice)}</TableCell>
+                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg6MonthsPrice, 2)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">{t.avg9PriceMonths}</TableCell>
                     {stockSymbols.map((stock) => (
-                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg9MonthsPrice)}</TableCell>
+                      <TableCell key={stock.symbol}>{formatCurrency(dividendStats[stock.symbol as keyof DividendStats].avg9MonthsPrice, 2)}</TableCell>
                     ))}
                   </TableRow>
                 </TableBody>
