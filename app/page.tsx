@@ -400,6 +400,7 @@ export default function FinancialDashboard() {
                       name="XDTE Dividend"
                       fill={xdteDividendVisible ? `hsl(0, 70%, 50%)` : `hsl(0, 0%, 70%)`}
                       opacity={xdteDividendVisible ? 0.7 : 0.4}
+                      hide={!xdteDividendVisible}
                     />
                   <Bar
                       key="QDTE_dividend"
@@ -408,6 +409,7 @@ export default function FinancialDashboard() {
                       name="QDTE Dividend"
                       fill={qdteDividendVisible ? `hsl(120, 70%, 50%)` : `hsl(0, 0%, 70%)`}
                       opacity={qdteDividendVisible ? 0.7 : 0.4}
+                      hide={!qdteDividendVisible}
                     />
                   <Bar
                       key="RDTE_dividend"
@@ -416,6 +418,7 @@ export default function FinancialDashboard() {
                       name="RDTE Dividend"
                       fill={rdteDividendVisible ? `hsl(240, 70%, 50%)` : `hsl(0, 0%, 70%)`}
                       opacity={rdteDividendVisible ? 0.7 : 0.4}
+                      hide={!rdteDividendVisible}
                     />
 
                   {/* 股價折線圖 */}
@@ -428,6 +431,7 @@ export default function FinancialDashboard() {
                       stroke={xdtePriceVisible ? `hsl(0, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 1 }}
+                      hide={!xdtePriceVisible}
                     />
                   <Line
                       key="QDTE_price"
@@ -438,6 +442,7 @@ export default function FinancialDashboard() {
                       stroke={qdtePriceVisible ? `hsl(120, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 1 }}
+                      hide={!qdtePriceVisible}
                     />
                   <Line
                       key="RDTE_price"
@@ -448,6 +453,7 @@ export default function FinancialDashboard() {
                       stroke={rdtePriceVisible ? `hsl(240, 70%, 40%)` : `hsl(0, 0%, 70%)`}
                       strokeWidth={2}
                       dot={{ r: 1 }}
+                      hide={!rdtePriceVisible}
                     />
                 </ComposedChart>
               </ResponsiveContainer>
