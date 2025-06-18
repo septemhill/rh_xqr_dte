@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "schedule": "npx ts-node-esm scripts/schedule.ts"
+    "schedule": "tsx scripts/schedule.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -70,6 +70,7 @@
     "postcss": "^8.5",
     "tailwindcss": "^3.4.17",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
     "typescript": "^5"
   }
 }
