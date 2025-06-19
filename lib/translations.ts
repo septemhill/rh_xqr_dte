@@ -1,7 +1,7 @@
 export const translations = {
     zh: {
         // 頁面標題
-        pageTitle: "Roundhill 零日備兌期權ETF總覽",
+        pageTitle: "零日備兌期權ETF總覽",
         pageDescription: "股價與股息資訊總覽",
         loading: "載入中...",
 
@@ -39,7 +39,7 @@ export const translations = {
     },
     en: {
         // 頁面標題
-        pageTitle: "Roundhill 0DTE Covered Call Dashboard",
+        pageTitle: "0DTE Covered Call Dashboard",
         pageDescription: "Overview of stock prices and dividend information",
         loading: "Loading...",
 
