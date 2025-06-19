@@ -4,8 +4,8 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: "Roundhill 0DTE Covered Call ETF",
-  description: "Created with v0",
+  title: "0DTE Covered Call ETF Dashboard",
+  description: "A dashboard for tracking 0DTE covered call ETFs",
   generator: "v0.dev",
   icons: {
     icon: '/favicon.ico',

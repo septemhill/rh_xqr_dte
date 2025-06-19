@@ -1,8 +1,8 @@
-# my-v0-project
+# 0DTE Covered Call ETF Dashboard
 
 ## Table of Contents
 
-- [my-v0-project](#my-v0-project)
+- [0DTE Covered Call ETF Dashboard](#0dte-covered-call-etf-dashboard)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [GitHub Pages](#github-pages)
