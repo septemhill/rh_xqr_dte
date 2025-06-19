@@ -1,7 +1,9 @@
+// src/components/stats-table.tsx
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { stockSymbols } from "@/lib/constants";
-import { DividendStats, StockSymbol } from "@/lib/types";
+// import { stockSymbols } from "@/lib/constants"; // We will no longer directly use stockSymbols constant
+import { DividendStats, StockSymbol } from "@/lib/types"; // Make sure DividendStats type is updated as discussed above
 import { formatCurrency } from "@/lib/utils";
 
 interface StatsTableProps {
@@ -16,9 +18,10 @@ interface StatsTableProps {
     avg6PriceMonths: string;
     avg9PriceMonths: string;
   };
+  selectedDataSource: "roundhill" | "yieldmax"; // <--- Add this prop
 }
 
-export function StatsTable({ stats, t }: StatsTableProps) {
+export function StatsTable({ stats, t, selectedDataSource }: StatsTableProps) {
   const statRows = [
     { label: t.avg3DivMonths, key: "avg3Months", digits: 6 },
     { label: t.avg6DivMonths, key: "avg6Months", digits: 6 },
@@ -27,6 +30,34 @@ export function StatsTable({ stats, t }: StatsTableProps) {
     { label: t.avg6PriceMonths, key: "avg6MonthsPrice", digits: 2 },
     { label: t.avg9PriceMonths, key: "avg9MonthsPrice", digits: 2 },
   ] as const;
+
+  // Get the specific data for the selected data source
+  // This will be like stats.roundhill or stats.yieldmax
+  // const currentDataSourceStats = stats[selectedDataSource];
+  const currentDataSourceStats = stats;
+
+  console.log("Current Data Source Stats:", currentDataSourceStats, selectedDataSource, stats);
+
+  // Dynamically get the stock symbols available in the current data source
+  // This ensures we only display columns for stocks present in the selected dataset
+  const currentStockSymbols = currentDataSourceStats ? Object.keys(currentDataSourceStats).sort() : []; // Sort for consistent order
+
+  // If there's no data for the selected source, display a message
+  if (!currentDataSourceStats || currentStockSymbols.length === 0) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>{t.statsTitle}</CardTitle>
+          <CardDescription>{t.statsDescription}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="text-center text-muted-foreground py-4">
+            No statistics available for the selected data source.
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card>
@@ -40,8 +71,9 @@ export function StatsTable({ stats, t }: StatsTableProps) {
             <TableHeader>
               <TableRow>
                 <TableHead>Statistics</TableHead>
-                {stockSymbols.map((stock) => (
-                  <TableHead key={stock.symbol}>{stock.symbol}</TableHead>
+                {/* Dynamically render TableHeads based on currentStockSymbols */}
+                {currentStockSymbols.map((symbol) => (
+                  <TableHead key={symbol}>{symbol}</TableHead>
                 ))}
               </TableRow>
             </TableHeader>
@@ -49,9 +81,11 @@ export function StatsTable({ stats, t }: StatsTableProps) {
               {statRows.map((row) => (
                 <TableRow key={row.key}>
                   <TableCell className="font-medium">{row.label}</TableCell>
-                  {stockSymbols.map((stock) => (
-                    <TableCell key={stock.symbol}>
-                      {formatCurrency(stats[stock.symbol as StockSymbol][row.key], row.digits)}
+                  {/* Dynamically render TableCells for each stock in the current data source */}
+                  {currentStockSymbols.map((symbol) => (
+                    <TableCell key={symbol}>
+                      {/* Access data like currentDataSourceStats["XDTE"].avg3Months */}
+                      {formatCurrency(currentDataSourceStats[symbol][row.key], row.digits)}
                     </TableCell>
                   ))}
                 </TableRow>

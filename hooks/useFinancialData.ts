@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { translations, type Language } from "@/lib/translations";
-import { stockSymbols } from "@/lib/constants";
 import { calculateAverage, calculateAllStats } from "@/lib/utils";
 import type { StockData, FinancialData, DividendStats } from "@/lib/types";
 
-export function useFinancialData(language: Language) {
+export type DataSource = "roundhill" | "yieldmax";
+
+export function useFinancialData(language: Language, dataSource: DataSource = "roundhill") {
     const [stocksData, setStocksData] = useState<StockData[]>([]);
     const [chartData, setChartData] = useState<any[]>([]);
     const [dividendStats, setDividendStats] = useState<DividendStats | null>(null);
@@ -15,17 +16,17 @@ export function useFinancialData(language: Language) {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const promises = stockSymbols.map(async (stock) => {
-                    const response = await fetch(`./data/${stock.symbol}.json`);
-                    const data: FinancialData[] = await response.json();
-                    return {
-                        symbol: stock.symbol,
-                        name: t.companies[stock.symbol],
-                        data: data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
-                    };
-                });
+                const response = await fetch(`./data/${dataSource}.json`);
+                const issuerData: Record<string, FinancialData[]> = await response.json();
 
-                const results = await Promise.all(promises);
+                const symbols = Object.keys(issuerData).map(symbol => ({ symbol }));
+
+                const results = symbols.map((stock) => ({
+                    symbol: stock.symbol,
+                    name: t.companies[stock.symbol],
+                    data: issuerData[stock.symbol].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+                }));
+
                 setStocksData(results);
 
                 const allDates = new Set<string>();
@@ -58,7 +59,7 @@ export function useFinancialData(language: Language) {
         };
 
         fetchData();
-    }, [language, t.companies]);
+    }, [language, t.companies, dataSource]);
 
     return { stocksData, chartData, dividendStats, loading };
 }

@@ -8,7 +8,10 @@ if (!ALPHAVANTAGE_API_KEY) {
     process.exit(1);
 }
 
-const symbols: string[] = ['XDTE', 'QDTE', 'RDTE'];
+const issuer: Record<string, string[]> = {
+    'roundhill': ['XDTE', 'QDTE', 'RDTE'],
+    'yieldmax': ['SDTY', 'QDTY', 'RDTY']
+}
 
 const DailyPriceAPI_Base = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY';
 const DividendAPI_Base = 'https://www.alphavantage.co/query?function=DIVIDENDS';
@@ -1654,55 +1657,64 @@ async function dividendAPI() {
 }
 
 async function fetchData() {
-    const m = new Map<string, DividendPrice[]>();
+    const m = new Map<string, Record<string, DividendPrice[]>>();
 
-    for (const symbol of symbols) {
-        let dividendData: DividendPrice[] = [];
+    for (const issuerName in issuer) {
+        if (issuer.hasOwnProperty(issuerName)) {
+            const symbols = issuer[issuerName];
+            const issuerData: Record<string, DividendPrice[]> = {};
 
-        // Construct Daily Price API URL
-        const dailyPriceUrl = `${DailyPriceAPI_Base}&symbol=${symbol}&apikey=${ALPHAVANTAGE_API_KEY}&outputsize=full`;
-        console.log(`Fetching daily price for ${symbol} from: ${dailyPriceUrl}`);
+            for (const symbol of symbols) {
+                let dividendData: DividendPrice[] = [];
 
-        // Construct Dividend API URL
-        const dividendUrl = `${DividendAPI_Base}&symbol=${symbol}&apikey=${ALPHAVANTAGE_API_KEY}`;
-        console.log(`Fetching dividends for ${symbol} from: ${dividendUrl}`);
+                // Construct Daily Price API URL
+                const dailyPriceUrl = `${DailyPriceAPI_Base}&symbol=${symbol}&apikey=${ALPHAVANTAGE_API_KEY}&outputsize=full`;
+                console.log(`Fetching daily price for ${symbol} from: ${dailyPriceUrl}`);
 
-        try {
-            // Fetch Daily Price Data
-            const dailyPriceResponse = await fetch(dailyPriceUrl);
-            if (!dailyPriceResponse.ok) {
-                throw new Error(`HTTP error! status: ${dailyPriceResponse.status} for ${dailyPriceUrl}`);
+                // Construct Dividend API URL
+                const dividendUrl = `${DividendAPI_Base}&symbol=${symbol}&apikey=${ALPHAVANTAGE_API_KEY}`;
+                console.log(`Fetching dividends for ${symbol} from: ${dividendUrl}`);
+
+                try {
+                    // Fetch Daily Price Data
+                    const dailyPriceResponse = await fetch(dailyPriceUrl);
+                    if (!dailyPriceResponse.ok) {
+                        throw new Error(`HTTP error! status: ${dailyPriceResponse.status} for ${dailyPriceUrl}`);
+                    }
+                    // const dailyPriceResponse = await priceAPI();
+                    const dailyPriceAPIData: any = await dailyPriceResponse.json();
+                    // console.log(`Daily Price Data for ${symbol}:`, dailyPriceAPIData);
+
+                    // Fetch Dividend Data
+                    const dividendResponse = await fetch(dividendUrl);
+                    if (!dividendResponse.ok) {
+                        throw new Error(`HTTP error! status: ${dividendResponse.status} for ${dividendUrl}`);
+                    }
+                    // const dividendResponse = await dividendAPI();
+                    const dividendAPIData: any = await dividendResponse.json();
+                    // console.log(`Dividend Data for ${symbol}:`, dividendAPIData);
+
+                    // Extract the dividend data
+                    dividendData = dividendAPIData.data.map((item: any) => ({
+                        date: item.ex_dividend_date,
+                        dividend: item.amount,
+                        price: dailyPriceAPIData['Time Series (Daily)']?.[item.ex_dividend_date]?.['4. close'],
+                    }));
+
+                    // Sort the dividend data by date in ascending order
+                    dividendData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+                    issuerData[symbol] = dividendData;
+
+                } catch (error) {
+                    console.error(`Failed to fetch data for ${symbol}:`, error);
+                }
+                console.log('---'); // Separator for better readability
             }
-            // const dailyPriceResponse = await priceAPI();
-            const dailyPriceAPIData: any = await dailyPriceResponse.json();
-            // console.log(`Daily Price Data for ${symbol}:`, dailyPriceAPIData);
-
-            // Fetch Dividend Data
-            const dividendResponse = await fetch(dividendUrl);
-            if (!dividendResponse.ok) {
-                throw new Error(`HTTP error! status: ${dividendResponse.status} for ${dividendUrl}`);
-            }
-            // const dividendResponse = await dividendAPI();
-            const dividendAPIData: any = await dividendResponse.json();
-            // console.log(`Dividend Data for ${symbol}:`, dividendAPIData);
-
-            // Extract the dividend data
-            dividendData = dividendAPIData.data.map((item: any) => ({
-                date: item.ex_dividend_date,
-                dividend: item.amount,
-                price: dailyPriceAPIData['Time Series (Daily)']?.[item.ex_dividend_date]?.['4. close'],
-            }));
-
-            // Sort the dividend data by date in ascending order
-            dividendData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
             // Save the data in the map
-            m.set(symbol, dividendData);
-
-        } catch (error) {
-            console.error(`Failed to fetch data for ${symbol}:`, error);
+            m.set(issuerName, issuerData);
         }
-        console.log('---'); // Separator for better readability
     }
 
     return m
