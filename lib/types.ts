@@ -2,6 +2,7 @@ export interface FinancialData {
     date: string;
     dividend: number;
     price: number;
+    yield: number;
 }
 
 export interface StockData {

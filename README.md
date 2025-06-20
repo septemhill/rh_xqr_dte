@@ -11,7 +11,7 @@
 
 ## Introduction
 
-This project is a dashboard for tracking the price and dividend information of Roundhill's XDTE, QDTE, and RDTE ETFs.
+This project is a dashboard for tracking the price and dividend information of RoundhillE ETFs and YieldMax ETFs.
 
 ## GitHub Pages
 

@@ -9,6 +9,7 @@ interface StockDataTableProps {
     date: string;
     price: string;
     dividend: string;
+    yield: string;
   };
 }
 
@@ -27,6 +28,7 @@ export function StockDataTable({ stock, t }: StockDataTableProps) {
                 <TableHead className="text-xs sm:text-sm border-b">{t.date}</TableHead>
                 <TableHead className="text-xs sm:text-sm border-b">{t.price}</TableHead>
                 <TableHead className="text-xs sm:text-sm border-b">{t.dividend}</TableHead>
+                <TableHead className="text-xs sm:text-sm border-b">{t.yield}</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -35,6 +37,7 @@ export function StockDataTable({ stock, t }: StockDataTableProps) {
                   <TableCell className="text-xs sm:text-sm font-medium">{formatDate(item.date)}</TableCell>
                   <TableCell className="text-xs sm:text-sm">{formatCurrency(item.price, 2)}</TableCell>
                   <TableCell className="text-xs sm:text-sm">{formatCurrency(item.dividend, 6)}</TableCell>
+                  <TableCell className="text-xs sm:text-sm">{item.yield ? item.yield + "%" : "0.00%"}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

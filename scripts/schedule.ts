@@ -1696,9 +1696,10 @@ async function fetchData() {
 
                     // Extract the dividend data
                     dividendData = dividendAPIData.data.map((item: any) => ({
-                        date: item.ex_dividend_date,
-                        dividend: item.amount,
-                        price: dailyPriceAPIData['Time Series (Daily)']?.[item.ex_dividend_date]?.['4. close'],
+                        date: item.ex_dividend_date as string,
+                        dividend: item.amount as number,
+                        price: dailyPriceAPIData['Time Series (Daily)']?.[item.ex_dividend_date]?.['4. close'] as number,
+                        yield: ((item.amount as number) / (dailyPriceAPIData['Time Series (Daily)']?.[item.ex_dividend_date]?.['4. close'] as number) * 52 * 100).toFixed(2)
                     }));
 
                     // Sort the dividend data by date in ascending order

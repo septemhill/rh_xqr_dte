@@ -9,6 +9,7 @@ export const translations = {
         date: "日期",
         price: "股價",
         dividend: "股息",
+        yield: "殖利率",
 
         // 圖表
         chartTitle: "股價與股息趨勢圖",
@@ -52,6 +53,7 @@ export const translations = {
         date: "Date",
         price: "Price",
         dividend: "Dividend",
+        yield: "Yield",
 
         // 圖表
         chartTitle: "Stock Price and Dividend Trends",
