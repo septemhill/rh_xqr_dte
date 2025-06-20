@@ -1,5 +1,6 @@
 "use client"
 
+import DataSourceSelector from "@/components/data-source-selector";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
@@ -42,17 +43,13 @@ export default function FinancialDashboard() {
           <p className="text-muted-foreground">{t.pageDescription}</p>
         </div>
 
-        {/* 新增資料來源選擇的下拉選單 */}
         <div className="flex justify-center mb-6">
-          <Select value={selectedDataSource} onValueChange={handleDataSourceChange}>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Select Data Source" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="roundhill">Roundhill Data</SelectItem>
-              <SelectItem value="yieldmax">YieldMax Data</SelectItem>
-            </SelectContent>
-          </Select>
+          <DataSourceSelector
+            selectedDataSource={selectedDataSource}
+            onDataSourceChange={handleDataSourceChange}
+            dataSources={["roundhill", "yieldmax"]}
+            t={t}
+          />
         </div>
 
         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">

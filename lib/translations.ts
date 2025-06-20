@@ -36,6 +36,11 @@ export const translations = {
             QDTE: "Innovation-100 零日備兌看漲期權",
             RDTE: "羅素2000 零日備兌看漲期權",
         },
+
+        issuer: {
+            roundhill: "Roundhill",
+            yieldmax: "Yieldmax"
+        }
     },
     en: {
         // 頁面標題
@@ -74,6 +79,11 @@ export const translations = {
             QDTE: "Innovation 100 0DTE Covered Call",
             RDTE: "Small Cap 0DTE Covered Call",
         },
+
+        issuer: {
+            roundhill: "Roundhill",
+            yieldmax: "Yieldmax"
+        }
     },
 }
 
