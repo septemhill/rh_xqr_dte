@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Brush } from "recharts";
 import { formatCurrency, formatDate } from "@/lib/utils";
 
 interface FinancialChartProps {
@@ -120,6 +120,7 @@ export function FinancialChart({ chartData, t }: FinancialChartProps) {
               <XAxis dataKey="date" tick={{ fontSize: 12 }} tickFormatter={(value) => formatDate(value)} />
               <YAxis yAxisId="price" orientation="left" tick={{ fontSize: 12 }} tickFormatter={(value) => `$${value}`} tickCount={8} />
               <YAxis yAxisId="dividend" orientation="right" tick={{ fontSize: 12 }} tickFormatter={(value) => `$${value}`} tickCount={8} />
+              <Brush dataKey="date" height={20} stroke="#8884d8" />
               <Tooltip
                 formatter={(value: any, name: string) => [formatCurrency(Number(value), 6), name.split(' ')[0]]}
                 labelFormatter={(label) => `📅 ${formatDate(label)}`}
