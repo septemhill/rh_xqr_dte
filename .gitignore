@@ -28,3 +28,4 @@ next-env.d.ts
 
 # opencode 
 /.opencode
+.opencode.json
