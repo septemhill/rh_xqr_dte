@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 import type { FinancialData, StockData, DividendStats, StockSymbol } from "@/lib/types";
 
 export const formatCurrency = (value: number, digits: number) => {
-  return new Intl.NumberFormat("zh-TW", {
+  return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     minimumFractionDigits: digits,

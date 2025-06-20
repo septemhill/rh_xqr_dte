@@ -26,23 +26,21 @@ interface StatsTableProps {
 
 export function StatsTable({ stats, t, selectedDataSource }: StatsTableProps) {
   const statRows = [
-    { label: t.avg3DivMonths, key: "avg3Months", digits: 6 },
-    { label: t.avg6DivMonths, key: "avg6Months", digits: 6 },
-    { label: t.avg9DivMonths, key: "avg9Months", digits: 6 },
-    { label: t.avg3PriceMonths, key: "avg3MonthsPrice", digits: 2 },
-    { label: t.avg6PriceMonths, key: "avg6MonthsPrice", digits: 2 },
-    { label: t.avg9PriceMonths, key: "avg9MonthsPrice", digits: 2 },
-    { label: t.avg3YieldMonths, key: "avg3MonthsYield", digits: 2 },
-    { label: t.avg6YieldMonths, key: "avg6MonthsYield", digits: 2 },
-    { label: t.avg9YieldMonths, key: "avg9MonthsYield", digits: 2 },
+    { label: t.avg3DivMonths, key: "avg3Months", digits: 6, type: "currency" },
+    { label: t.avg6DivMonths, key: "avg6Months", digits: 6, type: "currency" },
+    { label: t.avg9DivMonths, key: "avg9Months", digits: 6, type: "currency" },
+    { label: t.avg3PriceMonths, key: "avg3MonthsPrice", digits: 2, type: "currency" },
+    { label: t.avg6PriceMonths, key: "avg6MonthsPrice", digits: 2, type: "currency" },
+    { label: t.avg9PriceMonths, key: "avg9MonthsPrice", digits: 2, type: "currency" },
+    { label: t.avg3YieldMonths, key: "avg3MonthsYield", digits: 2, type: "percentage" },
+    { label: t.avg6YieldMonths, key: "avg6MonthsYield", digits: 2, type: "percentage" },
+    { label: t.avg9YieldMonths, key: "avg9MonthsYield", digits: 2, type: "percentage" },
   ] as const;
 
   // Get the specific data for the selected data source
   // This will be like stats.roundhill or stats.yieldmax
   // const currentDataSourceStats = stats[selectedDataSource];
   const currentDataSourceStats = stats;
-
-  console.log("Current Data Source Stats:", currentDataSourceStats, selectedDataSource, stats);
 
   // Dynamically get the stock symbols available in the current data source
   // This ensures we only display columns for stocks present in the selected dataset
@@ -91,7 +89,7 @@ export function StatsTable({ stats, t, selectedDataSource }: StatsTableProps) {
                   {currentStockSymbols.map((symbol) => (
                     <TableCell key={symbol}>
                       {/* Access data like currentDataSourceStats["XDTE"].avg3Months */}
-                      {formatCurrency(currentDataSourceStats[symbol][row.key], row.digits)}
+                      {row.type === "currency" ? formatCurrency(currentDataSourceStats[symbol][row.key], row.digits) : (currentDataSourceStats[symbol][row.key]).toFixed(row.digits) + "%"}
                     </TableCell>
                   ))}
                 </TableRow>
