@@ -20,6 +20,9 @@ export interface Stats {
     avg3MonthsPrice: number;
     avg6MonthsPrice: number;
     avg9MonthsPrice: number;
+    avg3MonthsYield: number;
+    avg6MonthsYield: number;
+    avg9MonthsYield: number;
 }
 
 export type DividendStats = Record<StockSymbol, Stats>;

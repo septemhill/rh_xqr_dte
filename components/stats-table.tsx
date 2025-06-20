@@ -17,6 +17,9 @@ interface StatsTableProps {
     avg3PriceMonths: string;
     avg6PriceMonths: string;
     avg9PriceMonths: string;
+    avg3YieldMonths: string;
+    avg6YieldMonths: string;
+    avg9YieldMonths: string;
   };
   selectedDataSource: "roundhill" | "yieldmax"; // <--- Add this prop
 }
@@ -29,6 +32,9 @@ export function StatsTable({ stats, t, selectedDataSource }: StatsTableProps) {
     { label: t.avg3PriceMonths, key: "avg3MonthsPrice", digits: 2 },
     { label: t.avg6PriceMonths, key: "avg6MonthsPrice", digits: 2 },
     { label: t.avg9PriceMonths, key: "avg9MonthsPrice", digits: 2 },
+    { label: t.avg3YieldMonths, key: "avg3MonthsYield", digits: 2 },
+    { label: t.avg6YieldMonths, key: "avg6MonthsYield", digits: 2 },
+    { label: t.avg9YieldMonths, key: "avg9MonthsYield", digits: 2 },
   ] as const;
 
   // Get the specific data for the selected data source
