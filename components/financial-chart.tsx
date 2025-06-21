@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { usePathname } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Brush } from "recharts";
 import { formatCurrency, formatDate } from "@/lib/utils";
@@ -12,6 +13,7 @@ interface FinancialChartProps {
 }
 
 export function FinancialChart({ chartData, t }: FinancialChartProps) {
+  const pathname = usePathname();
   // 動態生成 initialVisibilityState
   const getInitialVisibility = (data: any[]) => {
     if (!data || data.length === 0) return {};
@@ -51,13 +53,15 @@ export function FinancialChart({ chartData, t }: FinancialChartProps) {
       // 定義一個簡單的顏色生成邏輯，可以根據基金名稱hash或索引分配顏色
       // 這裡使用一個基礎色系，你可以根據實際需求調整
       let colorBase;
+      const isIssuerComparisonPage = pathname === '/issuer-comparison/';
+
       switch (fundName) {
-        case 'SDTY': colorBase = 'hsl(0, 70%, 50%)'; break; // 紅色系
         case 'XDTE': colorBase = 'hsl(0, 70%, 50%)'; break; // 紅色系
+        case 'SDTY': colorBase = isIssuerComparisonPage ? 'hsl(60, 70%, 50%)' : 'hsl(0, 70%, 50%)'; break; // 黃色系 or 紅色系
         case 'QDTE': colorBase = 'hsl(120, 70%, 50%)'; break; // 綠色系
-        case 'QDTY': colorBase = 'hsl(120, 70%, 50%)'; break; // 綠色系
+        case 'QDTY': colorBase = isIssuerComparisonPage ? 'hsl(60, 70%, 50%)' : 'hsl(120, 70%, 50%)'; break; // 黃色系 or 綠色系
         case 'RDTE': colorBase = 'hsl(240, 70%, 50%)'; break; // 藍色系
-        case 'RDTY': colorBase = 'hsl(240, 70%, 50%)'; break; // 藍色系
+        case 'RDTY': colorBase = isIssuerComparisonPage ? 'hsl(30, 70%, 50%)' : 'hsl(240, 70%, 70%)'; break; // 橘色系 or 藍色系
         // 如果有其他基金，可以在這裡添加更多顏色
         default: colorBase = `hsl(${Math.random() * 360}, 70%, 50%)`; // 隨機色
       }
