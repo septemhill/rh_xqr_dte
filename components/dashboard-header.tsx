@@ -2,13 +2,13 @@
 
 import { LanguageToggle } from "@/components/language-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { PageNavigation } from "@/components/page-navigation"; // Import the new component
+import { translations, Language } from "@/lib/translations"; // Import translations for localized page names
 
 interface DashboardHeaderProps {
   language: "zh" | "en";
   onToggle: () => void;
-  t: {
-    pageTitle: string;
-  }
+  t: typeof translations[Language];
 }
 
 export function DashboardHeader({ t, language, onToggle }: DashboardHeaderProps) {
@@ -20,6 +20,7 @@ export function DashboardHeader({ t, language, onToggle }: DashboardHeaderProps)
           <div className="flex items-center gap-4">
             <LanguageToggle language={language} onToggle={onToggle} />
             <ThemeToggle />
+            <PageNavigation language={language} t={t} />
           </div>
         </div>
       </div>
