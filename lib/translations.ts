@@ -73,8 +73,8 @@ export const translations = {
         avg6PriceMonths: "6M Avg Price",
         avg9PriceMonths: "9M Avg Price",
         avg3YieldMonths: "3M Avg Yield",
-        avg6YieldMonths: "3M Avg Yield",
-        avg9YieldMonths: "3M Avg Yield",
+        avg6YieldMonths: "6M Avg Yield",
+        avg9YieldMonths: "9M Avg Yield",
 
         // Legend 和 Tooltip
         priceLabel: "Price",
