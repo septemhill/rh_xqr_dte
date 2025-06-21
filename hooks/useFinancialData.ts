@@ -16,7 +16,7 @@ export function useFinancialData(language: Language, dataSource: DataSource = "r
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await fetch(`./data/${dataSource}.json`);
+                const response = await fetch(`/data/${dataSource}.json`);
                 const issuerData: Record<string, FinancialData[]> = await response.json();
 
                 const symbols = Object.keys(issuerData).map(symbol => ({ symbol }));
