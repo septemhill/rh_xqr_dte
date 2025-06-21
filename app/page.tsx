@@ -33,11 +33,6 @@ export default function FinancialDashboard() {
     <>
       <DashboardHeader language={language} t={t} onToggle={toggleLanguage} />
       <div className="container mx-auto p-4 pt-16 space-y-6">
-        {/* <div className="text-center">
-          <h1 className="text-3xl font-bold mb-2">{t.pageTitle}</h1>
-          <p className="text-muted-foreground">{t.pageDescription}</p>
-        </div> */}
-
         <div className="flex justify-center mb-6">
           <DataSourceSelector
             selectedDataSource={selectedDataSource}

@@ -41,6 +41,13 @@ export const translations = {
             RDTE: "羅素2000 零日備兌看漲期權",
         },
 
+        navigation: { // NEW: Navigation translations
+            selectPage: "選擇頁面",
+            dashboard: "首頁",
+            issuerComparison: "發行商比較",
+            // contact: "聯繫我們",
+        },
+
         issuer: {
             roundhill: "Roundhill",
             yieldmax: "Yieldmax"
@@ -86,6 +93,13 @@ export const translations = {
             XDTE: "S&P 500 0DTE Covered Call.",
             QDTE: "Innovation 100 0DTE Covered Call",
             RDTE: "Small Cap 0DTE Covered Call",
+        },
+
+        navigation: { // NEW: Navigation translations
+            selectPage: "Select Page",
+            dashboard: "Dashboard",
+            issuerComparison: "Comparison",
+            // contact: "Contact",
         },
 
         issuer: {
