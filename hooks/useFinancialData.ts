@@ -16,7 +16,8 @@ export function useFinancialData(language: Language, dataSource: DataSource = "r
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await fetch(`/data/${dataSource}.json`);
+                const baseUrl = process.env.NODE_ENV === 'development' ? '/data' : 'https://raw.githubusercontent.com/septemhill/rh_xqr_dte/gh-pages/data';
+                const response = await fetch(`${baseUrl}/${dataSource}.json`);
                 const issuerData: Record<string, FinancialData[]> = await response.json();
 
                 const symbols = Object.keys(issuerData).map(symbol => ({ symbol }));
