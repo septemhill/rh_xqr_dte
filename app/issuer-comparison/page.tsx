@@ -5,7 +5,7 @@ import { useFinancialData } from "@/hooks/useFinancialData";
 import { useLanguage } from '@/context/language-context';
 
 export default function IssuerComparisonPage() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const { chartData: roundhillData } = useFinancialData(language, "roundhill");
   const { chartData: yieldmaxData } = useFinancialData(language, "yieldmax");
 
@@ -129,7 +129,7 @@ export default function IssuerComparisonPage() {
           chartData={SDTYXDTEData}
           t={{
             chartTitle: "SDTY vs XDTE",
-            chartDescription: "Price and dividend comparison",
+            chartDescription: t.comparison.priceDivComparison,
           }}
         />
       )}
@@ -138,7 +138,7 @@ export default function IssuerComparisonPage() {
           chartData={QDTYQDTEData}
           t={{
             chartTitle: "QDTY vs QDTE",
-            chartDescription: "Price and dividend comparison",
+            chartDescription: t.comparison.priceDivComparison,
           }}
         />
       )}
@@ -147,7 +147,7 @@ export default function IssuerComparisonPage() {
           chartData={RDTYRDTEData}
           t={{
             chartTitle: "RDTY vs RDTE",
-            chartDescription: "Price and dividend comparison",
+            chartDescription: t.comparison.priceDivComparison,
           }}
         />
       )}

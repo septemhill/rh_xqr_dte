@@ -43,9 +43,14 @@ export const translations = {
 
         navigation: { // NEW: Navigation translations
             selectPage: "選擇頁面",
-            dashboard: "首頁",
+            dashboard: "總覽",
             issuerComparison: "發行商比較",
             // contact: "聯繫我們",
+        },
+
+        comparison: {
+            priceDivComparison: "價格與股息比較",
+            statsComparison: "統計數據比較",
         },
 
         issuer: {
@@ -100,6 +105,11 @@ export const translations = {
             dashboard: "Dashboard",
             issuerComparison: "Comparison",
             // contact: "Contact",
+        },
+
+        comparison: {
+            priceDivComparison: "Price and dividend comparison",
+            statsComparison: "Statistics comparison",
         },
 
         issuer: {
