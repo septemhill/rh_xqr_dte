@@ -122,6 +122,31 @@ export default function IssuerComparisonPage() {
     RDTE_dividend: item.RDTE_dividend,
   })).filter((item) => (item.RDTY_price !== null && item.RDTY_dividend !== null) || (item.RDTE_price !== null && item.RDTE_dividend !== null));
 
+  const calculateYield = (price: number | null, dividend: number | null): number | null => {
+    if (price === null || dividend === null || price === 0) {
+      return null;
+    }
+    return (dividend / price) * 52 * 100;
+  };
+
+  const SDTYXDTEYieldData = combinedChartData.map((item) => ({
+    date: item.date,
+    SDTY_yield: calculateYield(item.SDTY_price, item.SDTY_dividend),
+    XDTE_yield: calculateYield(item.XDTE_price, item.XDTE_dividend),
+  }));
+
+  const QDTYQDTEYieldData = combinedChartData.map((item) => ({
+    date: item.date,
+    QDTY_yield: calculateYield(item.QDTY_price, item.QDTY_dividend),
+    QDTE_yield: calculateYield(item.QDTE_price, item.QDTE_dividend),
+  }));
+
+  const RDTYRDTEYieldData = combinedChartData.map((item) => ({
+    date: item.date,
+    RDTY_yield: calculateYield(item.RDTY_price, item.RDTY_dividend),
+    RDTE_yield: calculateYield(item.RDTE_price, item.RDTE_dividend),
+  })).filter((item) => (item.RDTY_yield !== null) || (item.RDTE_yield !== null));;
+
   return (
     <div className="container mx-auto p-4 pt-16 space-y-6">
       {SDTYXDTEData.length > 0 && (
@@ -133,6 +158,17 @@ export default function IssuerComparisonPage() {
           }}
         />
       )}
+      {SDTYXDTEYieldData.length > 0 && (
+        <FinancialChart
+          chartData={SDTYXDTEYieldData}
+          t={{
+            chartTitle: "SDTY vs XDTE Yield",
+            chartDescription: "Comparison of SDTY and XDTE yields",
+          }}
+          dataKeys={["SDTY_yield", "XDTE_yield"]}
+          unit="percent"
+        />
+      )}
       {QDTYQDTEData.length > 0 && (
         <FinancialChart
           chartData={QDTYQDTEData}
@@ -140,6 +176,17 @@ export default function IssuerComparisonPage() {
             chartTitle: "QDTY vs QDTE",
             chartDescription: t.comparison.priceDivComparison,
           }}
+        />
+      )}
+      {QDTYQDTEYieldData.length > 0 && (
+        <FinancialChart
+          chartData={QDTYQDTEYieldData}
+          t={{
+            chartTitle: "QDTY vs QDTE Yield",
+            chartDescription: "Comparison of QDTY and QDTE yields",
+          }}
+          dataKeys={["QDTY_yield", "QDTE_yield"]}
+          unit="percent"
         />
       )}
       {RDTYRDTEData.length > 0 && (
@@ -151,6 +198,17 @@ export default function IssuerComparisonPage() {
           }}
         />
       )}
+      {RDTYRDTEYieldData.length > 0 && (
+        <FinancialChart
+          chartData={RDTYRDTEYieldData}
+          t={{
+            chartTitle: "RDTY vs RDTE Yield",
+            chartDescription: "Comparison of RDTY and RDTE yields",
+          }}
+          dataKeys={["RDTY_yield", "RDTE_yield"]}
+          unit="percent"
+        />
+      )}
     </div>
   );
-};
+}

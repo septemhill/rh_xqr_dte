@@ -10,15 +10,17 @@ interface FinancialChartProps {
     chartTitle: string;
     chartDescription: string;
   };
+  dataKeys?: string[];
+  unit?: 'dollar' | 'percent';
 }
 
-export function FinancialChart({ chartData, t }: FinancialChartProps) {
+export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: FinancialChartProps) {
   const pathname = usePathname();
   // 動態生成 initialVisibilityState
   const getInitialVisibility = (data: any[]) => {
     if (!data || data.length === 0) return {};
     const firstDataItem = data[0];
-    const keys = Object.keys(firstDataItem).filter(key => key !== 'date');
+    const keys = dataKeys || Object.keys(firstDataItem).filter(key => key !== 'date');
     const initialState: { [key: string]: boolean } = {};
     keys.forEach(key => {
       initialState[key] = true; // 預設所有數據線都可見
@@ -44,11 +46,12 @@ export function FinancialChart({ chartData, t }: FinancialChartProps) {
     if (!chartData || chartData.length === 0) return [];
 
     const firstDataItem = chartData[0];
-    const keys = Object.keys(firstDataItem).filter(key => key !== 'date'); // 排除 'date' 鍵
+    const keys = dataKeys || Object.keys(firstDataItem).filter(key => key !== 'date'); // 排除 'date' 鍵
 
     const generatedSeries = keys.map(key => {
       const isDividend = key.endsWith('_dividend');
-      const fundName = key.replace(/_price|_dividend/, ''); // 從鍵中提取基金名稱，例如 "XDTE"
+      const isYield = key.endsWith('_yield');
+      const fundName = key.replace(/_price|_dividend|_yield/, ''); // 從鍵中提取基金名稱，例如 "XDTE"
 
       // 定義一個簡單的顏色生成邏輯，可以根據基金名稱hash或索引分配顏色
       // 這裡使用一個基礎色系，你可以根據實際需求調整
@@ -66,7 +69,7 @@ export function FinancialChart({ chartData, t }: FinancialChartProps) {
         default: colorBase = `hsl(${Math.random() * 360}, 70%, 50%)`; // 隨機色
       }
 
-      const seriesName = `${fundName} ${isDividend ? 'Dividend' : 'Price'}`;
+      const seriesName = `${fundName} ${isDividend ? 'Dividend' : (isYield ? 'Yield' : 'Price')}`;
       const seriesType = isDividend ? 'bar' : 'line';
       const yAxisId = isDividend ? 'dividend' : 'price';
       const strokeColor = isDividend ? colorBase : colorBase.replace('50%)', '40%)'); // 價格線條顏色可以稍深
@@ -122,11 +125,14 @@ export function FinancialChart({ chartData, t }: FinancialChartProps) {
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="date" tick={{ fontSize: 12 }} tickFormatter={(value) => formatDate(value)} />
-              <YAxis yAxisId="price" orientation="left" tick={{ fontSize: 12 }} tickFormatter={(value) => `$${value}`} tickCount={8} />
-              <YAxis yAxisId="dividend" orientation="right" tick={{ fontSize: 12 }} tickFormatter={(value) => `$${value}`} tickCount={8} />
+              <YAxis yAxisId="price" orientation="left" tick={{ fontSize: 12 }} tickFormatter={(value) => (unit === 'dollar' ? `$${value}` : `${value.toFixed(2)}%`)} tickCount={8} />
+              <YAxis yAxisId="dividend" orientation="right" tick={{ fontSize: 12 }} tickFormatter={(value) => (unit === 'dollar' ? `$${value}` : `${value.toFixed(2)}%`)} tickCount={8} />
               <Brush dataKey="date" height={20} stroke="#8884d8" />
               <Tooltip
-                formatter={(value: any, name: string) => [formatCurrency(Number(value), 6), name.split(' ')[0]]}
+                formatter={(value: any, name: string) => {
+                  const formattedValue = unit === 'dollar' ? formatCurrency(Number(value), 6) : `${Number(value).toFixed(2)}%`;
+                  return [formattedValue, name.split(' ')[0]];
+                }}
                 labelFormatter={(label) => `📅 ${formatDate(label)}`}
                 contentStyle={{
                   backgroundColor: "hsl(var(--background))",
