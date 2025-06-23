@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation'; // Use next/navigation for App Router
+import { usePathname } from 'next/navigation';
 import {
   Select,
   SelectContent,
@@ -17,6 +18,7 @@ interface PageNavigationProps {
 
 export function PageNavigation({ language, t }: PageNavigationProps) {
   const router = useRouter();
+  const pathname = usePathname();
 
   // Define your navigation links and their translations
   // Make sure these keys (e.g., 'home', 'about', 'issuerComparison') are defined in your translations.ts
@@ -31,10 +33,13 @@ export function PageNavigation({ language, t }: PageNavigationProps) {
     router.push(path);
   };
 
+  // TODO: Workaround for the placeholder
+  const placeholder = pathname === "/" ? t.navigation.dashboard : t.navigation.issuerComparison;
+
   return (
     <Select onValueChange={handleNavigationChange}>
       <SelectTrigger className="w-[160px]"> {/* Adjust width as needed */}
-        <SelectValue placeholder={t.navigation.dashboard} /> {/* 'selectPage' should be defined in t.navigation */}
+        <SelectValue placeholder={placeholder} /> {/* 'selectPage' should be defined in t.navigation */}
       </SelectTrigger>
       <SelectContent>
         {navLinks.map((link) => (

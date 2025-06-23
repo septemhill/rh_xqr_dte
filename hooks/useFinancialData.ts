@@ -43,6 +43,7 @@ export function useFinancialData(language: Language, dataSource: DataSource = "r
                         const stockDataForDate = stock.data.find((item) => item.date === date);
                         dataPoint[`${stock.symbol}_price`] = stockDataForDate?.price || null;
                         dataPoint[`${stock.symbol}_dividend`] = stockDataForDate?.dividend || null;
+                        dataPoint[`${stock.symbol}_yield`] = stockDataForDate?.yield || null;
                     });
                     return dataPoint;
                 });

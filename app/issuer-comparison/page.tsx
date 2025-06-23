@@ -22,18 +22,24 @@ export default function IssuerComparisonPage() {
         // Roundhill fields (example, adjust to your actual data keys)
         XDTE_price: item.XDTE_price || null,
         XDTE_dividend: item.XDTE_dividend || null,
+        XDTE_yield: item.XDTE_yield || null,
         QDTE_price: item.QDTE_price || null, // Assuming QDTE/RDTE are also in Roundhill for consistency based on your earlier code
         QDTE_dividend: item.QDTE_dividend || null,
+        QDTE_yield: item.QDTE_yield || null,
         RDTE_price: item.RDTE_price || null,
         RDTE_dividend: item.RDTE_dividend || null,
+        RDTE_yield: item.RDTE_yield || null,
 
         // YieldMax fields (initialized to null, will be populated if found)
         SDTY_price: null, 
         SDTY_dividend: null, 
+        SDTY_yield: null,
         QDTY_price: null,
         QDTY_dividend: null,
+        QDTY_yield: null,
         RDTY_price: null,
         RDTY_dividend: null,
+        RDTY_yield: null,
         // If there are other YieldMax specific symbols, initialize them here too
       });
     }
@@ -48,18 +54,24 @@ export default function IssuerComparisonPage() {
         // If an entry for this date already exists (from roundhillData), merge YieldMax data into it
         existingEntry.QDTY_price = item.QDTY_price || null;
         existingEntry.QDTY_dividend = item.QDTY_dividend || null;
+        existingEntry.QDTY_yield = item.QDTY_yield || null;
         existingEntry.RDTY_price = item.RDTY_price || null;
         existingEntry.RDTY_dividend = item.RDTY_dividend || null;
+        existingEntry.RDTY_yield = item.RDTY_yield || null;
         existingEntry.SDTY_price = item.SDTY_price || null;
         existingEntry.SDTY_dividend = item.SDTY_dividend || null;
+        existingEntry.SDTY_yield = item.SDTY_yield || null;
         // Also update QDTE/RDTE if they exist in YieldMax and Roundhill has null for them,
         // or if YieldMax data should take precedence for these
         existingEntry.QDTE_price = item.QDTE_price || existingEntry.QDTE_price || null;
         existingEntry.QDTE_dividend = item.QDTE_dividend || existingEntry.QDTE_dividend || null;
+        existingEntry.QDTE_yield = item.QDTE_yield || existingEntry.QDTE_yield || null;
         existingEntry.RDTE_price = item.RDTE_price || existingEntry.RDTE_price || null;
         existingEntry.RDTE_dividend = item.RDTE_dividend || existingEntry.RDTE_dividend || null;
+        existingEntry.RDTE_yield = item.RDTE_yield || existingEntry.RDTE_yield || null;
         existingEntry.XDTE_price = item.XDTE_price || existingEntry.XDTE_price || null;
         existingEntry.XDTE_dividend = item.XDTE_dividend || existingEntry.XDTE_dividend || null;
+        existingEntry.XDTE_yield = item.XDTE_yield || existingEntry.XDTE_yield || null;
 
         // If there are other YieldMax specific symbols, merge them here
       } else {
@@ -69,17 +81,23 @@ export default function IssuerComparisonPage() {
           // Roundhill fields (initialized to null as they're not in this YieldMax item)
           XDTE_price: null,
           XDTE_dividend: null,
+          XDTE_yield: null,
           QDTE_price: null,
           QDTE_dividend: null,
+          QDTE_yield: null,
           RDTE_price: null,
           RDTE_dividend: null,
+          RDTE_yield: null,
           // YieldMax fields (from the current item)
           SDTY_price: item.SDTY_price || null,
           SDTY_dividend: item.SDTY_dividend || null,
+          SDTY_yield: item.SDTY_yield || null,
           QDTY_price: item.QDTY_price || null,
           QDTY_dividend: item.QDTY_dividend || null,
+          QDTY_yield: item.QDTY_yield || null,
           RDTY_price: item.RDTY_price || null,
           RDTY_dividend: item.RDTY_dividend || null,
+          RDTY_yield: item.RDTY_yield || null,
           // If there are other YieldMax specific symbols, add them here
         });
       }
@@ -88,15 +106,7 @@ export default function IssuerComparisonPage() {
 
   // --- Step 3: Convert the Map to an array and sort by date ---
   // Assuming 'date' is in a sortable string format (e.g., "YYYY-MM-DD")
-  const combinedChartData = Array.from(combinedChartDataMap.values()).sort((a, b) => {
-    if (a.date < b.date) return -1;
-    if (a.date > b.date) return 1;
-    return 0;
-  });
-
-  // console.log("roundhillData", roundhillData);
-  // console.log("yieldmaxData", yieldmaxData);
-  // console.log("combinedChartData", combinedChartData);
+  const combinedChartData = Array.from(combinedChartDataMap.values()).sort((a, b) => a.date.localeCompare(b.date));
 
   const SDTYXDTEData = combinedChartData.map((item) => ({
     date: item.date,
@@ -106,46 +116,45 @@ export default function IssuerComparisonPage() {
     XDTE_dividend: item.XDTE_dividend,
   }));
 
-  const QDTYQDTEData = combinedChartData.map((item) => ({
-    date: item.date,
-    QDTY_price: item.QDTY_price,
-    QDTY_dividend: item.QDTY_dividend,
-    QDTE_price: item.QDTE_price,
-    QDTE_dividend: item.QDTE_dividend,
+  const QDTYQDTEData = combinedChartData.map(({ date, QDTY_price, QDTY_dividend, QDTE_price, QDTE_dividend }) => ({
+    date,
+    QDTY_price,
+    QDTY_dividend,
+    QDTE_price,
+    QDTE_dividend,
   }));
 
-  const RDTYRDTEData = combinedChartData.map((item) => ({
-    date: item.date,
-    RDTY_price: item.RDTY_price,
-    RDTY_dividend: item.RDTY_dividend,
-    RDTE_price: item.RDTE_price,
-    RDTE_dividend: item.RDTE_dividend,
-  })).filter((item) => (item.RDTY_price !== null && item.RDTY_dividend !== null) || (item.RDTE_price !== null && item.RDTE_dividend !== null));
+  // Filter and map RDTYRDTEData
+  const RDTYRDTEData = combinedChartData
+    .filter(({ RDTY_price, RDTY_dividend, RDTE_price, RDTE_dividend }) => (RDTY_price !== null && RDTY_dividend !== null) || (RDTE_price !== null && RDTE_dividend !== null))
+    .map(({ date, RDTY_price, RDTY_dividend, RDTE_price, RDTE_dividend }) => ({
+      date,
+      RDTY_price,
+      RDTY_dividend,
+      RDTE_price,
+      RDTE_dividend,
+    }));
 
-  const calculateYield = (price: number | null, dividend: number | null): number | null => {
-    if (price === null || dividend === null || price === 0) {
-      return null;
-    }
-    return (dividend / price) * 52 * 100;
-  };
-
-  const SDTYXDTEYieldData = combinedChartData.map((item) => ({
-    date: item.date,
-    SDTY_yield: calculateYield(item.SDTY_price, item.SDTY_dividend),
-    XDTE_yield: calculateYield(item.XDTE_price, item.XDTE_dividend),
+  const SDTYXDTEYieldData = combinedChartData.map(({ date, SDTY_yield, XDTE_yield }) => ({
+    date,
+    SDTY_yield,
+    XDTE_yield,
   }));
 
-  const QDTYQDTEYieldData = combinedChartData.map((item) => ({
-    date: item.date,
-    QDTY_yield: calculateYield(item.QDTY_price, item.QDTY_dividend),
-    QDTE_yield: calculateYield(item.QDTE_price, item.QDTE_dividend),
+  const QDTYQDTEYieldData = combinedChartData.map(({ date, QDTY_yield, QDTE_yield }) => ({
+    date,
+    QDTY_yield,
+    QDTE_yield,
   }));
 
-  const RDTYRDTEYieldData = combinedChartData.map((item) => ({
-    date: item.date,
-    RDTY_yield: calculateYield(item.RDTY_price, item.RDTY_dividend),
-    RDTE_yield: calculateYield(item.RDTE_price, item.RDTE_dividend),
-  })).filter((item) => (item.RDTY_yield !== null) || (item.RDTE_yield !== null));;
+  // Filter and map RDTYRDTEYieldData
+  const RDTYRDTEYieldData = combinedChartData
+    .filter(({ RDTY_yield, RDTE_yield }) => RDTY_yield !== null || RDTE_yield !== null)
+    .map(({ date, RDTY_yield, RDTE_yield }) => ({
+      date,
+      RDTY_yield,
+      RDTE_yield,
+    }));
 
   return (
     <div className="container mx-auto p-4 pt-16 space-y-6">

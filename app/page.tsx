@@ -41,7 +41,28 @@ export default function FinancialDashboard() {
           ))}
         </div>
 
-        <FinancialChart chartData={chartData} t={t} />
+        <FinancialChart chartData={chartData.map(item => {
+          const newItem = { ...item };
+          Object.keys(newItem).forEach(key => {
+            if (key.endsWith('_yield')) {
+              delete newItem[key];
+            }
+          });
+          return newItem;
+        })} t={t} />
+
+        <FinancialChart chartData={chartData.map(item => {
+          const newItem = { ...item };
+          Object.keys(newItem).forEach(key => {
+            if (!key.endsWith('_yield') && !key.endsWith('date')) {
+              delete newItem[key];
+            }
+          });
+          return newItem;
+        })} t={{
+            chartTitle: "Yield Trends",
+            chartDescription: "Comparison of yields",
+          }} unit="percent"/>
 
         {dividendStats && <StatsTable stats={dividendStats} t={t} selectedDataSource={selectedDataSource} />}
       </div>
