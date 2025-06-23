@@ -131,7 +131,7 @@ export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: Fina
               <Tooltip
                 formatter={(value: any, name: string) => {
                   const formattedValue = unit === 'dollar' ? formatCurrency(Number(value), 6) : `${Number(value).toFixed(2)}%`;
-                  return [formattedValue, name.split(' ')[0]];
+                  return [formattedValue, name];
                 }}
                 labelFormatter={(label) => `📅 ${formatDate(label)}`}
                 contentStyle={{
