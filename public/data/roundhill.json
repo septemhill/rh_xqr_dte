@@ -4,13 +4,13 @@
       "date": "2024-03-26",
       "dividend": 0.208889,
       "price": 52.4856,
-      "yield": 20.70
+      "yield": 20.7
     },
     {
       "date": "2024-04-03",
       "dividend": 0.129,
-      "price": 52.3940,
-      "yield": 12.80
+      "price": 52.394,
+      "yield": 12.8
     },
     {
       "date": "2024-04-10",
@@ -45,13 +45,13 @@
     {
       "date": "2024-05-15",
       "dividend": 0.344108,
-      "price": 52.2200,
+      "price": 52.22,
       "yield": 34.27
     },
     {
       "date": "2024-05-22",
       "dividend": 0.13294,
-      "price": 52.2200,
+      "price": 52.22,
       "yield": 13.24
     },
     {
@@ -75,19 +75,19 @@
     {
       "date": "2024-06-20",
       "dividend": 0.224671,
-      "price": 52.7200,
+      "price": 52.72,
       "yield": 22.16
     },
     {
       "date": "2024-06-27",
       "dividend": 0.263798,
-      "price": 52.7000,
+      "price": 52.7,
       "yield": 26.03
     },
     {
       "date": "2024-07-03",
       "dividend": 0.215026,
-      "price": 52.7000,
+      "price": 52.7,
       "yield": 21.22
     },
     {
@@ -99,19 +99,19 @@
     {
       "date": "2024-07-18",
       "dividend": 0.200574,
-      "price": 52.2900,
+      "price": 52.29,
       "yield": 19.95
     },
     {
       "date": "2024-07-25",
       "dividend": 0.241214,
-      "price": 51.0900,
+      "price": 51.09,
       "yield": 24.55
     },
     {
       "date": "2024-08-01",
       "dividend": 0.351062,
-      "price": 51.3400,
+      "price": 51.34,
       "yield": 35.56
     },
     {
@@ -123,285 +123,285 @@
     {
       "date": "2024-08-15",
       "dividend": 0.387328,
-      "price": 52.0900,
+      "price": 52.09,
       "yield": 38.67
     },
     {
       "date": "2024-08-22",
       "dividend": 0.388473,
-      "price": 51.8200,
+      "price": 51.82,
       "yield": 38.98
     },
     {
       "date": "2024-08-29",
       "dividend": 0.261188,
-      "price": 51.9800,
+      "price": 51.98,
       "yield": 26.13
     },
     {
       "date": "2024-09-05",
       "dividend": 0.311931,
-      "price": 50.8800,
+      "price": 50.88,
       "yield": 31.88
     },
     {
       "date": "2024-09-12",
       "dividend": 0.334891,
-      "price": 51.3300,
+      "price": 51.33,
       "yield": 33.93
     },
     {
       "date": "2024-09-19",
       "dividend": 0.198645,
-      "price": 52.4000,
+      "price": 52.4,
       "yield": 19.71
     },
     {
       "date": "2024-09-26",
       "dividend": 0.1881,
-      "price": 52.5800,
-      "yield": 18.60
+      "price": 52.58,
+      "yield": 18.6
     },
     {
       "date": "2024-10-03",
       "dividend": 0.228813,
-      "price": 52.0600,
+      "price": 52.06,
       "yield": 22.85
     },
     {
       "date": "2024-10-10",
       "dividend": 0.202149,
-      "price": 52.4600,
+      "price": 52.46,
       "yield": 20.04
     },
     {
       "date": "2024-10-17",
       "dividend": 0.217068,
-      "price": 52.6350,
+      "price": 52.635,
       "yield": 21.44
     },
     {
       "date": "2024-10-24",
       "dividend": 0.239162,
-      "price": 52.1600,
+      "price": 52.16,
       "yield": 23.84
     },
     {
       "date": "2024-10-31",
       "dividend": 0.15488,
-      "price": 51.3500,
+      "price": 51.35,
       "yield": 15.68
     },
     {
       "date": "2024-11-07",
       "dividend": 0.213826,
-      "price": 53.3900,
+      "price": 53.39,
       "yield": 20.83
     },
     {
       "date": "2024-11-14",
       "dividend": 0.274052,
-      "price": 53.1100,
+      "price": 53.11,
       "yield": 26.83
     },
     {
       "date": "2024-11-21",
       "dividend": 0.258072,
-      "price": 52.6000,
+      "price": 52.6,
       "yield": 25.51
     },
     {
       "date": "2024-11-27",
       "dividend": 0.185623,
-      "price": 52.9500,
+      "price": 52.95,
       "yield": 18.23
     },
     {
       "date": "2024-12-05",
       "dividend": 0.235192,
-      "price": 53.3300,
+      "price": 53.33,
       "yield": 22.93
     },
     {
       "date": "2024-12-12",
       "dividend": 0.153618,
-      "price": 53.1000,
+      "price": 53.1,
       "yield": 15.04
     },
     {
       "date": "2024-12-19",
       "dividend": 0.64209,
-      "price": 51.0700,
+      "price": 51.07,
       "yield": 65.38
     },
     {
       "date": "2024-12-26",
       "dividend": 0.606064,
-      "price": 51.1400,
+      "price": 51.14,
       "yield": 61.63
     },
     {
       "date": "2025-01-02",
       "dividend": 0.336263,
-      "price": 49.7000,
+      "price": 49.7,
       "yield": 35.18
     },
     {
       "date": "2025-01-08",
       "dividend": 0.189527,
-      "price": 49.9700,
+      "price": 49.97,
       "yield": 19.72
     },
     {
       "date": "2025-01-16",
       "dividend": 0.368099,
-      "price": 49.8600,
+      "price": 49.86,
       "yield": 38.39
     },
     {
       "date": "2025-01-23",
       "dividend": 0.213664,
-      "price": 51.0700,
+      "price": 51.07,
       "yield": 21.76
     },
     {
       "date": "2025-01-30",
       "dividend": 0.254857,
-      "price": 50.4100,
+      "price": 50.41,
       "yield": 26.29
     },
     {
       "date": "2025-02-06",
       "dividend": 0.178395,
-      "price": 50.3900,
+      "price": 50.39,
       "yield": 18.41
     },
     {
       "date": "2025-02-13",
       "dividend": 0.233573,
-      "price": 50.2600,
+      "price": 50.26,
       "yield": 24.17
     },
     {
       "date": "2025-02-20",
       "dividend": 0.220169,
-      "price": 50.1500,
+      "price": 50.15,
       "yield": 22.83
     },
     {
       "date": "2025-02-27",
       "dividend": 0.203243,
-      "price": 47.9600,
+      "price": 47.96,
       "yield": 22.04
     },
     {
       "date": "2025-03-06",
       "dividend": 0.142112,
-      "price": 46.7500,
+      "price": 46.75,
       "yield": 15.81
     },
     {
       "date": "2025-03-13",
       "dividend": 0.243703,
-      "price": 44.9100,
+      "price": 44.91,
       "yield": 28.22
     },
     {
       "date": "2025-03-20",
       "dividend": 0.32497,
-      "price": 45.9900,
+      "price": 45.99,
       "yield": 36.74
     },
     {
       "date": "2025-03-27",
       "dividend": 0.210776,
-      "price": 46.1000,
+      "price": 46.1,
       "yield": 23.78
     },
     {
       "date": "2025-04-03",
       "dividend": 0.275316,
-      "price": 43.2000,
+      "price": 43.2,
       "yield": 33.14
     },
     {
       "date": "2025-04-10",
       "dividend": 0.216883,
-      "price": 39.8900,
+      "price": 39.89,
       "yield": 28.27
     },
     {
       "date": "2025-04-16",
       "dividend": 0.236439,
-      "price": 39.9600,
+      "price": 39.96,
       "yield": 30.77
     },
     {
       "date": "2025-04-24",
       "dividend": 0.342929,
-      "price": 40.9500,
+      "price": 40.95,
       "yield": 43.55
     },
     {
       "date": "2025-05-01",
       "dividend": 0.255418,
-      "price": 41.5700,
+      "price": 41.57,
       "yield": 31.95
     },
     {
       "date": "2025-05-08",
       "dividend": 0.335848,
-      "price": 41.8500,
+      "price": 41.85,
       "yield": 41.73
     },
     {
       "date": "2025-05-15",
       "dividend": 0.240247,
-      "price": 43.5800,
+      "price": 43.58,
       "yield": 28.67
     },
     {
       "date": "2025-05-22",
       "dividend": 0.211589,
-      "price": 42.8150,
-      "yield": 25.70
+      "price": 42.815,
+      "yield": 25.7
     },
     {
       "date": "2025-05-29",
       "dividend": 0.207348,
-      "price": 43.1000,
+      "price": 43.1,
       "yield": 25.02
     },
     {
       "date": "2025-06-05",
       "dividend": 0.248632,
-      "price": 43.0200,
+      "price": 43.02,
       "yield": 30.05
     },
     {
       "date": "2025-06-12",
       "dividend": 0.193257,
-      "price": 43.6200,
+      "price": 43.62,
       "yield": 23.04
     },
     {
       "date": "2025-06-18",
       "dividend": 0.222549,
-      "price": 43.0200,
-      "yield": 26.90
+      "price": 43.02,
+      "yield": 26.9
     }
   ],
   "QDTE": [
     {
       "date": "2024-03-26",
       "dividend": 0.364273,
-      "price": 45.8300,
+      "price": 45.83,
       "yield": 41.33
     },
     {
       "date": "2024-04-03",
       "dividend": 0.332,
-      "price": 45.3520,
+      "price": 45.352,
       "yield": 38.07
     },
     {
@@ -420,31 +420,31 @@
       "date": "2024-04-24",
       "dividend": 0.333596,
       "price": 43.1536,
-      "yield": 40.20
+      "yield": 40.2
     },
     {
       "date": "2024-05-01",
       "dividend": 0.251747,
-      "price": 42.1500,
+      "price": 42.15,
       "yield": 31.06
     },
     {
       "date": "2024-05-08",
       "dividend": 0.311116,
-      "price": 43.7500,
+      "price": 43.75,
       "yield": 36.98
     },
     {
       "date": "2024-05-15",
       "dividend": 0.374705,
-      "price": 44.6400,
+      "price": 44.64,
       "yield": 43.65
     },
     {
       "date": "2024-05-22",
       "dividend": 0.212041,
       "price": 44.4689,
-      "yield": 24.80
+      "yield": 24.8
     },
     {
       "date": "2024-05-30",
@@ -456,330 +456,330 @@
       "date": "2024-06-06",
       "dividend": 0.142601,
       "price": 44.9336,
-      "yield": 16.50
+      "yield": 16.5
     },
     {
       "date": "2024-06-13",
       "dividend": 0.234412,
-      "price": 45.7500,
+      "price": 45.75,
       "yield": 26.64
     },
     {
       "date": "2024-06-20",
       "dividend": 0.29751,
-      "price": 45.7200,
+      "price": 45.72,
       "yield": 33.84
     },
     {
       "date": "2024-06-27",
       "dividend": 0.354811,
-      "price": 45.4700,
+      "price": 45.47,
       "yield": 40.58
     },
     {
       "date": "2024-07-03",
       "dividend": 0.197169,
-      "price": 45.6300,
+      "price": 45.63,
       "yield": 22.47
     },
     {
       "date": "2024-07-11",
       "dividend": 0.346492,
-      "price": 45.2700,
-      "yield": 39.80
+      "price": 45.27,
+      "yield": 39.8
     },
     {
       "date": "2024-07-18",
       "dividend": 0.310109,
-      "price": 44.1800,
-      "yield": 36.50
+      "price": 44.18,
+      "yield": 36.5
     },
     {
       "date": "2024-07-25",
       "dividend": 0.354109,
-      "price": 42.4600,
+      "price": 42.46,
       "yield": 43.37
     },
     {
       "date": "2024-08-01",
       "dividend": 0.568635,
-      "price": 42.3100,
+      "price": 42.31,
       "yield": 69.89
     },
     {
       "date": "2024-08-08",
       "dividend": 0.514208,
-      "price": 41.0400,
+      "price": 41.04,
       "yield": 65.15
     },
     {
       "date": "2024-08-15",
       "dividend": 0.476485,
-      "price": 42.8600,
+      "price": 42.86,
       "yield": 57.81
     },
     {
       "date": "2024-08-22",
       "dividend": 0.475843,
-      "price": 42.2300,
+      "price": 42.23,
       "yield": 58.59
     },
     {
       "date": "2024-08-29",
       "dividend": 0.312576,
-      "price": 41.8600,
+      "price": 41.86,
       "yield": 38.83
     },
     {
       "date": "2024-09-05",
       "dividend": 0.329389,
-      "price": 40.8900,
+      "price": 40.89,
       "yield": 41.89
     },
     {
       "date": "2024-09-12",
       "dividend": 0.445588,
-      "price": 41.2400,
+      "price": 41.24,
       "yield": 56.18
     },
     {
       "date": "2024-09-19",
       "dividend": 0.195328,
-      "price": 42.1600,
+      "price": 42.16,
       "yield": 24.09
     },
     {
       "date": "2024-09-26",
       "dividend": 0.256747,
-      "price": 42.7400,
+      "price": 42.74,
       "yield": 31.24
     },
     {
       "date": "2024-10-03",
       "dividend": 0.217625,
-      "price": 42.1000,
+      "price": 42.1,
       "yield": 26.88
     },
     {
       "date": "2024-10-10",
       "dividend": 0.269579,
-      "price": 42.6200,
+      "price": 42.62,
       "yield": 32.89
     },
     {
       "date": "2024-10-17",
       "dividend": 0.318116,
-      "price": 42.3300,
+      "price": 42.33,
       "yield": 39.08
     },
     {
       "date": "2024-10-24",
       "dividend": 0.208127,
-      "price": 42.2300,
+      "price": 42.23,
       "yield": 25.63
     },
     {
       "date": "2024-10-31",
       "dividend": 0.204827,
-      "price": 41.3700,
+      "price": 41.37,
       "yield": 25.75
     },
     {
       "date": "2024-11-07",
       "dividend": 0.264636,
-      "price": 43.5800,
+      "price": 43.58,
       "yield": 31.58
     },
     {
       "date": "2024-11-14",
       "dividend": 0.252937,
-      "price": 43.1600,
+      "price": 43.16,
       "yield": 30.47
     },
     {
       "date": "2024-11-21",
       "dividend": 0.252349,
-      "price": 42.4800,
+      "price": 42.48,
       "yield": 30.89
     },
     {
       "date": "2024-11-27",
       "dividend": 0.221139,
-      "price": 42.4600,
+      "price": 42.46,
       "yield": 27.08
     },
     {
       "date": "2024-12-05",
       "dividend": 0.235937,
-      "price": 43.1400,
+      "price": 43.14,
       "yield": 28.44
     },
     {
       "date": "2024-12-12",
       "dividend": 0.164597,
-      "price": 43.0700,
+      "price": 43.07,
       "yield": 19.87
     },
     {
       "date": "2024-12-19",
       "dividend": 0.869508,
-      "price": 41.1700,
+      "price": 41.17,
       "yield": 109.82
     },
     {
       "date": "2024-12-26",
       "dividend": 0.803885,
-      "price": 41.2300,
+      "price": 41.23,
       "yield": 101.39
     },
     {
       "date": "2025-01-02",
       "dividend": 0.298366,
-      "price": 39.6700,
+      "price": 39.67,
       "yield": 39.11
     },
     {
       "date": "2025-01-08",
       "dividend": 0.182772,
-      "price": 39.9600,
+      "price": 39.96,
       "yield": 23.78
     },
     {
       "date": "2025-01-16",
       "dividend": 0.336502,
-      "price": 39.6700,
+      "price": 39.67,
       "yield": 44.11
     },
     {
       "date": "2025-01-23",
       "dividend": 0.24603,
-      "price": 40.9200,
+      "price": 40.92,
       "yield": 31.26
     },
     {
       "date": "2025-01-30",
       "dividend": 0.188007,
-      "price": 39.8800,
+      "price": 39.88,
       "yield": 24.51
     },
     {
       "date": "2025-02-06",
       "dividend": 0.231345,
-      "price": 40.1400,
+      "price": 40.14,
       "yield": 29.97
     },
     {
       "date": "2025-02-13",
       "dividend": 0.250935,
-      "price": 40.3200,
+      "price": 40.32,
       "yield": 32.36
     },
     {
       "date": "2025-02-20",
       "dividend": 0.246262,
-      "price": 40.2300,
+      "price": 40.23,
       "yield": 31.83
     },
     {
       "date": "2025-02-27",
       "dividend": 0.259556,
-      "price": 37.4200,
+      "price": 37.42,
       "yield": 36.07
     },
     {
       "date": "2025-03-06",
       "dividend": 0.151438,
-      "price": 36.3800,
+      "price": 36.38,
       "yield": 21.65
     },
     {
       "date": "2025-03-13",
       "dividend": 0.233161,
-      "price": 34.8100,
+      "price": 34.81,
       "yield": 34.83
     },
     {
       "date": "2025-03-20",
       "dividend": 0.277205,
-      "price": 35.6700,
+      "price": 35.67,
       "yield": 40.41
     },
     {
       "date": "2025-03-27",
       "dividend": 0.236134,
-      "price": 35.7800,
+      "price": 35.78,
       "yield": 34.32
     },
     {
       "date": "2025-04-03",
       "dividend": 0.250455,
-      "price": 32.9000,
+      "price": 32.9,
       "yield": 39.59
     },
     {
       "date": "2025-04-10",
       "dividend": 0.179537,
-      "price": 30.4400,
+      "price": 30.44,
       "yield": 30.67
     },
     {
       "date": "2025-04-16",
       "dividend": 0.209337,
-      "price": 30.2800,
+      "price": 30.28,
       "yield": 35.95
     },
     {
       "date": "2025-04-24",
       "dividend": 0.239917,
-      "price": 31.4100,
+      "price": 31.41,
       "yield": 39.72
     },
     {
       "date": "2025-05-01",
       "dividend": 0.218172,
-      "price": 32.0500,
-      "yield": 35.40
+      "price": 32.05,
+      "yield": 35.4
     },
     {
       "date": "2025-05-08",
       "dividend": 0.307516,
-      "price": 32.4100,
+      "price": 32.41,
       "yield": 49.34
     },
     {
       "date": "2025-05-15",
       "dividend": 0.179609,
-      "price": 34.2900,
+      "price": 34.29,
       "yield": 27.24
     },
     {
       "date": "2025-05-22",
       "dividend": 0.172146,
-      "price": 33.7900,
+      "price": 33.79,
       "yield": 26.49
     },
     {
       "date": "2025-05-29",
       "dividend": 0.214958,
-      "price": 34.0200,
+      "price": 34.02,
       "yield": 32.86
     },
     {
       "date": "2025-06-05",
       "dividend": 0.207747,
-      "price": 34.1300,
+      "price": 34.13,
       "yield": 31.65
     },
     {
       "date": "2025-06-12",
       "dividend": 0.145807,
-      "price": 34.6600,
+      "price": 34.66,
       "yield": 21.88
     },
     {
       "date": "2025-06-18",
       "dividend": 0.204734,
-      "price": 34.2000,
+      "price": 34.2,
       "yield": 31.13
     }
   ],
@@ -787,188 +787,188 @@
     {
       "date": "2024-09-26",
       "dividend": 0.360323,
-      "price": 44.3100,
+      "price": 44.31,
       "yield": 42.29
     },
     {
       "date": "2024-10-03",
       "dividend": 0.386265,
-      "price": 43.5100,
+      "price": 43.51,
       "yield": 46.16
     },
     {
       "date": "2024-10-10",
       "dividend": 0.249786,
-      "price": 43.5300,
+      "price": 43.53,
       "yield": 29.84
     },
     {
       "date": "2024-10-17",
       "dividend": 0.306793,
-      "price": 44.2300,
+      "price": 44.23,
       "yield": 36.07
     },
     {
       "date": "2024-10-24",
       "dividend": 0.335223,
-      "price": 42.9200,
+      "price": 42.92,
       "yield": 40.61
     },
     {
       "date": "2024-10-31",
       "dividend": 0.257541,
-      "price": 42.4900,
+      "price": 42.49,
       "yield": 31.52
     },
     {
       "date": "2024-11-07",
       "dividend": 0.262856,
-      "price": 45.4000,
+      "price": 45.4,
       "yield": 30.11
     },
     {
       "date": "2024-11-14",
       "dividend": 0.334341,
-      "price": 44.6100,
+      "price": 44.61,
       "yield": 38.97
     },
     {
       "date": "2024-11-21",
       "dividend": 0.410503,
-      "price": 44.2300,
+      "price": 44.23,
       "yield": 48.26
     },
     {
       "date": "2024-11-27",
       "dividend": 0.327406,
-      "price": 45.2800,
-      "yield": 37.60
+      "price": 45.28,
+      "yield": 37.6
     },
     {
       "date": "2024-12-05",
       "dividend": 0.28264,
-      "price": 44.5800,
+      "price": 44.58,
       "yield": 32.97
     },
     {
       "date": "2024-12-12",
       "dividend": 0.371052,
-      "price": 43.8400,
+      "price": 43.84,
       "yield": 44.01
     },
     {
       "date": "2024-12-19",
       "dividend": 0.264902,
-      "price": 41.2000,
+      "price": 41.2,
       "yield": 33.43
     },
     {
       "date": "2024-12-26",
       "dividend": 0.273542,
-      "price": 41.9300,
+      "price": 41.93,
       "yield": 33.92
     },
     {
       "date": "2025-01-02",
       "dividend": 0.590683,
-      "price": 40.8400,
+      "price": 40.84,
       "yield": 75.21
     },
     {
       "date": "2025-01-08",
       "dividend": 0.20576,
-      "price": 40.7900,
+      "price": 40.79,
       "yield": 26.23
     },
     {
       "date": "2025-01-16",
       "dividend": 0.375482,
-      "price": 40.9600,
+      "price": 40.96,
       "yield": 47.67
     },
     {
       "date": "2025-01-23",
       "dividend": 0.200155,
-      "price": 41.4900,
+      "price": 41.49,
       "yield": 25.09
     },
     {
       "date": "2025-01-30",
       "dividend": 0.215479,
-      "price": 41.3200,
+      "price": 41.32,
       "yield": 27.12
     },
     {
       "date": "2025-02-06",
       "dividend": 0.279654,
-      "price": 41.0600,
+      "price": 41.06,
       "yield": 35.42
     },
     {
       "date": "2025-02-13",
       "dividend": 0.253721,
-      "price": 40.5100,
+      "price": 40.51,
       "yield": 32.57
     },
     {
       "date": "2025-02-20",
       "dividend": 0.202667,
-      "price": 40.1700,
+      "price": 40.17,
       "yield": 26.24
     },
     {
       "date": "2025-02-27",
       "dividend": 0.193473,
-      "price": 37.9300,
+      "price": 37.93,
       "yield": 26.52
     },
     {
       "date": "2025-03-06",
       "dividend": 0.149736,
-      "price": 36.7500,
+      "price": 36.75,
       "yield": 21.19
     },
     {
       "date": "2025-03-13",
       "dividend": 0.300946,
-      "price": 35.3400,
+      "price": 35.34,
       "yield": 44.28
     },
     {
       "date": "2025-03-20",
       "dividend": 0.326605,
-      "price": 36.3400,
+      "price": 36.34,
       "yield": 46.73
     },
     {
       "date": "2025-03-27",
       "dividend": 0.192276,
-      "price": 36.2100,
+      "price": 36.21,
       "yield": 27.61
     },
     {
       "date": "2025-04-03",
       "dividend": 0.322066,
-      "price": 32.8300,
+      "price": 32.83,
       "yield": 51.01
     },
     {
       "date": "2025-04-10",
       "dividend": 0.24647,
-      "price": 30.1500,
+      "price": 30.15,
       "yield": 42.51
     },
     {
       "date": "2025-04-16",
       "dividend": 0.235906,
-      "price": 30.5700,
+      "price": 30.57,
       "yield": 40.13
     },
     {
       "date": "2025-04-24",
       "dividend": 0.311538,
-      "price": 31.7000,
-      "yield": 51.10
+      "price": 31.7,
+      "yield": 51.1
     },
     {
       "date": "2025-05-01",
@@ -979,43 +979,43 @@
     {
       "date": "2025-05-08",
       "dividend": 0.238059,
-      "price": 32.8700,
+      "price": 32.87,
       "yield": 37.66
     },
     {
       "date": "2025-05-15",
       "dividend": 0.236833,
-      "price": 34.0600,
+      "price": 34.06,
       "yield": 36.16
     },
     {
       "date": "2025-05-22",
       "dividend": 0.24942,
-      "price": 33.1900,
+      "price": 33.19,
       "yield": 39.08
     },
     {
       "date": "2025-05-29",
       "dividend": 0.267197,
-      "price": 33.4400,
+      "price": 33.44,
       "yield": 41.55
     },
     {
       "date": "2025-06-05",
       "dividend": 0.300745,
-      "price": 33.5500,
+      "price": 33.55,
       "yield": 46.61
     },
     {
       "date": "2025-06-12",
       "dividend": 0.134876,
-      "price": 34.2500,
+      "price": 34.25,
       "yield": 20.48
     },
     {
       "date": "2025-06-18",
       "dividend": 0.24399,
-      "price": 33.7900,
+      "price": 33.79,
       "yield": 37.55
     }
   ]
