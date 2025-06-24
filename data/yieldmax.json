@@ -3,67 +3,67 @@
     {
       "date": "2025-02-20",
       "dividend": 0.2221,
-      "price": 50.3900,
+      "price": 50.39,
       "yield": 22.92
     },
     {
       "date": "2025-02-27",
       "dividend": 0.1977,
-      "price": 48.5000,
-      "yield": 21.20
+      "price": 48.5,
+      "yield": 21.2
     },
     {
       "date": "2025-03-06",
       "dividend": 0.1709,
-      "price": 47.0200,
-      "yield": 18.90
+      "price": 47.02,
+      "yield": 18.9
     },
     {
       "date": "2025-03-13",
       "dividend": 0.2174,
-      "price": 45.3800,
+      "price": 45.38,
       "yield": 24.91
     },
     {
       "date": "2025-03-20",
       "dividend": 0.3175,
-      "price": 46.1600,
+      "price": 46.16,
       "yield": 35.77
     },
     {
       "date": "2025-03-27",
       "dividend": 0.2133,
-      "price": 46.2700,
+      "price": 46.27,
       "yield": 23.97
     },
     {
       "date": "2025-04-03",
       "dividend": 0.2723,
-      "price": 43.1800,
+      "price": 43.18,
       "yield": 32.79
     },
     {
       "date": "2025-04-10",
       "dividend": 0.227,
-      "price": 40.3400,
+      "price": 40.34,
       "yield": 29.26
     },
     {
       "date": "2025-04-17",
       "dividend": 0.3085,
-      "price": 40.3200,
+      "price": 40.32,
       "yield": 39.79
     },
     {
       "date": "2025-04-24",
       "dividend": 0.3024,
-      "price": 41.0900,
+      "price": 41.09,
       "yield": 38.27
     },
     {
       "date": "2025-05-01",
       "dividend": 0.311,
-      "price": 41.9100,
+      "price": 41.91,
       "yield": 38.59
     },
     {
@@ -75,37 +75,37 @@
     {
       "date": "2025-05-15",
       "dividend": 0.2448,
-      "price": 44.1300,
+      "price": 44.13,
       "yield": 28.85
     },
     {
       "date": "2025-05-22",
       "dividend": 0.2732,
       "price": 43.0443,
-      "yield": 33.00
+      "yield": 33
     },
     {
       "date": "2025-05-29",
       "dividend": 0.2578,
-      "price": 43.4000,
+      "price": 43.4,
       "yield": 30.89
     },
     {
       "date": "2025-06-05",
       "dividend": 0.2175,
-      "price": 43.4600,
+      "price": 43.46,
       "yield": 26.02
     },
     {
       "date": "2025-06-12",
       "dividend": 0.2258,
-      "price": 44.0200,
+      "price": 44.02,
       "yield": 26.67
     },
     {
       "date": "2025-06-20",
       "dividend": 0.2233,
-      "price": 43.4000,
+      "price": 43.4,
       "yield": 26.75
     }
   ],
@@ -113,104 +113,104 @@
     {
       "date": "2025-02-27",
       "dividend": 0.3231,
-      "price": 47.3700,
+      "price": 47.37,
       "yield": 35.47
     },
     {
       "date": "2025-03-06",
       "dividend": 0.158,
-      "price": 46.1800,
+      "price": 46.18,
       "yield": 17.79
     },
     {
       "date": "2025-03-13",
       "dividend": 0.246,
-      "price": 44.3100,
+      "price": 44.31,
       "yield": 28.87
     },
     {
       "date": "2025-03-20",
       "dividend": 0.3124,
-      "price": 45.2500,
-      "yield": 35.90
+      "price": 45.25,
+      "yield": 35.9
     },
     {
       "date": "2025-03-27",
       "dividend": 0.2711,
-      "price": 45.1900,
-      "yield": 31.20
+      "price": 45.19,
+      "yield": 31.2
     },
     {
       "date": "2025-04-03",
       "dividend": 0.2638,
-      "price": 41.4800,
+      "price": 41.48,
       "yield": 33.07
     },
     {
       "date": "2025-04-10",
       "dividend": 0.2199,
-      "price": 38.3400,
+      "price": 38.34,
       "yield": 29.82
     },
     {
       "date": "2025-04-17",
       "dividend": 0.332,
-      "price": 38.0800,
+      "price": 38.08,
       "yield": 45.34
     },
     {
       "date": "2025-04-24",
       "dividend": 0.3231,
-      "price": 39.2100,
+      "price": 39.21,
       "yield": 42.85
     },
     {
       "date": "2025-05-01",
       "dividend": 0.3362,
-      "price": 39.8000,
+      "price": 39.8,
       "yield": 43.93
     },
     {
       "date": "2025-05-08",
       "dividend": 0.2841,
-      "price": 40.3500,
+      "price": 40.35,
       "yield": 36.61
     },
     {
       "date": "2025-05-15",
       "dividend": 0.2347,
-      "price": 42.5400,
+      "price": 42.54,
       "yield": 28.69
     },
     {
       "date": "2025-05-22",
       "dividend": 0.3249,
-      "price": 41.9700,
+      "price": 41.97,
       "yield": 40.25
     },
     {
       "date": "2025-05-29",
       "dividend": 0.3115,
-      "price": 42.2100,
+      "price": 42.21,
       "yield": 38.37
     },
     {
       "date": "2025-06-05",
       "dividend": 0.2307,
-      "price": 42.4400,
+      "price": 42.44,
       "yield": 28.27
     },
     {
       "date": "2025-06-12",
       "dividend": 0.2572,
-      "price": 43.0600,
+      "price": 43.06,
       "yield": 31.06
     },
     {
       "date": "2025-06-20",
       "dividend": 0.2342,
-      "price": 42.4300,
-      "yield": 28.70
+      "price": 42.43,
+      "yield": 28.7
     }
   ],
   "RDTY": [
@@ -229,13 +229,13 @@
     {
       "date": "2025-04-03",
       "dividend": 0.3351,
-      "price": 44.1600,
+      "price": 44.16,
       "yield": 39.46
     },
     {
       "date": "2025-04-10",
       "dividend": 0.359,
-      "price": 40.8000,
+      "price": 40.8,
       "yield": 45.75
     },
     {
@@ -259,43 +259,43 @@
     {
       "date": "2025-05-08",
       "dividend": 0.4634,
-      "price": 43.9500,
+      "price": 43.95,
       "yield": 54.83
     },
     {
       "date": "2025-05-15",
       "dividend": 0.2447,
-      "price": 45.3800,
+      "price": 45.38,
       "yield": 28.04
     },
     {
       "date": "2025-05-22",
       "dividend": 0.3446,
-      "price": 44.3800,
+      "price": 44.38,
       "yield": 40.38
     },
     {
       "date": "2025-05-29",
       "dividend": 0.3538,
-      "price": 44.4100,
+      "price": 44.41,
       "yield": 41.43
     },
     {
       "date": "2025-06-05",
       "dividend": 0.2108,
-      "price": 44.9800,
+      "price": 44.98,
       "yield": 24.37
     },
     {
       "date": "2025-06-12",
       "dividend": 0.3038,
-      "price": 45.6800,
+      "price": 45.68,
       "yield": 34.58
     },
     {
       "date": "2025-06-20",
       "dividend": 0.3265,
-      "price": 45.2300,
+      "price": 45.23,
       "yield": 37.54
     }
   ]
