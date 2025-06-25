@@ -11,8 +11,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/rh_xqr_dte',
-  assetPrefix: '/rh_xqr_dte/',
+  basePath: process.env.NODE_ENV === 'production' ? '/rh_xqr_dte' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/rh_xqr_dte/' : '',
 }
 
 module.exports = nextConfig
