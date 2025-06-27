@@ -51,6 +51,10 @@ export const translations = {
         comparison: {
             priceDivComparison: "價格與股息比較",
             statsComparison: "統計數據比較",
+            notesTitle: "註解",
+            notesContent: "此區塊用於說明資料來源、計算方式以及圖表的奇怪成因。",
+            dataSource: "資料來源：https://www.alphavantage.co/",
+            lineDiscontinous: "線段不連續的主因，為分發配息的日子不同所導致"
         },
 
         issuer: {
@@ -110,6 +114,10 @@ export const translations = {
         comparison: {
             priceDivComparison: "Price and dividend comparison",
             statsComparison: "Statistics comparison",
+            notesTitle: "Notes",
+            notesContent: "This section provides information on data sources, calculation methods, and unusual chart behaviors.",
+            dataSource: "Data source: https://www.alphavantage.co/",
+            lineDiscontinous: "The gaps in the line chart are caused by variations in dividend distribution dates, which lead to missing data points on certain days."
         },
 
         issuer: {

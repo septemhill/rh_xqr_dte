@@ -2,6 +2,7 @@
 
 import { FinancialChart } from "@/components/financial-chart";
 import { useFinancialData } from "@/hooks/useFinancialData";
+import { NotesSection } from "@/components/notes-section";
 import { useLanguage } from '@/context/language-context';
 
 export default function IssuerComparisonPage() {
@@ -218,6 +219,11 @@ export default function IssuerComparisonPage() {
           unit="percent"
         />
       )}
+
+      <NotesSection notes={[
+        t.comparison.dataSource,
+        t.comparison.lineDiscontinous,
+      ]} />
     </div>
   );
 }
