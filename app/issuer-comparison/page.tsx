@@ -165,6 +165,7 @@ export default function IssuerComparisonPage() {
           t={{
             chartTitle: "SDTY vs XDTE",
             chartDescription: t.comparison.priceDivComparison,
+            tooltipText: t.comparison.lineDiscontinous,
           }}
         />
       )}
@@ -174,6 +175,7 @@ export default function IssuerComparisonPage() {
           t={{
             chartTitle: "SDTY vs XDTE Yield",
             chartDescription: "Comparison of SDTY and XDTE yields",
+            tooltipText: t.comparison.lineDiscontinous,
           }}
           dataKeys={["SDTY_yield", "XDTE_yield"]}
           unit="percent"
@@ -185,6 +187,7 @@ export default function IssuerComparisonPage() {
           t={{
             chartTitle: "QDTY vs QDTE",
             chartDescription: t.comparison.priceDivComparison,
+            tooltipText: t.comparison.lineDiscontinous,
           }}
         />
       )}
@@ -194,6 +197,7 @@ export default function IssuerComparisonPage() {
           t={{
             chartTitle: "QDTY vs QDTE Yield",
             chartDescription: "Comparison of QDTY and QDTE yields",
+            tooltipText: t.comparison.lineDiscontinous,
           }}
           dataKeys={["QDTY_yield", "QDTE_yield"]}
           unit="percent"
@@ -205,6 +209,7 @@ export default function IssuerComparisonPage() {
           t={{
             chartTitle: "RDTY vs RDTE",
             chartDescription: t.comparison.priceDivComparison,
+            tooltipText: t.comparison.lineDiscontinous,
           }}
         />
       )}
@@ -214,16 +219,17 @@ export default function IssuerComparisonPage() {
           t={{
             chartTitle: "RDTY vs RDTE Yield",
             chartDescription: "Comparison of RDTY and RDTE yields",
+            tooltipText: t.comparison.lineDiscontinous,
           }}
           dataKeys={["RDTY_yield", "RDTE_yield"]}
           unit="percent"
         />
       )}
 
-      <NotesSection notes={[
+      {/* <NotesSection notes={[
         t.comparison.dataSource,
         t.comparison.lineDiscontinous,
-      ]} />
+      ]} /> */}
     </div>
   );
 }
