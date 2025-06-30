@@ -7,7 +7,7 @@ import { useLanguage } from '@/context/language-context';
 import { LoadingSkeleton } from "@/components/loading-skeleton";
 import { StockDataTable } from "@/components/stock-data-table";
 import { FinancialChart } from "@/components/financial-chart";
-import { StatsTable } from "@/components/stats-table";
+import { StatsChart } from "@/components/stats-chart";
 
 export default function FinancialDashboard() {
   const { language, t } = useLanguage();
@@ -63,7 +63,7 @@ export default function FinancialDashboard() {
             chartDescription: "Comparison of yields",
           }} unit="percent"/>
 
-        {dividendStats && <StatsTable stats={dividendStats} t={t} selectedDataSource={selectedDataSource} />}
+        {dividendStats && <StatsChart stats={dividendStats} t={t} selectedDataSource={selectedDataSource} />}
       </div>
     </>
   );
