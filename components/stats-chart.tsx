@@ -91,7 +91,7 @@ export function StatsChart({ stats, t }: StatsChartProps) {
           <BarChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
-            <YAxis tickFormatter={yAxisFormatter} />
+            <YAxis tickFormatter={yAxisFormatter} tickCount={8} />
             <Tooltip formatter={yAxisFormatter} />
             <Legend />
             {currentStockSymbols.map((symbol, index) => (
