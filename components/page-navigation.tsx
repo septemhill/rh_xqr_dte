@@ -12,11 +12,10 @@ import {
 import { translations, Language } from "@/lib/translations"; // Import translations for localized page names
 
 interface PageNavigationProps {
-  language: Language; // To get the correct translations
   t: typeof translations[Language]; // Pass the 't' object for current language translations
 }
 
-export function PageNavigation({ language, t }: PageNavigationProps) {
+export function PageNavigation({ t }: PageNavigationProps) {
   const router = useRouter();
   const pathname = usePathname();
 

@@ -27,6 +27,12 @@ export interface Stats {
 
 export type DividendStats = Record<StockSymbol, Stats>;
 
+export interface CombinedData {
+  date: string;
+  [key: string]: string | number | null;
+}
+
+
 // export interface DividendStats {
 //     roundhill: {
 //         [key: string]: { // key will be like "XDTE", "QDTE", "RDTE"

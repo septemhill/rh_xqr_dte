@@ -2,7 +2,6 @@
 
 import DataSourceSelector from "@/components/data-source-selector";
 import { useState } from "react";
-import { translations, type Language } from "@/lib/translations";
 import { useFinancialData, DataSource } from "@/hooks/useFinancialData";
 import { useLanguage } from '@/context/language-context';
 import { LoadingSkeleton } from "@/components/loading-skeleton";

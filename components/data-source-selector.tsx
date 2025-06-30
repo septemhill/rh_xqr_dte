@@ -1,7 +1,6 @@
 "use client";
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { translations, type Language } from "@/lib/translations"; // 導入 translations 和 Language 類型
 
 interface DataSourceSelectorProps {
   selectedDataSource: string;

@@ -2,8 +2,8 @@
 
 import { FinancialChart } from "@/components/financial-chart";
 import { useFinancialData } from "@/hooks/useFinancialData";
-import { NotesSection } from "@/components/notes-section";
 import { useLanguage } from '@/context/language-context';
+import { CombinedData } from "@/lib/types";
 
 export default function IssuerComparisonPage() {
   const { language, t } = useLanguage();
@@ -11,7 +11,7 @@ export default function IssuerComparisonPage() {
   const { chartData: yieldmaxData } = useFinancialData(language, "yieldmax");
 
   // Create a Map to store combined data, using the date as the key for efficient lookups.
-  const combinedChartDataMap = new Map<string, any>();
+  const combinedChartDataMap = new Map<string, CombinedData>();
 
   // --- Step 1: Add all data from roundhillData to the map ---
   roundhillData?.forEach((item) => {
@@ -21,15 +21,15 @@ export default function IssuerComparisonPage() {
       combinedChartDataMap.set(item.date, {
         date: item.date,
         // Roundhill fields (example, adjust to your actual data keys)
-        XDTE_price: item.XDTE_price || null,
-        XDTE_dividend: item.XDTE_dividend || null,
-        XDTE_yield: item.XDTE_yield || null,
-        QDTE_price: item.QDTE_price || null, // Assuming QDTE/RDTE are also in Roundhill for consistency based on your earlier code
-        QDTE_dividend: item.QDTE_dividend || null,
-        QDTE_yield: item.QDTE_yield || null,
-        RDTE_price: item.RDTE_price || null,
-        RDTE_dividend: item.RDTE_dividend || null,
-        RDTE_yield: item.RDTE_yield || null,
+        XDTE_price: item.XDTE_price,
+        XDTE_dividend: item.XDTE_dividend,
+        XDTE_yield: item.XDTE_yield,
+        QDTE_price: item.QDTE_price, // Assuming QDTE/RDTE are also in Roundhill for consistency based on your earlier code
+        QDTE_dividend: item.QDTE_dividend,
+        QDTE_yield: item.QDTE_yield,
+        RDTE_price: item.RDTE_price,
+        RDTE_dividend: item.RDTE_dividend,
+        RDTE_yield: item.RDTE_yield,
 
         // YieldMax fields (initialized to null, will be populated if found)
         SDTY_price: null, 
@@ -53,26 +53,26 @@ export default function IssuerComparisonPage() {
 
       if (existingEntry) {
         // If an entry for this date already exists (from roundhillData), merge YieldMax data into it
-        existingEntry.QDTY_price = item.QDTY_price || null;
-        existingEntry.QDTY_dividend = item.QDTY_dividend || null;
-        existingEntry.QDTY_yield = item.QDTY_yield || null;
-        existingEntry.RDTY_price = item.RDTY_price || null;
-        existingEntry.RDTY_dividend = item.RDTY_dividend || null;
-        existingEntry.RDTY_yield = item.RDTY_yield || null;
-        existingEntry.SDTY_price = item.SDTY_price || null;
-        existingEntry.SDTY_dividend = item.SDTY_dividend || null;
-        existingEntry.SDTY_yield = item.SDTY_yield || null;
+        existingEntry.QDTY_price = item.QDTY_price;
+        existingEntry.QDTY_dividend = item.QDTY_dividend;
+        existingEntry.QDTY_yield = item.QDTY_yield;
+        existingEntry.RDTY_price = item.RDTY_price;
+        existingEntry.RDTY_dividend = item.RDTY_dividend;
+        existingEntry.RDTY_yield = item.RDTY_yield;
+        existingEntry.SDTY_price = item.SDTY_price;
+        existingEntry.SDTY_dividend = item.SDTY_dividend;
+        existingEntry.SDTY_yield = item.SDTY_yield;
         // Also update QDTE/RDTE if they exist in YieldMax and Roundhill has null for them,
         // or if YieldMax data should take precedence for these
-        existingEntry.QDTE_price = item.QDTE_price || existingEntry.QDTE_price || null;
-        existingEntry.QDTE_dividend = item.QDTE_dividend || existingEntry.QDTE_dividend || null;
-        existingEntry.QDTE_yield = item.QDTE_yield || existingEntry.QDTE_yield || null;
-        existingEntry.RDTE_price = item.RDTE_price || existingEntry.RDTE_price || null;
-        existingEntry.RDTE_dividend = item.RDTE_dividend || existingEntry.RDTE_dividend || null;
-        existingEntry.RDTE_yield = item.RDTE_yield || existingEntry.RDTE_yield || null;
-        existingEntry.XDTE_price = item.XDTE_price || existingEntry.XDTE_price || null;
-        existingEntry.XDTE_dividend = item.XDTE_dividend || existingEntry.XDTE_dividend || null;
-        existingEntry.XDTE_yield = item.XDTE_yield || existingEntry.XDTE_yield || null;
+        existingEntry.QDTE_price = item.QDTE_price || existingEntry.QDTE_price;
+        existingEntry.QDTE_dividend = item.QDTE_dividend || existingEntry.QDTE_dividend;
+        existingEntry.QDTE_yield = item.QDTE_yield || existingEntry.QDTE_yield;
+        existingEntry.RDTE_price = item.RDTE_price || existingEntry.RDTE_price;
+        existingEntry.RDTE_dividend = item.RDTE_dividend || existingEntry.RDTE_dividend;
+        existingEntry.RDTE_yield = item.RDTE_yield || existingEntry.RDTE_yield;
+        existingEntry.XDTE_price = item.XDTE_price || existingEntry.XDTE_price;
+        existingEntry.XDTE_dividend = item.XDTE_dividend || existingEntry.XDTE_dividend;
+        existingEntry.XDTE_yield = item.XDTE_yield || existingEntry.XDTE_yield;
 
         // If there are other YieldMax specific symbols, merge them here
       } else {
@@ -90,15 +90,15 @@ export default function IssuerComparisonPage() {
           RDTE_dividend: null,
           RDTE_yield: null,
           // YieldMax fields (from the current item)
-          SDTY_price: item.SDTY_price || null,
-          SDTY_dividend: item.SDTY_dividend || null,
-          SDTY_yield: item.SDTY_yield || null,
-          QDTY_price: item.QDTY_price || null,
-          QDTY_dividend: item.QDTY_dividend || null,
-          QDTY_yield: item.QDTY_yield || null,
-          RDTY_price: item.RDTY_price || null,
-          RDTY_dividend: item.RDTY_dividend || null,
-          RDTY_yield: item.RDTY_yield || null,
+          SDTY_price: item.SDTY_price,
+          SDTY_dividend: item.SDTY_dividend,
+          SDTY_yield: item.SDTY_yield,
+          QDTY_price: item.QDTY_price,
+          QDTY_dividend: item.QDTY_dividend,
+          QDTY_yield: item.QDTY_yield,
+          RDTY_price: item.RDTY_price,
+          RDTY_dividend: item.RDTY_dividend,
+          RDTY_yield: item.RDTY_yield,
           // If there are other YieldMax specific symbols, add them here
         });
       }

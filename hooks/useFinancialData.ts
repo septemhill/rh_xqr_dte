@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { translations, type Language } from "@/lib/translations";
 import { calculateAverage, calculateAllStats } from "@/lib/utils";
-import type { StockData, FinancialData, DividendStats } from "@/lib/types";
+import type { StockData, FinancialData, DividendStats, CombinedData } from "@/lib/types";
 
 export type DataSource = "roundhill" | "yieldmax";
 
 export function useFinancialData(language: Language, dataSource: DataSource = "roundhill") {
     const [stocksData, setStocksData] = useState<StockData[]>([]);
-    const [chartData, setChartData] = useState<any[]>([]);
+    const [chartData, setChartData] = useState<CombinedData[]>([]);
     const [dividendStats, setDividendStats] = useState<DividendStats | null>(null);
     const [loading, setLoading] = useState(true);
     const t = translations[language];
@@ -38,7 +38,7 @@ export function useFinancialData(language: Language, dataSource: DataSource = "r
                 const sortedDates = Array.from(allDates).sort();
 
                 const combinedData = sortedDates.map((date) => {
-                    const dataPoint: any = { date };
+                    const dataPoint: CombinedData = { date };
                     results.forEach((stock) => {
                         const stockDataForDate = stock.data.find((item) => item.date === date);
                         dataPoint[`${stock.symbol}_price`] = stockDataForDate?.price || null;

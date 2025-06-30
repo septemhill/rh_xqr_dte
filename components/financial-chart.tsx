@@ -5,9 +5,21 @@ import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip as Recha
 import { formatCurrency, formatDate } from "@/lib/utils";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { HelpCircle } from 'lucide-react';
+import { CombinedData } from "@/lib/types";
+
+const getInitialVisibility = (data: CombinedData[], dataKeys?: string[]) => {
+  if (!data || data.length === 0) return {};
+  const firstDataItem = data[0];
+  const keys = dataKeys || Object.keys(firstDataItem).filter(key => key !== 'date');
+  const initialState: { [key: string]: boolean } = {};
+  keys.forEach(key => {
+    initialState[key] = true;
+  });
+  return initialState;
+};
 
 interface FinancialChartProps {
-  chartData: any[];
+  chartData: CombinedData[];
   t: {
     chartTitle: string;
     chartDescription: string;
@@ -17,26 +29,19 @@ interface FinancialChartProps {
   unit?: 'dollar' | 'percent';
 }
 
+interface LegendClickArgs {
+  dataKey: string;
+}
+
 export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: FinancialChartProps) {
   const pathname = usePathname();
-  const getInitialVisibility = (data: any[]) => {
-    if (!data || data.length === 0) return {};
-    const firstDataItem = data[0];
-    const keys = dataKeys || Object.keys(firstDataItem).filter(key => key !== 'date');
-    const initialState: { [key: string]: boolean } = {};
-    keys.forEach(key => {
-      initialState[key] = true;
-    });
-    return initialState;
-  };
-
-  const [visibility, setVisibility] = useState<{ [key: string]: boolean }>(getInitialVisibility(chartData));
+  const [visibility, setVisibility] = useState<{ [key: string]: boolean }>(getInitialVisibility(chartData, dataKeys));
 
   useEffect(() => {
-    setVisibility(getInitialVisibility(chartData));
-  }, [chartData]);
+    setVisibility(getInitialVisibility(chartData, dataKeys));
+  }, [chartData, dataKeys]);
 
-  const handleLegendClick = (dataKey: any) => {
+  const handleLegendClick = (dataKey: LegendClickArgs) => {
     const key = dataKey.dataKey as string;
     setVisibility(prev => ({ ...prev, [key]: !prev[key] }));
   };
@@ -125,7 +130,7 @@ export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: Fina
               <YAxis yAxisId="dividend" orientation="right" tick={{ fontSize: 12 }} tickFormatter={(value) => (unit === 'dollar' ? `${value}` : `${value.toFixed(2)}%`)} tickCount={8} />
               <Brush dataKey="date" height={20} stroke="#8884d8" />
               <RechartsTooltip
-                formatter={(value: any, name: string) => {
+                formatter={(value: string | number, name: string) => {
                   const formattedValue = unit === 'dollar' ? formatCurrency(Number(value), 6) : `${Number(value).toFixed(2)}%`;
                   return [formattedValue, name];
                 }}

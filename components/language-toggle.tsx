@@ -8,7 +8,7 @@ interface LanguageToggleProps {
   className?: string;
 }
 
-export function LanguageToggle({ language, onToggle, className }: LanguageToggleProps) {
+export function LanguageToggle({  onToggle, className }: LanguageToggleProps) {
   return (
     <Button variant="outline" size="icon" onClick={onToggle} className={`top-4 left-16 z-50 h-9 w-9 ${className}`}>
       <Globe className="h-[1.2rem] w-[1.2rem]" />

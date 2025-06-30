@@ -2,8 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-// import { stockSymbols } from "@/lib/constants"; // We will no longer directly use stockSymbols constant
-import { DividendStats, StockSymbol } from "@/lib/types"; // Make sure DividendStats type is updated as discussed above
+import { DividendStats } from "@/lib/types"; // Make sure DividendStats type is updated as discussed above
 import { formatCurrency } from "@/lib/utils";
 
 interface StatsTableProps {
@@ -24,7 +23,7 @@ interface StatsTableProps {
   selectedDataSource: "roundhill" | "yieldmax"; // <--- Add this prop
 }
 
-export function StatsTable({ stats, t, selectedDataSource }: StatsTableProps) {
+export function StatsTable({ stats, t }: StatsTableProps) {
   const statRows = [
     { label: t.avg3DivMonths, key: "avg3Months", digits: 6, type: "currency" },
     { label: t.avg6DivMonths, key: "avg6Months", digits: 6, type: "currency" },
