@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const isGithubPages = process.env.NODE_ENV === 'production' && !process.env.CF_PAGES;
+
 const nextConfig = {
   output: "export",
   trailingSlash: true,
@@ -11,8 +14,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/rh_xqr_dte' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/rh_xqr_dte/' : '',
+  basePath: isGithubPages ? '/rh_xqr_dte' : '',
+  assetPrefix: isGithubPages ? '/rh_xqr_dte/' : '',
 }
 
 module.exports = nextConfig
