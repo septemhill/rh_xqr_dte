@@ -22,12 +22,15 @@ export const translations = {
         avg3DivMonths: "近3個月平均股息",
         avg6DivMonths: "近6個月平均股息",
         avg9DivMonths: "近9個月平均股息",
+        avg12DivMonths: "近12個月平均股息",
         avg3PriceMonths: "近3個月平均價格",
         avg6PriceMonths: "近6個月平均價格",
         avg9PriceMonths: "近9個月平均價格",
+        avg12PriceMonths: "近12個月平均價格",
         avg3YieldMonths: "近3個月平均殖利率",
         avg6YieldMonths: "近6個月平均殖利率",
         avg9YieldMonths: "近9個月平均殖利率",
+        avg12YieldMonths: "近12個月平均殖利率",
 
         // Legend 和 Tooltip
         priceLabel: "股價",
@@ -85,12 +88,15 @@ export const translations = {
         avg3DivMonths: "3M Avg Div",
         avg6DivMonths: "6M Avg Div",
         avg9DivMonths: "9M Avg Div",
+        avg12DivMonths: "12M Avg Div",
         avg3PriceMonths: "3M Avg Price",
         avg6PriceMonths: "6M Avg Price",
         avg9PriceMonths: "9M Avg Price",
+        avg12PriceMonths: "12M Avg Price",
         avg3YieldMonths: "3M Avg Yield",
         avg6YieldMonths: "6M Avg Yield",
         avg9YieldMonths: "9M Avg Yield",
+        avg12YieldMonths: "12M Avg Yield",
 
         // Legend 和 Tooltip
         priceLabel: "Price",

@@ -13,12 +13,15 @@ interface StatsTableProps {
     avg3DivMonths: string;
     avg6DivMonths: string;
     avg9DivMonths: string;
+    avg12DivMonths: string;
     avg3PriceMonths: string;
     avg6PriceMonths: string;
     avg9PriceMonths: string;
+    avg12PriceMonths: string;
     avg3YieldMonths: string;
     avg6YieldMonths: string;
     avg9YieldMonths: string;
+    avg12YieldMonths: string;
   };
   selectedDataSource: "roundhill" | "yieldmax"; // <--- Add this prop
 }
@@ -28,12 +31,15 @@ export function StatsTable({ stats, t }: StatsTableProps) {
     { label: t.avg3DivMonths, key: "avg3Months", digits: 6, type: "currency" },
     { label: t.avg6DivMonths, key: "avg6Months", digits: 6, type: "currency" },
     { label: t.avg9DivMonths, key: "avg9Months", digits: 6, type: "currency" },
+    { label: t.avg12DivMonths, key: "avg12Months", digits: 6, type: "currency" },
     { label: t.avg3PriceMonths, key: "avg3MonthsPrice", digits: 2, type: "currency" },
     { label: t.avg6PriceMonths, key: "avg6MonthsPrice", digits: 2, type: "currency" },
     { label: t.avg9PriceMonths, key: "avg9MonthsPrice", digits: 2, type: "currency" },
+    { label: t.avg12PriceMonths, key: "avg12MonthsPrice", digits: 2, type: "currency" },
     { label: t.avg3YieldMonths, key: "avg3MonthsYield", digits: 2, type: "percentage" },
     { label: t.avg6YieldMonths, key: "avg6MonthsYield", digits: 2, type: "percentage" },
     { label: t.avg9YieldMonths, key: "avg9MonthsYield", digits: 2, type: "percentage" },
+    { label: t.avg12YieldMonths, key: "avg12MonthsYield", digits: 2, type: "percentage" },
   ] as const;
 
   // Get the specific data for the selected data source
