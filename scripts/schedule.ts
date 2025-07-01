@@ -21,6 +21,7 @@ interface DividendPrice {
     dividend: number;
     price: number;
     yield: number;
+    volume: number;
 }
 
 interface DividendResponse {
@@ -74,6 +75,7 @@ async function fetchData() {
                     dividendData = dividendAPIData.data.map((item: any) => {
                         const amount = parseFloat(item.amount);
                         const closePrice = parseFloat(dailyPriceAPIData['Time Series (Daily)']?.[item.ex_dividend_date]?.['4. close']);
+                        const volume = parseFloat(dailyPriceAPIData['Time Series (Daily)']?.[item.ex_dividend_date]?.['5. volume']);
 
                         // Handle potential NaN values if data is missing or invalid
                         const calculatedYield = (!isNaN(amount) && !isNaN(closePrice) && closePrice !== 0) ? ((amount / closePrice) * 52 * 100) : 0;
@@ -82,7 +84,8 @@ async function fetchData() {
                             date: item.ex_dividend_date as string,
                             dividend: amount,
                             price: closePrice,
-                            yield: parseFloat(calculatedYield.toFixed(2)) // Ensure yield is a number and formatted
+                            yield: parseFloat(calculatedYield.toFixed(2)), // Ensure yield is a number and formatted
+                            volume: volume,
                         };
                     });
 
