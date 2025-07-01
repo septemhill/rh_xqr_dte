@@ -160,34 +160,6 @@ export default function IssuerComparisonPage() {
 
   return (
     <div className="container mx-auto p-4 pt-16 space-y-6">
-      {roundhillStats && yieldmaxStats && (
-        <>
-          {/* <ComparisonStatsChart
-            stats1={yieldmaxStats.QDTY}
-            stats2={roundhillStats.QDTE}
-            symbol1="QDTY"
-            symbol2="QDTE"
-            chartTitle="QDTY vs QDTE Stats"
-            chartDescription={t.comparison.statsComparison}
-          /> */}
-          {/* <ComparisonStatsChart
-            stats1={yieldmaxStats.SDTY}
-            stats2={roundhillStats.XDTE}
-            symbol1="SDTY"
-            symbol2="XDTE"
-            chartTitle="SDTY vs XDTE Stats"
-            chartDescription={t.comparison.statsComparison}
-          /> */}
-          {/* <ComparisonStatsChart
-            stats1={yieldmaxStats.RDTY}
-            stats2={roundhillStats.RDTE}
-            symbol1="RDTY"
-            symbol2="RDTE"
-            chartTitle="RDTY vs RDTE Stats"
-            chartDescription={t.comparison.statsComparison}
-          /> */}
-        </>
-      )}
       {SDTYXDTEData.length > 0 && (
         <FinancialChart
           chartData={SDTYXDTEData}

@@ -4,13 +4,13 @@ import { useState } from "react";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MonthlyStat } from "@/lib/types";
+import { Stats } from "@/lib/types";
 import { formatCurrency } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
 
 interface ComparisonStatsChartProps {
-  stats1: MonthlyStat;
-  stats2: MonthlyStat;
+  stats1: Stats;
+  stats2: Stats;
   symbol1: string;
   symbol2: string;
   chartTitle: string;
@@ -40,10 +40,10 @@ export function ComparisonStatsChart({ stats1, stats2, symbol1, symbol2, chartTi
   }
 
   const chartData = [
-    { name: "3M", [symbol1]: stats1[`avg3Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`], [symbol2]: stats2[`avg3Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`] },
-    { name: "6M", [symbol1]: stats1[`avg6Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`], [symbol2]: stats2[`avg6Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`] },
-    { name: "9M", [symbol1]: stats1[`avg9Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`], [symbol2]: stats2[`avg9Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`] },
-    { name: "12M", [symbol1]: stats1[`avg12Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`], [symbol2]: stats2[`avg12Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`] },
+    { name: "3M", [symbol1]: stats1[`avg3Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof Stats], [symbol2]: stats2[`avg3Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof Stats] },
+    { name: "6M", [symbol1]: stats1[`avg6Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof Stats], [symbol2]: stats2[`avg6Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof Stats] },
+    { name: "9M", [symbol1]: stats1[`avg9Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof Stats], [symbol2]: stats2[`avg9Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof Stats] },
+    { name: "1Y", [symbol1]: stats1[`avg1Year${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof Stats], [symbol2]: stats2[`avg1Year${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof Stats] },
   ];
 
   const yAxisFormatter = (value: number) => {

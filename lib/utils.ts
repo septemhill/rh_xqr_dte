@@ -77,15 +77,15 @@ export const calculateAllStats = (stocksData: StockData[]): DividendStats => {
       avg3Months: calculateAverage(dividendData, threeMonthsAgo, "dividend"),
       avg6Months: calculateAverage(dividendData, sixMonthsAgo, "dividend"),
       avg9Months: calculateAverage(dividendData, nineMonthsAgo, "dividend"),
-      avg12Months: calculateAverage(dividendData, twelveMonthsAgo, "dividend"),
+      avg1Year: calculateAverage(dividendData, twelveMonthsAgo, "dividend"),
       avg3MonthsPrice: calculateAverage(priceData, threeMonthsAgo, "price"),
       avg6MonthsPrice: calculateAverage(priceData, sixMonthsAgo, "price"),
       avg9MonthsPrice: calculateAverage(priceData, nineMonthsAgo, "price"),
-      avg12MonthsPrice: calculateAverage(priceData, twelveMonthsAgo, "price"),
+      avg1YearPrice: calculateAverage(priceData, twelveMonthsAgo, "price"),
       avg3MonthsYield: (calculateGeometricMean(yieldData, threeMonthsAgo, "yield") - 1) * 100,
       avg6MonthsYield: (calculateGeometricMean(yieldData, sixMonthsAgo, "yield") - 1) * 100,
       avg9MonthsYield: (calculateGeometricMean(yieldData, nineMonthsAgo, "yield") - 1) * 100,
-      avg12MonthsYield: (calculateGeometricMean(yieldData, twelveMonthsAgo, "yield") - 1) * 100,
+      avg1YearYield: (calculateGeometricMean(yieldData, twelveMonthsAgo, "yield") - 1) * 100,
     };
   });
 

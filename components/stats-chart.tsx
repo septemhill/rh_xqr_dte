@@ -12,18 +12,18 @@ interface StatsChartProps {
   t: {
     statsTitle: string;
     statsDescription: string;
-    avg3DivMonths: string;
-    avg6DivMonths: string;
-    avg9DivMonths: string;
-    avg12DivMonths: string;
-    avg3PriceMonths: string;
-    avg6PriceMonths: string;
-    avg9PriceMonths: string;
-    avg12PriceMonths: string;
-    avg3YieldMonths: string;
-    avg6YieldMonths: string;
-    avg9YieldMonths: string;
-    avg12YieldMonths: string;
+    avg3MDiv: string;
+    avg6MDiv: string;
+    avg9MDiv: string;
+    avg1YDiv: string;
+    avg3MPrice: string;
+    avg6MPrice: string;
+    avg9MPrice: string;
+    avg1YPrice: string;
+    avg3MYield: string;
+    avg6MYield: string;
+    avg9MYield: string;
+    avg1YYield: string;
     dividend: string;
     price: string;
     yield: string;
@@ -56,10 +56,10 @@ export function StatsChart({ stats, t }: StatsChartProps) {
   }
 
   const chartData = [
-    { name: "3M", ...Object.fromEntries(currentStockSymbols.map(s => [s, currentDataSourceStats[s][`avg3Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`]])) },
-    { name: "6M", ...Object.fromEntries(currentStockSymbols.map(s => [s, currentDataSourceStats[s][`avg6Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`]])) },
-    { name: "9M", ...Object.fromEntries(currentStockSymbols.map(s => [s, currentDataSourceStats[s][`avg9Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`]])) },
-    { name: "12M", ...Object.fromEntries(currentStockSymbols.map(s => [s, currentDataSourceStats[s][`avg12Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}`]])) },
+    { name: "3M", ...Object.fromEntries(currentStockSymbols.map(s => [s, currentDataSourceStats[s][`avg3Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof typeof currentDataSourceStats[StockSymbol]]])) },
+    { name: "6M", ...Object.fromEntries(currentStockSymbols.map(s => [s, currentDataSourceStats[s][`avg6Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof typeof currentDataSourceStats[StockSymbol]]])) },
+    { name: "9M", ...Object.fromEntries(currentStockSymbols.map(s => [s, currentDataSourceStats[s][`avg9Months${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof typeof currentDataSourceStats[StockSymbol]]])) },
+    { name: "1Y", ...Object.fromEntries(currentStockSymbols.map(s => [s, currentDataSourceStats[s][`avg1Year${chartType === 'dividend' ? '' : chartType.charAt(0).toUpperCase() + chartType.slice(1)}` as keyof typeof currentDataSourceStats[StockSymbol]]])) },
   ];
 
   const yAxisFormatter = (value: number) => {
