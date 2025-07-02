@@ -103,7 +103,7 @@ export function StatsChart({ stats, t }: StatsChartProps) {
             <Tooltip formatter={yAxisFormatter} />
             <Legend />
             {currentStockSymbols.map((symbol, index) => (
-              <Bar key={symbol} dataKey={symbol} fill={`hsl(${index * 137.5}, 70%, 50%)`} />
+              <Bar key={symbol} dataKey={symbol} fill={`hsl(${index * 50}, 75%, 60%)`} />
             ))}
           </BarChart>
         </ResponsiveContainer>
