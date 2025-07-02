@@ -16,6 +16,12 @@ export const translations = {
         chartTitle: "股價與股息趨勢圖",
         chartDescription: "折線圖顯示股價，柱狀圖顯示股息",
 
+        yieldChartTitle: "殖利率趨勢圖",
+        yieldChartDescription: "折線圖顯示殖利率",
+
+        volumeChartTitle: "成交量趨勢圖",
+        volumeChartDescription: "折線圖顯示成交量",
+
         // 統計
         statsTitle: "數據統計分析",
         statsDescription: "各股票近期平均股息和價格表現",
@@ -84,6 +90,12 @@ export const translations = {
         // 圖表
         chartTitle: "Stock Price and Dividend Trends",
         chartDescription: "Line chart shows stock prices, bar chart shows dividends",
+
+        yieldChartTitle: "Yield Trends",
+        yieldChartDescription: "Line chart shows yields",
+
+        volumeChartTitle: "Volume Trends",
+        volumeChartDescription: "Line chart shows volumes",
 
         // 統計
         statsTitle: "Financial Statistics Analysis",

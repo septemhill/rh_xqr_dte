@@ -59,8 +59,8 @@ export default function FinancialDashboard() {
           });
           return newItem;
         })} t={{
-            chartTitle: "Yield Trends",
-            chartDescription: "Comparison of yields",
+            chartTitle: t.yieldChartTitle,
+            chartDescription: t.yieldChartDescription,
           }} unit="yield"/>
 
         <FinancialChart chartData={chartData.map(item => {
@@ -72,8 +72,8 @@ export default function FinancialDashboard() {
           });
           return newItem;
         })} t={{
-            chartTitle: "Volume Trends",
-            chartDescription: "Comparison of volumes",
+            chartTitle: t.volumeChartTitle,
+            chartDescription: t.volumeChartDescription,
           }} unit="volume"/>
 
         {dividendStats && <StatsChart stats={dividendStats} t={t} selectedDataSource={selectedDataSource} />}
