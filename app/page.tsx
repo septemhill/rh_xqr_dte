@@ -61,12 +61,12 @@ export default function FinancialDashboard() {
         })} t={{
             chartTitle: "Yield Trends",
             chartDescription: "Comparison of yields",
-          }} unit="percent"/>
+          }} unit="yield"/>
 
         <FinancialChart chartData={chartData.map(item => {
           const newItem = { ...item };
           Object.keys(newItem).forEach(key => {
-            if (!key.endsWith('_volume')) {
+            if (!key.endsWith('_volume') && !key.endsWith('date')) {
               delete newItem[key];
             }
           });

@@ -18,6 +18,34 @@ const getInitialVisibility = (data: CombinedData[], dataKeys?: string[]) => {
   return initialState;
 };
 
+const formatYAxisTick = (value: number, unit?: 'dollar' | 'percent' | 'volume' | 'yield' | 'dividend' | 'price') => {
+  if (typeof value !== 'number') {
+    return value;
+  }
+
+  switch (unit) {
+    case 'volume':
+      if (value >= 1_000_000_000) {
+        return `${(value / 1_000_000_000).toFixed(1)}B`;
+      }
+      if (value >= 1_000_000) {
+        return `${(value / 1_000_000).toFixed(1)}M`;
+      }
+      if (value >= 1_000) {
+        return `${(value / 1_000).toFixed(1)}K`;
+      }
+      return value.toString();
+    case 'yield':
+      return `${value.toFixed(2)}%`;
+    case 'price':
+      return value.toFixed(2);
+    case 'dividend':
+      return value.toFixed(6);
+    default:
+      return value.toString();
+  }
+};
+
 interface FinancialChartProps {
   chartData: CombinedData[];
   t: {
@@ -54,19 +82,20 @@ export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: Fina
     const generatedSeries = keys.map(key => {
       const isDividend = key.endsWith('_dividend');
       const isYield = key.endsWith('_yield');
-      const fundName = key.replace(/_price|_dividend|_yield/, '');
+      const isVolume = key.endsWith('_volume');
+      const fundName = key.replace(/_price|_dividend|_yield|_volume/, '');
       let colorBase;
       const isIssuerComparisonPage = pathname === '/issuer-comparison/';
       switch (fundName) {
-        case 'XDTE': colorBase = 'hsl(0, 70%, 50%)'; break;
+        case 'XDTE': colorBase = 'hsl(0, 85%, 50%)'; break;
         case 'SDTY': colorBase = isIssuerComparisonPage ? 'hsl(60, 70%, 50%)' : 'hsl(0, 70%, 50%)'; break;
-        case 'QDTE': colorBase = 'hsl(120, 70%, 50%)'; break;
+        case 'QDTE': colorBase = 'hsl(160, 75%, 45%)'; break;
         case 'QDTY': colorBase = isIssuerComparisonPage ? 'hsl(60, 70%, 50%)' : 'hsl(120, 70%, 50%)'; break;
-        case 'RDTE': colorBase = 'hsl(240, 70%, 50%)'; break;
+        case 'RDTE': colorBase = 'hsl(220, 90%, 50%)'; break;
         case 'RDTY': colorBase = isIssuerComparisonPage ? 'hsl(30, 70%, 50%)' : 'hsl(240, 70%, 70%)'; break;
         default: colorBase = `hsl(${Math.random() * 360}, 70%, 50%)`;
       }
-      const seriesName = `${fundName} ${isDividend ? 'Dividend' : (isYield ? 'Yield' : 'Price')}`;
+      const seriesName = `${fundName} ${isDividend ? 'Dividend' : (isYield ? 'Yield' : (isVolume ? 'Volume' : 'Price'))}`;
       const seriesType = isDividend ? 'bar' : 'line';
       const yAxisId = isDividend ? 'dividend' : 'price';
       const strokeColor = isDividend ? colorBase : colorBase.replace('50%)', '40%)');
@@ -126,12 +155,12 @@ export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: Fina
             <ComposedChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="date" tick={{ fontSize: 12 }} tickFormatter={(value) => formatDate(value)} />
-              <YAxis yAxisId="price" orientation="left" tick={{ fontSize: 12 }} tickFormatter={(value) => (unit === 'dollar' || unit === 'volume' ? `${value}` : `${value.toFixed(2)}%`)} tickCount={8} />
-              <YAxis yAxisId="dividend" orientation="right" tick={{ fontSize: 12 }} tickFormatter={(value) => (unit === 'dollar' ? `${value}` : `${value.toFixed(2)}%`)} tickCount={8} />
+              <YAxis yAxisId="price" orientation="left" tick={{ fontSize: 12 }} tickFormatter={(value) => formatYAxisTick(value, unit)} tickCount={8} />
+              <YAxis yAxisId="dividend" orientation="right" tick={{ fontSize: 12 }} tickFormatter={(value) => formatYAxisTick(value, 'dividend')} tickCount={8} />
               <Brush dataKey="date" height={20} stroke="#8884d8" />
               <RechartsTooltip
                 formatter={(value: string | number, name: string) => {
-                  const formattedValue = unit === 'dollar' || unit === 'volume' ? formatCurrency(Number(value), 6) : `${Number(value).toFixed(2)}%`;
+                  const formattedValue = formatYAxisTick(Number(value), unit);
                   return [formattedValue, name];
                 }}
                 labelFormatter={(label) => `📅 ${formatDate(label)}`}
