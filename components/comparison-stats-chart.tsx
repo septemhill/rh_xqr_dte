@@ -17,7 +17,7 @@ interface ComparisonStatsChartProps {
   chartDescription: string;
 }
 
-type ChartType = "dividend" | "price" | "yield";
+type ChartType = "dividend" | "price" | "yield" | "volume";
 
 export function ComparisonStatsChart({ stats1, stats2, symbol1, symbol2, chartTitle, chartDescription }: ComparisonStatsChartProps) {
   const [chartType, setChartType] = useState<ChartType>("dividend");
@@ -49,6 +49,12 @@ export function ComparisonStatsChart({ stats1, stats2, symbol1, symbol2, chartTi
   const yAxisFormatter = (value: number) => {
     if (chartType === 'price') return formatCurrency(value, 2);
     if (chartType === 'yield') return `${value.toFixed(2)}%`;
+    if (chartType === 'volume') {
+        if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B`;
+        if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`;
+        if (value >= 1_000) return `${(value / 1_000).toFixed(1)}K`;
+        return value.toString();
+    }
     return formatCurrency(value, 6);
   };
 
@@ -66,6 +72,7 @@ export function ComparisonStatsChart({ stats1, stats2, symbol1, symbol2, chartTi
               <SelectItem value="dividend">{t.dividend}</SelectItem>
               <SelectItem value="price">{t.price}</SelectItem>
               <SelectItem value="yield">{t.yield}</SelectItem>
+              <SelectItem value="volume">{t.volume}</SelectItem>
             </SelectContent>
           </Select>
         </div>

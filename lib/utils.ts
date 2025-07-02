@@ -22,7 +22,7 @@ export const formatDate = (dateString: string) => {
 export const calculateAverage = (
   data: FinancialData[],
   fromDate: Date,
-  key: "dividend" | "price"
+  key: "dividend" | "price" | "volume"
 ): number => {
   const filteredData = data.filter((item) => {
     const itemDate = new Date(item.date);
@@ -86,6 +86,10 @@ export const calculateAllStats = (stocksData: StockData[]): DividendStats => {
       avg6MonthsYield: (calculateGeometricMean(yieldData, sixMonthsAgo, "yield") - 1) * 100,
       avg9MonthsYield: (calculateGeometricMean(yieldData, nineMonthsAgo, "yield") - 1) * 100,
       avg1YearYield: (calculateGeometricMean(yieldData, twelveMonthsAgo, "yield") - 1) * 100,
+      avg3MonthsVolume: calculateAverage(stock.data, threeMonthsAgo, "volume"),
+      avg6MonthsVolume: calculateAverage(stock.data, sixMonthsAgo, "volume"),
+      avg9MonthsVolume: calculateAverage(stock.data, nineMonthsAgo, "volume"),
+      avg1YearVolume: calculateAverage(stock.data, twelveMonthsAgo, "volume"),
     };
   });
 

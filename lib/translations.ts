@@ -10,6 +10,7 @@ export const translations = {
         price: "股價",
         dividend: "股息",
         yield: "殖利率",
+        volume: "成交量",
 
         // 圖表
         chartTitle: "股價與股息趨勢圖",
@@ -36,6 +37,7 @@ export const translations = {
         priceLabel: "股價",
         dividendLabel: "股息",
         dateLabel: "日期",
+        volumeLabel: "成交量",
 
         // 公司名稱
         companies: {
@@ -76,6 +78,7 @@ export const translations = {
         price: "Price",
         dividend: "Dividend",
         yield: "Yield",
+        volume: "Volume",
 
         // 圖表
         chartTitle: "Stock Price and Dividend Trends",
@@ -102,6 +105,7 @@ export const translations = {
         priceLabel: "Price",
         dividendLabel: "Dividend",
         dateLabel: "Date",
+        volumeLabel: "Volume",
 
         // 公司名稱
         companies: {
