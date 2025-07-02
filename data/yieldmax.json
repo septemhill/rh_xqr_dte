@@ -4,115 +4,134 @@
       "date": "2025-02-20",
       "dividend": 0.2221,
       "price": 50.39,
-      "yield": 22.92
+      "yield": 22.92,
+      "volume": 53756
     },
     {
       "date": "2025-02-27",
       "dividend": 0.1977,
       "price": 48.5,
-      "yield": 21.2
+      "yield": 21.2,
+      "volume": 36688
     },
     {
       "date": "2025-03-06",
       "dividend": 0.1709,
       "price": 47.02,
-      "yield": 18.9
+      "yield": 18.9,
+      "volume": 10580
     },
     {
       "date": "2025-03-13",
       "dividend": 0.2174,
       "price": 45.38,
-      "yield": 24.91
+      "yield": 24.91,
+      "volume": 14412
     },
     {
       "date": "2025-03-20",
       "dividend": 0.3175,
       "price": 46.16,
-      "yield": 35.77
+      "yield": 35.77,
+      "volume": 23621
     },
     {
       "date": "2025-03-27",
       "dividend": 0.2133,
       "price": 46.27,
-      "yield": 23.97
+      "yield": 23.97,
+      "volume": 8968
     },
     {
       "date": "2025-04-03",
       "dividend": 0.2723,
       "price": 43.18,
-      "yield": 32.79
+      "yield": 32.79,
+      "volume": 10694
     },
     {
       "date": "2025-04-10",
       "dividend": 0.227,
       "price": 40.34,
-      "yield": 29.26
+      "yield": 29.26,
+      "volume": 12851
     },
     {
       "date": "2025-04-17",
       "dividend": 0.3085,
       "price": 40.32,
-      "yield": 39.79
+      "yield": 39.79,
+      "volume": 5286
     },
     {
       "date": "2025-04-24",
       "dividend": 0.3024,
       "price": 41.09,
-      "yield": 38.27
+      "yield": 38.27,
+      "volume": 5890
     },
     {
       "date": "2025-05-01",
       "dividend": 0.311,
       "price": 41.91,
-      "yield": 38.59
+      "yield": 38.59,
+      "volume": 5476
     },
     {
       "date": "2025-05-08",
       "dividend": 0.2714,
       "price": 42.3365,
-      "yield": 33.33
+      "yield": 33.33,
+      "volume": 3342
     },
     {
       "date": "2025-05-15",
       "dividend": 0.2448,
       "price": 44.13,
-      "yield": 28.85
+      "yield": 28.85,
+      "volume": 4787
     },
     {
       "date": "2025-05-22",
       "dividend": 0.2732,
       "price": 43.0443,
-      "yield": 33
+      "yield": 33,
+      "volume": 3051
     },
     {
       "date": "2025-05-29",
       "dividend": 0.2578,
       "price": 43.4,
-      "yield": 30.89
+      "yield": 30.89,
+      "volume": 8265
     },
     {
       "date": "2025-06-05",
       "dividend": 0.2175,
       "price": 43.46,
-      "yield": 26.02
+      "yield": 26.02,
+      "volume": 7617
     },
     {
       "date": "2025-06-12",
       "dividend": 0.2258,
       "price": 44.02,
-      "yield": 26.67
+      "yield": 26.67,
+      "volume": 3921
     },
     {
       "date": "2025-06-20",
       "dividend": 0.2233,
       "price": 43.4,
-      "yield": 26.75
+      "yield": 26.75,
+      "volume": 6530
     },
     {
       "date": "2025-06-26",
       "dividend": 0.1151,
       "price": 44.43,
-      "yield": 13.47
+      "yield": 13.47,
+      "volume": 7585
     }
   ],
   "QDTY": [
@@ -120,109 +139,127 @@
       "date": "2025-02-27",
       "dividend": 0.3231,
       "price": 47.37,
-      "yield": 35.47
+      "yield": 35.47,
+      "volume": 8863
     },
     {
       "date": "2025-03-06",
       "dividend": 0.158,
       "price": 46.18,
-      "yield": 17.79
+      "yield": 17.79,
+      "volume": 11824
     },
     {
       "date": "2025-03-13",
       "dividend": 0.246,
       "price": 44.31,
-      "yield": 28.87
+      "yield": 28.87,
+      "volume": 12475
     },
     {
       "date": "2025-03-20",
       "dividend": 0.3124,
       "price": 45.25,
-      "yield": 35.9
+      "yield": 35.9,
+      "volume": 21776
     },
     {
       "date": "2025-03-27",
       "dividend": 0.2711,
       "price": 45.19,
-      "yield": 31.2
+      "yield": 31.2,
+      "volume": 9492
     },
     {
       "date": "2025-04-03",
       "dividend": 0.2638,
       "price": 41.48,
-      "yield": 33.07
+      "yield": 33.07,
+      "volume": 10028
     },
     {
       "date": "2025-04-10",
       "dividend": 0.2199,
       "price": 38.34,
-      "yield": 29.82
+      "yield": 29.82,
+      "volume": 16897
     },
     {
       "date": "2025-04-17",
       "dividend": 0.332,
       "price": 38.08,
-      "yield": 45.34
+      "yield": 45.34,
+      "volume": 16241
     },
     {
       "date": "2025-04-24",
       "dividend": 0.3231,
       "price": 39.21,
-      "yield": 42.85
+      "yield": 42.85,
+      "volume": 10258
     },
     {
       "date": "2025-05-01",
       "dividend": 0.3362,
       "price": 39.8,
-      "yield": 43.93
+      "yield": 43.93,
+      "volume": 10959
     },
     {
       "date": "2025-05-08",
       "dividend": 0.2841,
       "price": 40.35,
-      "yield": 36.61
+      "yield": 36.61,
+      "volume": 2879
     },
     {
       "date": "2025-05-15",
       "dividend": 0.2347,
       "price": 42.54,
-      "yield": 28.69
+      "yield": 28.69,
+      "volume": 3450
     },
     {
       "date": "2025-05-22",
       "dividend": 0.3249,
       "price": 41.97,
-      "yield": 40.25
+      "yield": 40.25,
+      "volume": 1794
     },
     {
       "date": "2025-05-29",
       "dividend": 0.3115,
       "price": 42.21,
-      "yield": 38.37
+      "yield": 38.37,
+      "volume": 2012
     },
     {
       "date": "2025-06-05",
       "dividend": 0.2307,
       "price": 42.44,
-      "yield": 28.27
+      "yield": 28.27,
+      "volume": 6934
     },
     {
       "date": "2025-06-12",
       "dividend": 0.2572,
       "price": 43.06,
-      "yield": 31.06
+      "yield": 31.06,
+      "volume": 6719
     },
     {
       "date": "2025-06-20",
       "dividend": 0.2342,
       "price": 42.43,
-      "yield": 28.7
+      "yield": 28.7,
+      "volume": 4528
     },
     {
       "date": "2025-06-26",
       "dividend": 0.1188,
       "price": 43.65,
-      "yield": 14.15
+      "yield": 14.15,
+      "volume": 4040
     }
   ],
   "RDTY": [
@@ -230,91 +267,106 @@
       "date": "2025-03-20",
       "dividend": 0.3193,
       "price": 49.1797,
-      "yield": 33.76
+      "yield": 33.76,
+      "volume": 7684
     },
     {
       "date": "2025-03-27",
       "dividend": 0.3037,
       "price": 48.8726,
-      "yield": 32.31
+      "yield": 32.31,
+      "volume": 2000
     },
     {
       "date": "2025-04-03",
       "dividend": 0.3351,
       "price": 44.16,
-      "yield": 39.46
+      "yield": 39.46,
+      "volume": 6192
     },
     {
       "date": "2025-04-10",
       "dividend": 0.359,
       "price": 40.8,
-      "yield": 45.75
+      "yield": 45.75,
+      "volume": 3963
     },
     {
       "date": "2025-04-17",
       "dividend": 0.3745,
       "price": 41.6288,
-      "yield": 46.78
+      "yield": 46.78,
+      "volume": 3770
     },
     {
       "date": "2025-04-24",
       "dividend": 0.457,
       "price": 42.7049,
-      "yield": 55.65
+      "yield": 55.65,
+      "volume": 4638
     },
     {
       "date": "2025-05-01",
       "dividend": 0.4696,
       "price": 43.0849,
-      "yield": 56.68
+      "yield": 56.68,
+      "volume": 4733
     },
     {
       "date": "2025-05-08",
       "dividend": 0.4634,
       "price": 43.95,
-      "yield": 54.83
+      "yield": 54.83,
+      "volume": 5726
     },
     {
       "date": "2025-05-15",
       "dividend": 0.2447,
       "price": 45.38,
-      "yield": 28.04
+      "yield": 28.04,
+      "volume": 2508
     },
     {
       "date": "2025-05-22",
       "dividend": 0.3446,
       "price": 44.38,
-      "yield": 40.38
+      "yield": 40.38,
+      "volume": 8114
     },
     {
       "date": "2025-05-29",
       "dividend": 0.3538,
       "price": 44.41,
-      "yield": 41.43
+      "yield": 41.43,
+      "volume": 985
     },
     {
       "date": "2025-06-05",
       "dividend": 0.2108,
       "price": 44.98,
-      "yield": 24.37
+      "yield": 24.37,
+      "volume": 1558
     },
     {
       "date": "2025-06-12",
       "dividend": 0.3038,
       "price": 45.68,
-      "yield": 34.58
+      "yield": 34.58,
+      "volume": 1641
     },
     {
       "date": "2025-06-20",
       "dividend": 0.3265,
       "price": 45.23,
-      "yield": 37.54
+      "yield": 37.54,
+      "volume": 2092
     },
     {
       "date": "2025-06-26",
       "dividend": 0.2035,
       "price": 45.78,
-      "yield": 23.11
+      "yield": 23.11,
+      "volume": 4611
     }
   ]
 }
