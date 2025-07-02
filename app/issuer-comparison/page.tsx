@@ -190,6 +190,7 @@ export default function IssuerComparisonPage() {
             symbol2="XDTE"
             chartTitle="SDTY vs XDTE Stats"
             chartDescription={t.comparison.statsComparison}
+            tooltipText={t.comparison.avgStats}
           />
       )}
       {QDTYQDTEData.length > 0 && (
@@ -222,6 +223,7 @@ export default function IssuerComparisonPage() {
             symbol2="QDTE"
             chartTitle="QDTY vs QDTE Stats"
             chartDescription={t.comparison.statsComparison}
+            tooltipText={t.comparison.avgStats}
           />
       )}
       {RDTYRDTEData.length > 0 && (
@@ -254,6 +256,7 @@ export default function IssuerComparisonPage() {
             symbol2="RDTE"
             chartTitle="RDTY vs RDTE Stats"
             chartDescription={t.comparison.statsComparison}
+            tooltipText={t.comparison.avgStats}
           />
       )}
 

@@ -1,12 +1,14 @@
 "use client"
 
 import { useState } from "react";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip as RechartsTooltip, Legend, ResponsiveContainer } from "recharts";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Stats } from "@/lib/types";
 import { formatCurrency } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { HelpCircle } from 'lucide-react';
 
 interface ComparisonStatsChartProps {
   stats1: Stats;
@@ -15,11 +17,12 @@ interface ComparisonStatsChartProps {
   symbol2: string;
   chartTitle: string;
   chartDescription: string;
+  tooltipText?: string;
 }
 
 type ChartType = "dividend" | "price" | "yield" | "volume";
 
-export function ComparisonStatsChart({ stats1, stats2, symbol1, symbol2, chartTitle, chartDescription }: ComparisonStatsChartProps) {
+export function ComparisonStatsChart({ stats1, stats2, symbol1, symbol2, chartTitle, chartDescription, tooltipText }: ComparisonStatsChartProps) {
   const [chartType, setChartType] = useState<ChartType>("dividend");
   const { t } = useLanguage();
 
@@ -61,7 +64,23 @@ export function ComparisonStatsChart({ stats1, stats2, symbol1, symbol2, chartTi
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{chartTitle}</CardTitle>
+        <div className="flex items-center">
+          <CardTitle>{chartTitle}</CardTitle>
+          {tooltipText && (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <span className="ml-2 cursor-pointer">
+                    <HelpCircle className="h-4 w-4 text-muted-foreground" />
+                  </span>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{tooltipText}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          )}
+        </div>
         <CardDescription>{chartDescription}</CardDescription>
         <div className="pt-4">
           <Select value={chartType} onValueChange={(value: ChartType) => setChartType(value)}>
@@ -83,7 +102,18 @@ export function ComparisonStatsChart({ stats1, stats2, symbol1, symbol2, chartTi
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis tickFormatter={yAxisFormatter} tickCount={8} />
-            <Tooltip formatter={yAxisFormatter} />
+            <RechartsTooltip 
+              formatter={yAxisFormatter}
+              contentStyle={{
+                backgroundColor: "hsl(var(--background))",
+                border: "1px solid hsl(var(--border))",
+                color: "hsl(var(--foreground))"
+              }}
+              labelStyle={{
+                color: "hsl(var(--foreground))",
+                fontWeight: "bold"
+              }}
+            />
             <Legend />
             <Bar dataKey={symbol1} fill="hsl(var(--chart-1))" />
             <Bar dataKey={symbol2} fill="hsl(var(--chart-2))" />

@@ -59,7 +59,8 @@ export const translations = {
             notesTitle: "註解",
             notesContent: "此區塊用於說明資料來源、計算方式以及圖表的奇怪成因。",
             dataSource: "資料來源：https://www.alphavantage.co/",
-            lineDiscontinous: "線段不連續的主因，為分發配息的日子不同所導致"
+            lineDiscontinous: "線段不連續的主因，為分發配息的日子不同所導致",
+            avgStats: "該數據為近幾個月的平均數據，殖利率採用幾何平均，其餘採用算術平均"
         },
 
         issuer: {
@@ -127,7 +128,8 @@ export const translations = {
             notesTitle: "Notes",
             notesContent: "This section provides information on data sources, calculation methods, and unusual chart behaviors.",
             dataSource: "Data source: https://www.alphavantage.co/",
-            lineDiscontinous: "The gaps in the line chart are caused by variations in dividend distribution dates, which lead to missing data points on certain days."
+            lineDiscontinous: "The gaps in the line chart are caused by variations in dividend distribution dates, which lead to missing data points on certain days.",
+            avgStats: "This data is the average of recent months, geometric average for yield, and arithmetic average for the rest."
         },
 
         issuer: {
