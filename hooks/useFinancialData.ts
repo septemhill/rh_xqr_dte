@@ -44,6 +44,7 @@ export function useFinancialData(language: Language, dataSource: DataSource = "r
                         dataPoint[`${stock.symbol}_price`] = stockDataForDate?.price || null;
                         dataPoint[`${stock.symbol}_dividend`] = stockDataForDate?.dividend || null;
                         dataPoint[`${stock.symbol}_yield`] = stockDataForDate?.yield || null;
+                        dataPoint[`${stock.symbol}_volume`] = stockDataForDate?.volume || null;
                     });
                     return dataPoint;
                 });

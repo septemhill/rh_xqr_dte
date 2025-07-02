@@ -3,6 +3,7 @@ export interface FinancialData {
     dividend: number;
     price: number;
     yield: number;
+    volume: number;
 }
 
 export interface StockData {

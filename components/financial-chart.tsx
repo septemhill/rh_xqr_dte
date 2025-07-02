@@ -26,7 +26,7 @@ interface FinancialChartProps {
     tooltipText?: string;
   };
   dataKeys?: string[];
-  unit?: 'dollar' | 'percent';
+  unit?: 'dollar' | 'percent' | 'volume' | 'yield' | 'dividend' | 'price';
 }
 
 interface LegendClickArgs {
@@ -126,12 +126,12 @@ export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: Fina
             <ComposedChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="date" tick={{ fontSize: 12 }} tickFormatter={(value) => formatDate(value)} />
-              <YAxis yAxisId="price" orientation="left" tick={{ fontSize: 12 }} tickFormatter={(value) => (unit === 'dollar' ? `${value}` : `${value.toFixed(2)}%`)} tickCount={8} />
+              <YAxis yAxisId="price" orientation="left" tick={{ fontSize: 12 }} tickFormatter={(value) => (unit === 'dollar' || unit === 'volume' ? `${value}` : `${value.toFixed(2)}%`)} tickCount={8} />
               <YAxis yAxisId="dividend" orientation="right" tick={{ fontSize: 12 }} tickFormatter={(value) => (unit === 'dollar' ? `${value}` : `${value.toFixed(2)}%`)} tickCount={8} />
               <Brush dataKey="date" height={20} stroke="#8884d8" />
               <RechartsTooltip
                 formatter={(value: string | number, name: string) => {
-                  const formattedValue = unit === 'dollar' ? formatCurrency(Number(value), 6) : `${Number(value).toFixed(2)}%`;
+                  const formattedValue = unit === 'dollar' || unit === 'volume' ? formatCurrency(Number(value), 6) : `${Number(value).toFixed(2)}%`;
                   return [formattedValue, name];
                 }}
                 labelFormatter={(label) => `📅 ${formatDate(label)}`}

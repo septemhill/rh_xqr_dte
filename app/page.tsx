@@ -43,7 +43,7 @@ export default function FinancialDashboard() {
         <FinancialChart chartData={chartData.map(item => {
           const newItem = { ...item };
           Object.keys(newItem).forEach(key => {
-            if (key.endsWith('_yield')) {
+            if (key.endsWith('_yield') || key.endsWith('volume')) {
               delete newItem[key];
             }
           });
@@ -62,6 +62,19 @@ export default function FinancialDashboard() {
             chartTitle: "Yield Trends",
             chartDescription: "Comparison of yields",
           }} unit="percent"/>
+
+        <FinancialChart chartData={chartData.map(item => {
+          const newItem = { ...item };
+          Object.keys(newItem).forEach(key => {
+            if (!key.endsWith('_volume')) {
+              delete newItem[key];
+            }
+          });
+          return newItem;
+        })} t={{
+            chartTitle: "Volume Trends",
+            chartDescription: "Comparison of volumes",
+          }} unit="volume"/>
 
         {dividendStats && <StatsChart stats={dividendStats} t={t} selectedDataSource={selectedDataSource} />}
       </div>
