@@ -6,6 +6,7 @@ import { formatDate } from "@/lib/utils";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { HelpCircle } from 'lucide-react';
 import { CombinedData } from "@/lib/types";
+import { Payload } from 'recharts/types/component/DefaultLegendContent'; // 導入 Recharts 的 Payload 類型
 
 const getInitialVisibility = (data: CombinedData[], dataKeys?: string[]) => {
   if (!data || data.length === 0) return {};
@@ -57,10 +58,6 @@ interface FinancialChartProps {
   unit?: 'dollar' | 'percent' | 'volume' | 'yield' | 'dividend' | 'price';
 }
 
-interface LegendClickArgs {
-  dataKey: string;
-}
-
 export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: FinancialChartProps) {
   const pathname = usePathname();
   const [visibility, setVisibility] = useState<{ [key: string]: boolean }>(getInitialVisibility(chartData, dataKeys));
@@ -69,9 +66,14 @@ export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: Fina
     setVisibility(getInitialVisibility(chartData, dataKeys));
   }, [chartData, dataKeys]);
 
-  const handleLegendClick = (dataKey: LegendClickArgs) => {
-    const key = dataKey.dataKey as string;
-    setVisibility(prev => ({ ...prev, [key]: !prev[key] }));
+  // 更新 handleLegendClick 函數，使用 Recharts 的 Payload 類型
+  // Payload 包含 dataKey 和其他資訊
+  const handleLegendClick = (data: Payload) => {
+    // 檢查 dataKey 是否存在且為字串
+    if (typeof data.dataKey === 'string') {
+      const key = data.dataKey;
+      setVisibility(prev => ({ ...prev, [key]: !prev[key] }));
+    }
   };
 
   const dynamicSeries = () => {
