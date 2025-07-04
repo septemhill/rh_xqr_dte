@@ -39,6 +39,7 @@ interface PriceResponse {
 
 async function fetchData() {
     const m = new Map<string, Record<string, DividendPrice[]>>();
+    let hasErrors = false;
 
     for (const issuerName in issuer) {
         if (issuer.hasOwnProperty(issuerName)) {
@@ -96,6 +97,7 @@ async function fetchData() {
 
                 } catch (error) {
                     console.error(`Failed to fetch data for ${symbol}:`, error);
+                    hasErrors = true;
                 }
                 console.log('---'); // Separator for better readability
             }
@@ -103,6 +105,10 @@ async function fetchData() {
             // Save the data in the map
             m.set(issuerName, issuerData);
         }
+    }
+
+    if (hasErrors) {
+        throw new Error('One or more fetch operations failed. No files will be written.');
     }
 
     return m
@@ -124,4 +130,6 @@ fetchData().then(data => {
             }
         });
     });
+}).catch(error => {
+    console.error(error.message);
 });

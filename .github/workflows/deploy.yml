@@ -69,21 +69,30 @@ jobs:
         run: pnpm install
 
       - name: Run scheduled script
+        id: schedule
         run: pnpm run schedule
         env:
           ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
 
       - name: Commit changes if any
+        if: success() && steps.schedule.outcome == 'success'
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git diff --cached --quiet || git commit -m "Auto update via schedule"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto update via schedule"
+            git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}
+            git push
+          fi
 
       - name: Trigger build-and-deploy workflow via API
+        if: success() && steps.schedule.outcome == 'success'
         run: |
+          set -e
           curl -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.GH_PAT }}" \
