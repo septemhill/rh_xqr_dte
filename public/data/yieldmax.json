@@ -146,6 +146,13 @@
       "price": 45.145,
       "yield": 16.1,
       "volume": 5688
+    },
+    {
+      "date": "2025-07-17",
+      "dividend": 0.1481,
+      "price": 45.1586,
+      "yield": 17.05,
+      "volume": 15585
     }
   ],
   "QDTY": [
@@ -422,7 +429,7 @@
       "dividend": 0.333,
       "price": 46.1301,
       "yield": 37.54,
-      "volume": 9017
+      "volume": 9131
     }
   ]
 }
