@@ -316,6 +316,13 @@
       "price": 44.81,
       "yield": 22.56,
       "volume": 3706
+    },
+    {
+      "date": "2025-07-31",
+      "dividend": 0.1707,
+      "price": 44.94,
+      "yield": 19.75,
+      "volume": 7025
     }
   ],
   "RDTY": [
