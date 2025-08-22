@@ -185,9 +185,9 @@
     {
       "date": "2025-08-21",
       "dividend": 0.1681,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.7842,
+      "yield": 19.52,
+      "volume": 6479
     }
   ],
   "QDTY": [
@@ -365,6 +365,13 @@
       "price": 45.1696,
       "yield": 22.07,
       "volume": 8793
+    },
+    {
+      "date": "2025-08-21",
+      "dividend": 0.1912,
+      "price": 43.947,
+      "yield": 22.62,
+      "volume": 3487
     }
   ],
   "RDTY": [
@@ -525,9 +532,9 @@
     {
       "date": "2025-08-21",
       "dividend": 0.3935,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.1898,
+      "yield": 46.3,
+      "volume": 2465
     }
   ]
 }
