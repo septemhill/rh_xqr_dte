@@ -516,7 +516,7 @@
       "dividend": 0.25398,
       "price": 43.48,
       "yield": 30.37,
-      "volume": 532687
+      "volume": 533217
     }
   ],
   "QDTE": [
@@ -1030,6 +1030,13 @@
       "price": 35.625,
       "yield": 34,
       "volume": 494253
+    },
+    {
+      "date": "2025-08-21",
+      "dividend": 0.23925,
+      "price": 34.55,
+      "yield": 36.01,
+      "volume": 1358326
     }
   ],
   "RDTE": [
@@ -1367,7 +1374,7 @@
       "dividend": 0.254822,
       "price": 33.01,
       "yield": 40.14,
-      "volume": 71715
+      "volume": 72093
     }
   ]
 }
