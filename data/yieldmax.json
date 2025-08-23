@@ -187,7 +187,7 @@
       "dividend": 0.1681,
       "price": 44.7842,
       "yield": 19.52,
-      "volume": 6479
+      "volume": 6491
     }
   ],
   "QDTY": [
@@ -371,7 +371,7 @@
       "dividend": 0.1912,
       "price": 43.947,
       "yield": 22.62,
-      "volume": 3487
+      "volume": 3505
     }
   ],
   "RDTY": [
@@ -534,7 +534,7 @@
       "dividend": 0.3935,
       "price": 44.1898,
       "yield": 46.3,
-      "volume": 2465
+      "volume": 2483
     }
   ]
 }
