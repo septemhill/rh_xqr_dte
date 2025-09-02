@@ -18,6 +18,29 @@ export default function FinancialDashboard() {
     setSelectedDataSource(value as DataSource);
   };
 
+  const priceAndCumulativeDividendChartData = (() => {
+    const cumulativeDividends: { [key: string]: number } = {};
+    return chartData.map(item => {
+      const newItem = { ...item };
+      Object.keys(newItem).forEach(key => {
+        if (key.endsWith('_dividend')) {
+          const symbol = key.replace('_dividend', '');
+          if (!cumulativeDividends[symbol]) {
+            cumulativeDividends[symbol] = 0;
+          }
+          cumulativeDividends[symbol] += Number(newItem[key] || 0);
+          newItem[key] = Math.trunc(cumulativeDividends[symbol] * 1000000) / 1000000;
+        }
+      });
+      Object.keys(newItem).forEach(key => {
+        if (key.endsWith('_yield') || key.endsWith('volume')) {
+          delete newItem[key];
+        }
+      });
+      return newItem;
+    });
+  })();
+
   if (loading) {
     return <LoadingSkeleton t={t} />;
   }
@@ -40,15 +63,7 @@ export default function FinancialDashboard() {
           ))}
         </div>
 
-        <FinancialChart chartData={chartData.map(item => {
-          const newItem = { ...item };
-          Object.keys(newItem).forEach(key => {
-            if (key.endsWith('_yield') || key.endsWith('volume')) {
-              delete newItem[key];
-            }
-          });
-          return newItem;
-        })} t={t} />
+        <FinancialChart chartData={priceAndCumulativeDividendChartData} t={t} />
 
         <FinancialChart chartData={chartData.map(item => {
           const newItem = { ...item };

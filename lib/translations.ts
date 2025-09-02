@@ -13,8 +13,8 @@ export const translations = {
         volume: "成交量",
 
         // 圖表
-        chartTitle: "股價與股息趨勢圖",
-        chartDescription: "折線圖顯示股價，柱狀圖顯示股息",
+        chartTitle: "股價與累進股息趨勢圖",
+        chartDescription: "折線圖顯示股價，柱狀圖顯示累進股息",
 
         yieldChartTitle: "殖利率趨勢圖",
         yieldChartDescription: "折線圖顯示殖利率",
@@ -88,8 +88,8 @@ export const translations = {
         volume: "Volume",
 
         // 圖表
-        chartTitle: "Stock Price and Dividend Trends",
-        chartDescription: "Line chart shows stock prices, bar chart shows dividends",
+        chartTitle: "Stock Price and Cumulative Dividend Trends",
+        chartDescription: "Line chart shows stock prices, bar chart shows cumulative dividends",
 
         yieldChartTitle: "Yield Trends",
         yieldChartDescription: "Line chart shows yields",

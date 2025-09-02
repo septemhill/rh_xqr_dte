@@ -29,14 +29,6 @@ interface DividendResponse {
     data: { ex_dividend_date: string, declaration_date: string, record_date: string, payment_date: string, amount: string }[]
 }
 
-interface PriceResponse {
-    'Time Series (Daily)': {
-        [date: string]: {
-            '1. open': string, '2. high': string, '3. low': string, '4. close': string, '5. volume': string
-        }
-    };
-}
-
 async function fetchData() {
     const m = new Map<string, Record<string, DividendPrice[]>>();
     let hasErrors = false;
