@@ -198,10 +198,10 @@
     },
     {
       "date": "2025-09-04",
-      "dividend": 0.3825,
+      "dividend": 0.19,
       "price": 44.9698,
-      "yield": 44.23,
-      "volume": 3830
+      "yield": 21.97,
+      "volume": 3837
     }
   ],
   "QDTY": [
@@ -396,10 +396,10 @@
     },
     {
       "date": "2025-09-04",
-      "dividend": 0.3825,
+      "dividend": 0.2833,
       "price": 43.7444,
-      "yield": 45.47,
-      "volume": 3199
+      "yield": 33.68,
+      "volume": 3238
     }
   ],
   "RDTY": [
@@ -573,10 +573,10 @@
     },
     {
       "date": "2025-09-04",
-      "dividend": 0.3825,
+      "dividend": 0.4502,
       "price": 44.53,
-      "yield": 44.67,
-      "volume": 5118
+      "yield": 52.57,
+      "volume": 5120
     }
   ]
 }
