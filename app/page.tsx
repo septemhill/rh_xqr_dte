@@ -78,6 +78,8 @@ export default function FinancialDashboard() {
           );
         })}
 
+        <FinancialChart chartData={priceAndCumulativeDividendChartData} t={t} />
+
         <FinancialChart chartData={chartData.map(item => {
           const newItem = { ...item };
           Object.keys(newItem).forEach(key => {

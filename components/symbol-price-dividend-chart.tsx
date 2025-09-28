@@ -69,8 +69,7 @@ export function SymbolPriceDividendChart({ chartData, symbol, t }: SymbolPriceDi
               <YAxis tick={{ fontSize: 12 }} tickFormatter={(value) => formatCurrency(Number(value), 2)} />
               <Tooltip
                 formatter={(value: number, name: string) => {
-                  const originalName = name === priceKey ? 'Price' : 'Cumulative Dividend';
-                  return [formatCurrency(value, 4), originalName];
+                  return [formatCurrency(value, 4), name];
                 }}
                 labelFormatter={(label) => `📅 ${formatDate(label)}`}
                 contentStyle={{
