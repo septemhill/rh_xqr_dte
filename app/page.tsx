@@ -8,6 +8,7 @@ import { LoadingSkeleton } from "@/components/loading-skeleton";
 import { StockDataTable } from "@/components/stock-data-table";
 import { FinancialChart } from "@/components/financial-chart";
 import { StatsChart } from "@/components/stats-chart";
+import { SymbolPriceDividendChart } from "@/components/symbol-price-dividend-chart";
 
 export default function FinancialDashboard() {
   const { language, t } = useLanguage();
@@ -63,7 +64,19 @@ export default function FinancialDashboard() {
           ))}
         </div>
 
-        <FinancialChart chartData={priceAndCumulativeDividendChartData} t={t} />
+        {stocksData.map(stock => {
+          const symbol = stock.symbol;
+          return (
+            <SymbolPriceDividendChart
+              key={symbol}
+              symbol={symbol}
+              chartData={priceAndCumulativeDividendChartData}
+              t={{
+                chartTitle: `${symbol} - ${t.chartTitle}`,
+                chartDescription: t.chartDescription,
+              }} />
+          );
+        })}
 
         <FinancialChart chartData={chartData.map(item => {
           const newItem = { ...item };
