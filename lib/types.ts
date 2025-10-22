@@ -12,7 +12,7 @@ export interface StockData {
     data: FinancialData[];
 }
 
-export type StockSymbol = "XDTE" | "QDTE" | "RDTE" | "SDTY" | "QDTY" | "RDTY";
+export type StockSymbol = "XDTE" | "QDTE" | "RDTE" | "WPAY" | "SDTY" | "QDTY" | "RDTY" | "YMAX";
 
 export interface Stats {
     avg3Months: number;

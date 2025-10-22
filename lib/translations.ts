@@ -14,7 +14,7 @@ export const translations = {
 
         // 圖表
         chartTitle: "股價與累進股息趨勢圖",
-        chartDescription: "折線圖顯示股價，柱狀圖顯示累進股息",
+        chartDescription: "堆疊柱狀圖顯示股價及累進股息",
 
         yieldChartTitle: "殖利率趨勢圖",
         yieldChartDescription: "折線圖顯示殖利率",
@@ -78,7 +78,7 @@ export const translations = {
     },
     en: {
         // 頁面標題
-        pageTitle: "0DTE Covered Call Dashboard",
+        pageTitle: "Dividend ETFs Dashboard",
         pageDescription: "Overview of stock prices and dividend information",
         loading: "Loading...",
 
@@ -91,7 +91,7 @@ export const translations = {
 
         // 圖表
         chartTitle: "Stock Price and Cumulative Dividend Trends",
-        chartDescription: "Line chart shows stock prices, bar chart shows cumulative dividends",
+        chartDescription: "Stacked Bar chart shows stock prices and cumulative dividends",
 
         yieldChartTitle: "Yield Trends",
         yieldChartDescription: "Line chart shows yields",

@@ -1,8 +1,8 @@
-# 0DTE Covered Call ETF Dashboard
+# Dividend ETF Dashboard
 
 ## Table of Contents
 
-- [0DTE Covered Call ETF Dashboard](#0dte-covered-call-etf-dashboard)
+- [Dividend ETF Dashboard](#dividend-etf-dashboard)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [GitHub Pages](#github-pages)

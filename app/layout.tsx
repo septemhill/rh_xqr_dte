@@ -7,7 +7,7 @@ import ClientLayoutContent from "./client-layout-content"; // We'll create this 
 
 // Define Metadata here (in a Server Component)
 export const metadata: Metadata = {
-  title: "0DTE Covered Call", // Default title, ClientLayoutContent will update it dynamically
+  title: "Dividend ETFs", // Default title, ClientLayoutContent will update it dynamically
   description: "Your go-to platform for in-depth analysis and comparison of high-yield ETFs.",
   icons: {
     icon: "/favicon.ico",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   keywords: ["YieldMax", "Roundhill", "ETFs", "high yield", "dividends", "investment", "financial analysis", "0DTE", "Covered Call"],
-  authors: [{ name: "Your Name/Organization" }],
+  authors: [{ name: "Septem/Maluku" }],
 };
 
 export default function RootLayout({
