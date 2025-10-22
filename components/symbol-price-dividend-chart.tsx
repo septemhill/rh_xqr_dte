@@ -28,7 +28,7 @@ export function SymbolPriceDividendChart({ chartData, symbol, t }: SymbolPriceDi
       [dividendKey]: cumulativeDividend,
       // 為了堆疊效果，我們需要一個代表總和的鍵，但這裡我們直接堆疊 price 和 dividend
     };
-  }).filter(item => item[priceKey] > 0 || item[dividendKey] > 0); // 過濾掉沒有數據的日期
+  }).filter(item => (item[priceKey] > 0 && item[dividendKey] > 0)); // 過濾掉沒有數據的日期
 
   if (!stackedChartData || stackedChartData.length === 0) {
     return (

@@ -31,6 +31,9 @@ export default function IssuerComparisonPage() {
         RDTE_price: item.RDTE_price,
         RDTE_dividend: item.RDTE_dividend,
         RDTE_yield: item.RDTE_yield,
+        WPAY_price: item.WPAY_price,
+        WPAY_dividend: item.WPAY_dividend,
+        WPAY_yield: item.WPAY_yield,
 
         // YieldMax fields (initialized to null, will be populated if found)
         SDTY_price: null, 
@@ -42,6 +45,9 @@ export default function IssuerComparisonPage() {
         RDTY_price: null,
         RDTY_dividend: null,
         RDTY_yield: null,
+        YMAX_price: null,
+        YMAX_dividend: null,
+        YMAX_yield: null,
         // If there are other YieldMax specific symbols, initialize them here too
       });
     }
@@ -63,6 +69,9 @@ export default function IssuerComparisonPage() {
         existingEntry.SDTY_price = item.SDTY_price;
         existingEntry.SDTY_dividend = item.SDTY_dividend;
         existingEntry.SDTY_yield = item.SDTY_yield;
+        existingEntry.YMAX_price = item.YMAX_price;
+        existingEntry.YMAX_dividend = item.YMAX_dividend;
+        existingEntry.YMAX_yield = item.YMAX_yield;
         // Also update QDTE/RDTE if they exist in YieldMax and Roundhill has null for them,
         // or if YieldMax data should take precedence for these
         existingEntry.QDTE_price = item.QDTE_price || existingEntry.QDTE_price;
@@ -74,6 +83,9 @@ export default function IssuerComparisonPage() {
         existingEntry.XDTE_price = item.XDTE_price || existingEntry.XDTE_price;
         existingEntry.XDTE_dividend = item.XDTE_dividend || existingEntry.XDTE_dividend;
         existingEntry.XDTE_yield = item.XDTE_yield || existingEntry.XDTE_yield;
+        existingEntry.WPAY_price = item.WPAY_price || existingEntry.WPAY_price;
+        existingEntry.WPAY_dividend = item.WPAY_dividend || existingEntry.WPAY_dividend;
+        existingEntry.WPAY_yield = item.WPAY_yield || existingEntry.WPAY_yield;
 
         // If there are other YieldMax specific symbols, merge them here
       } else {
@@ -90,6 +102,9 @@ export default function IssuerComparisonPage() {
           RDTE_price: null,
           RDTE_dividend: null,
           RDTE_yield: null,
+          WPAY_price: null,
+          WPAY_dividend: null,
+          WPAY_yield: null,
           // YieldMax fields (from the current item)
           SDTY_price: item.SDTY_price,
           SDTY_dividend: item.SDTY_dividend,
@@ -100,6 +115,9 @@ export default function IssuerComparisonPage() {
           RDTY_price: item.RDTY_price,
           RDTY_dividend: item.RDTY_dividend,
           RDTY_yield: item.RDTY_yield,
+          YMAX_price: item.YMAX_price,
+          YMAX_dividend: item.YMAX_dividend,
+          YMAX_yield: item.YMAX_yield,
           // If there are other YieldMax specific symbols, add them here
         });
       }
@@ -116,6 +134,14 @@ export default function IssuerComparisonPage() {
     SDTY_dividend: item.SDTY_dividend,
     XDTE_price: item.XDTE_price,
     XDTE_dividend: item.XDTE_dividend,
+  }));
+
+  const WPAYYMAXData = combinedChartData.map((item) => ({
+    date: item.date,
+    WPAY_price: item.WPAY_price,
+    WPAY_dividend: item.WPAY_dividend,
+    YMAX_price: item.YMAX_price,
+    YMAX_dividend: item.YMAX_dividend,
   }));
 
   const QDTYQDTEData = combinedChartData.map(({ date, QDTY_price, QDTY_dividend, QDTE_price, QDTE_dividend }) => ({
@@ -143,6 +169,12 @@ export default function IssuerComparisonPage() {
     XDTE_yield,
   }));
 
+  const WPAYYMAXYieldData = combinedChartData.map(({ date, WPAY_yield, YMAX_yield }) => ({
+    date,
+    WPAY_yield,
+    YMAX_yield,
+  }));
+
   const QDTYQDTEYieldData = combinedChartData.map(({ date, QDTY_yield, QDTE_yield }) => ({
     date,
     QDTY_yield,
@@ -160,6 +192,39 @@ export default function IssuerComparisonPage() {
 
   return (
     <div className="container mx-auto p-4 pt-16 space-y-6">
+      {WPAYYMAXData.length > 0 && (
+        <FinancialChart
+          chartData={WPAYYMAXData}
+          t={{
+            chartTitle: "WPAY vs YMAX",
+            chartDescription: t.comparison.priceDivComparison,
+            tooltipText: t.comparison.lineDiscontinous,
+          }}
+        />
+      )}
+      {WPAYYMAXYieldData.length > 0 && (
+        <FinancialChart
+          chartData={WPAYYMAXYieldData}
+          t={{
+            chartTitle: "WPAY vs YMAX Yield",
+            chartDescription: "Comparison of WPAY and YMAX yields",
+            tooltipText: t.comparison.lineDiscontinous,
+          }}
+          dataKeys={["WPAY_yield", "YMAX_yield"]}
+          unit="percent"
+        />
+      )}
+      {roundhillStats && yieldmaxStats && roundhillStats.WPAY && yieldmaxStats.YMAX && (
+          <ComparisonStatsChart
+            stats1={yieldmaxStats.YMAX}
+            stats2={roundhillStats.WPAY}
+            symbol1="YMAX"
+            symbol2="WPAY"
+            chartTitle="YMAX vs WPAY Stats"
+            chartDescription={t.comparison.statsComparison}
+            tooltipText={t.comparison.avgStats}
+          />
+      )}
       {SDTYXDTEData.length > 0 && (
         <FinancialChart
           chartData={SDTYXDTEData}

@@ -50,6 +50,8 @@ export const translations = {
             XDTE: "標普500 零日備兌看漲期權",
             QDTE: "Innovation-100 零日備兌看漲期權",
             RDTE: "羅素2000 零日備兌看漲期權",
+            WPAY: "WeeklyPay™ Universe ETF",
+            YMAX: "Universe Fund of Option Income ETF",
         },
 
         navigation: { // NEW: Navigation translations
@@ -125,6 +127,8 @@ export const translations = {
             XDTE: "S&P 500 0DTE Covered Call.",
             QDTE: "Innovation 100 0DTE Covered Call",
             RDTE: "Small Cap 0DTE Covered Call",
+            WPAY: "WeeklyPay™ Universe ETF",
+            YMAX: "Universe Fund of Option Income ETF",
         },
 
         navigation: { // NEW: Navigation translations

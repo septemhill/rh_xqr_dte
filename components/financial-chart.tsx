@@ -95,6 +95,8 @@ export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: Fina
         case 'QDTY': colorBase = isIssuerComparisonPage ? 'hsl(60, 70%, 50%)' : 'hsl(120, 70%, 50%)'; break;
         case 'RDTE': colorBase = 'hsl(220, 90%, 50%)'; break;
         case 'RDTY': colorBase = isIssuerComparisonPage ? 'hsl(30, 70%, 50%)' : 'hsl(240, 70%, 70%)'; break;
+        case 'WPAY': colorBase = 'hsl(300, 70%, 50%)'; break;
+        case 'YMAX': colorBase = isIssuerComparisonPage ? 'hsl(60, 70%, 50%)' : 'hsl(60, 70%, 50%)'; break;
         default: colorBase = `hsl(${Math.random() * 360}, 70%, 50%)`;
       }
       const seriesName = `${fundName} ${isDividend ? 'Dividend' : (isYield ? 'Yield' : (isVolume ? 'Volume' : 'Price'))}`;
@@ -185,7 +187,7 @@ export function FinancialChart({ chartData, t, dataKeys, unit = 'dollar' }: Fina
                 if (s.type === 'bar') {
                   return <Bar key={s.dataKey} yAxisId={s.yAxisId} dataKey={s.dataKey} name={s.name} fill={isVisible ? s.color : `hsl(0, 0%, 70%)`} opacity={isVisible ? 0.7 : 0.4} hide={!isVisible} />;
                 }
-                return <Line key={s.dataKey} yAxisId={s.yAxisId} type="monotone" dataKey={s.dataKey} name={s.name} stroke={isVisible ? s.color : `hsl(0, 0%, 70%)`} strokeWidth={2} dot={{ r: 1 }} hide={!isVisible} />;
+                return <Line key={s.dataKey} connectNulls={true} yAxisId={s.yAxisId} type="monotone" dataKey={s.dataKey} name={s.name} stroke={isVisible ? s.color : `hsl(0, 0%, 70%)`} strokeWidth={2} dot={{ r: 1 }} hide={!isVisible} />;
               })}
             </ComposedChart>
           </ResponsiveContainer>

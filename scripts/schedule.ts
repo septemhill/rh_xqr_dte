@@ -9,8 +9,8 @@ if (!ALPHAVANTAGE_API_KEY) {
 }
 
 const issuer: Record<string, string[]> = {
-    'roundhill': ['XDTE', 'QDTE', 'RDTE'],
-    'yieldmax': ['SDTY', 'QDTY', 'RDTY']
+    'roundhill': ['XDTE', 'QDTE', 'RDTE', 'WPAY'],
+    'yieldmax': ['SDTY', 'QDTY', 'RDTY', 'YMAX']
 }
 
 const DailyPriceAPI_Base = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY';
