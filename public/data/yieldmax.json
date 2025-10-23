@@ -248,9 +248,9 @@
     {
       "date": "2025-10-22",
       "dividend": 0.1729,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.1722,
+      "yield": 19.9,
+      "volume": 14925
     }
   ],
   "QDTY": [
@@ -495,9 +495,9 @@
     {
       "date": "2025-10-22",
       "dividend": 0.345,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.7192,
+      "yield": 40.12,
+      "volume": 6281
     }
   ],
   "RDTY": [
@@ -721,9 +721,9 @@
     {
       "date": "2025-10-22",
       "dividend": 0.4161,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.0332,
+      "yield": 50.28,
+      "volume": 13334
     }
   ],
   "YMAX": [
@@ -1178,9 +1178,9 @@
     {
       "date": "2025-10-22",
       "dividend": 0.1573,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 12.14,
+      "yield": 67.38,
+      "volume": 3193370
     }
   ]
 }
