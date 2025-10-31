@@ -257,7 +257,7 @@
       "dividend": 0.2221,
       "price": 46.2772,
       "yield": 24.96,
-      "volume": 8497
+      "volume": 8499
     }
   ],
   "QDTY": [
@@ -511,7 +511,7 @@
       "dividend": 0.2714,
       "price": 46.5703,
       "yield": 30.3,
-      "volume": 12366
+      "volume": 12375
     }
   ],
   "RDTY": [
@@ -744,7 +744,7 @@
       "dividend": 0.3395,
       "price": 43.3846,
       "yield": 40.69,
-      "volume": 12313
+      "volume": 12318
     }
   ],
   "YMAX": [
@@ -1208,7 +1208,7 @@
       "dividend": 0.1939,
       "price": 12.27,
       "yield": 82.17,
-      "volume": 1982506
+      "volume": 2010072
     }
   ]
 }
