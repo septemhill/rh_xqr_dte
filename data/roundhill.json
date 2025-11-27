@@ -1720,6 +1720,13 @@
       "price": null,
       "yield": 0,
       "volume": null
+    },
+    {
+      "date": "2025-11-25",
+      "dividend": 0.447253,
+      "price": null,
+      "yield": 0,
+      "volume": null
     }
   ]
 }
