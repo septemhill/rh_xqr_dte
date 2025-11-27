@@ -279,6 +279,13 @@
       "price": null,
       "yield": 0,
       "volume": null
+    },
+    {
+      "date": "2025-11-26",
+      "dividend": 0.337,
+      "price": null,
+      "yield": 0,
+      "volume": null
     }
   ],
   "QDTY": [
@@ -551,6 +558,13 @@
     {
       "date": "2025-11-19",
       "dividend": 0.342,
+      "price": null,
+      "yield": 0,
+      "volume": null
+    },
+    {
+      "date": "2025-11-26",
+      "dividend": 0.4191,
       "price": null,
       "yield": 0,
       "volume": null
@@ -1290,6 +1304,13 @@
     {
       "date": "2025-11-19",
       "dividend": 0.1301,
+      "price": null,
+      "yield": 0,
+      "volume": null
+    },
+    {
+      "date": "2025-11-26",
+      "dividend": 0.1012,
       "price": null,
       "yield": 0,
       "volume": null
