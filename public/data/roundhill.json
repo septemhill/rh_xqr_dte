@@ -3,1730 +3,1702 @@
     {
       "date": "2024-03-26",
       "dividend": 0.208889,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.4856,
+      "yield": 20.7,
+      "volume": 6896
     },
     {
       "date": "2024-04-03",
       "dividend": 0.129,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.394,
+      "yield": 12.8,
+      "volume": 6508
     },
     {
       "date": "2024-04-10",
       "dividend": 0.022241,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.7906,
+      "yield": 2.23,
+      "volume": 4791
     },
     {
       "date": "2024-04-17",
       "dividend": 0.195337,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 50.4839,
+      "yield": 20.12,
+      "volume": 5985
     },
     {
       "date": "2024-04-24",
       "dividend": 0.37392,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 50.6632,
+      "yield": 38.38,
+      "volume": 2626
     },
     {
       "date": "2024-05-01",
       "dividend": 0.258006,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 49.7166,
+      "yield": 26.99,
+      "volume": 8978
     },
     {
       "date": "2024-05-08",
       "dividend": 0.239328,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.3666,
+      "yield": 24.23,
+      "volume": 5835
     },
     {
       "date": "2024-05-15",
       "dividend": 0.344108,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.22,
+      "yield": 34.27,
+      "volume": 4340
     },
     {
       "date": "2024-05-22",
       "dividend": 0.13294,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.22,
+      "yield": 13.24,
+      "volume": 9509
     },
     {
       "date": "2024-05-30",
       "dividend": 0.163464,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.4476,
+      "yield": 16.52,
+      "volume": 35138
     },
     {
       "date": "2024-06-06",
       "dividend": 0.11101,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.1793,
+      "yield": 11.06,
+      "volume": 10036
     },
     {
       "date": "2024-06-13",
       "dividend": 0.203345,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.7755,
+      "yield": 20.04,
+      "volume": 8326
     },
     {
       "date": "2024-06-20",
       "dividend": 0.224671,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.72,
+      "yield": 22.16,
+      "volume": 17122
     },
     {
       "date": "2024-06-27",
       "dividend": 0.263798,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.7,
+      "yield": 26.03,
+      "volume": 18713
     },
     {
       "date": "2024-07-03",
       "dividend": 0.215026,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.7,
+      "yield": 21.22,
+      "volume": 42243
     },
     {
       "date": "2024-07-11",
       "dividend": 0.23737,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.6975,
+      "yield": 23.42,
+      "volume": 36069
     },
     {
       "date": "2024-07-18",
       "dividend": 0.200574,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.29,
+      "yield": 19.95,
+      "volume": 33089
     },
     {
       "date": "2024-07-25",
       "dividend": 0.241214,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.09,
+      "yield": 24.55,
+      "volume": 46594
     },
     {
       "date": "2024-08-01",
       "dividend": 0.351062,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.34,
+      "yield": 35.56,
+      "volume": 91749
     },
     {
       "date": "2024-08-08",
       "dividend": 0.412474,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 50.0995,
+      "yield": 42.81,
+      "volume": 44967
     },
     {
       "date": "2024-08-15",
       "dividend": 0.387328,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.09,
+      "yield": 38.67,
+      "volume": 69203
     },
     {
       "date": "2024-08-22",
       "dividend": 0.388473,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.82,
+      "yield": 38.98,
+      "volume": 104100
     },
     {
       "date": "2024-08-29",
       "dividend": 0.261188,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.98,
+      "yield": 26.13,
+      "volume": 142759
     },
     {
       "date": "2024-09-05",
       "dividend": 0.311931,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 50.88,
+      "yield": 31.88,
+      "volume": 150646
     },
     {
       "date": "2024-09-12",
       "dividend": 0.334891,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.33,
+      "yield": 33.93,
+      "volume": 132492
     },
     {
       "date": "2024-09-19",
       "dividend": 0.198645,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.4,
+      "yield": 19.71,
+      "volume": 174778
     },
     {
       "date": "2024-09-26",
       "dividend": 0.1881,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.58,
+      "yield": 18.6,
+      "volume": 136215
     },
     {
       "date": "2024-10-03",
       "dividend": 0.228813,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.06,
+      "yield": 22.85,
+      "volume": 81990
     },
     {
       "date": "2024-10-10",
       "dividend": 0.202149,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.46,
+      "yield": 20.04,
+      "volume": 123278
     },
     {
       "date": "2024-10-17",
       "dividend": 0.217068,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.635,
+      "yield": 21.44,
+      "volume": 107178
     },
     {
       "date": "2024-10-24",
       "dividend": 0.239162,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.16,
+      "yield": 23.84,
+      "volume": 120527
     },
     {
       "date": "2024-10-31",
       "dividend": 0.15488,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.35,
+      "yield": 15.68,
+      "volume": 233212
     },
     {
       "date": "2024-11-07",
       "dividend": 0.213826,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 53.39,
+      "yield": 20.83,
+      "volume": 125751
     },
     {
       "date": "2024-11-14",
       "dividend": 0.274052,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 53.11,
+      "yield": 26.83,
+      "volume": 134007
     },
     {
       "date": "2024-11-21",
       "dividend": 0.258072,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.6,
+      "yield": 25.51,
+      "volume": 190973
     },
     {
       "date": "2024-11-27",
       "dividend": 0.185623,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.95,
+      "yield": 18.23,
+      "volume": 169689
     },
     {
       "date": "2024-12-05",
       "dividend": 0.235192,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 53.33,
+      "yield": 22.93,
+      "volume": 143094
     },
     {
       "date": "2024-12-12",
       "dividend": 0.153618,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 53.1,
+      "yield": 15.04,
+      "volume": 138819
     },
     {
       "date": "2024-12-19",
       "dividend": 0.64209,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.07,
+      "yield": 65.38,
+      "volume": 241415
     },
     {
       "date": "2024-12-26",
       "dividend": 0.606064,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.14,
+      "yield": 61.63,
+      "volume": 185425
     },
     {
       "date": "2025-01-02",
       "dividend": 0.336263,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 49.7,
+      "yield": 35.18,
+      "volume": 208726
     },
     {
       "date": "2025-01-08",
       "dividend": 0.189527,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 49.97,
+      "yield": 19.72,
+      "volume": 203015
     },
     {
       "date": "2025-01-16",
       "dividend": 0.368099,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 49.86,
+      "yield": 38.39,
+      "volume": 210120
     },
     {
       "date": "2025-01-23",
       "dividend": 0.213664,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.07,
+      "yield": 21.76,
+      "volume": 141704
     },
     {
       "date": "2025-01-30",
       "dividend": 0.254857,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 50.41,
+      "yield": 26.29,
+      "volume": 172133
     },
     {
       "date": "2025-02-06",
       "dividend": 0.178395,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 50.39,
+      "yield": 18.41,
+      "volume": 160580
     },
     {
       "date": "2025-02-13",
       "dividend": 0.233573,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 50.26,
+      "yield": 24.17,
+      "volume": 178505
     },
     {
       "date": "2025-02-20",
       "dividend": 0.220169,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 50.15,
+      "yield": 22.83,
+      "volume": 297717
     },
     {
       "date": "2025-02-27",
       "dividend": 0.203243,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 47.96,
+      "yield": 22.04,
+      "volume": 295618
     },
     {
       "date": "2025-03-06",
       "dividend": 0.142112,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 46.75,
+      "yield": 15.81,
+      "volume": 201992
     },
     {
       "date": "2025-03-13",
       "dividend": 0.243703,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.91,
+      "yield": 28.22,
+      "volume": 229260
     },
     {
       "date": "2025-03-20",
       "dividend": 0.32497,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.99,
+      "yield": 36.74,
+      "volume": 90272
     },
     {
       "date": "2025-03-27",
       "dividend": 0.210776,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 46.1,
+      "yield": 23.78,
+      "volume": 91026
     },
     {
       "date": "2025-04-03",
       "dividend": 0.275316,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.2,
+      "yield": 33.14,
+      "volume": 290585
     },
     {
       "date": "2025-04-10",
       "dividend": 0.216883,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 39.89,
+      "yield": 28.27,
+      "volume": 306963
     },
     {
       "date": "2025-04-16",
       "dividend": 0.236439,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 39.96,
+      "yield": 30.77,
+      "volume": 194101
     },
     {
       "date": "2025-04-24",
       "dividend": 0.342929,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.95,
+      "yield": 43.55,
+      "volume": 133039
     },
     {
       "date": "2025-05-01",
       "dividend": 0.255418,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.57,
+      "yield": 31.95,
+      "volume": 124961
     },
     {
       "date": "2025-05-08",
       "dividend": 0.335848,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.85,
+      "yield": 41.73,
+      "volume": 171981
     },
     {
       "date": "2025-05-15",
       "dividend": 0.240247,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.58,
+      "yield": 28.67,
+      "volume": 135889
     },
     {
       "date": "2025-05-22",
       "dividend": 0.211589,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.815,
+      "yield": 25.7,
+      "volume": 152702
     },
     {
       "date": "2025-05-29",
       "dividend": 0.207348,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.1,
+      "yield": 25.02,
+      "volume": 292961
     },
     {
       "date": "2025-06-05",
       "dividend": 0.248632,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.02,
+      "yield": 30.05,
+      "volume": 169014
     },
     {
       "date": "2025-06-12",
       "dividend": 0.193257,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.62,
+      "yield": 23.04,
+      "volume": 131753
     },
     {
       "date": "2025-06-18",
       "dividend": 0.222549,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.02,
+      "yield": 26.9,
+      "volume": 132489
     },
     {
       "date": "2025-06-26",
       "dividend": 0.269417,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.75,
+      "yield": 32.02,
+      "volume": 176059
     },
     {
       "date": "2025-07-02",
       "dividend": 0.247367,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.08,
+      "yield": 29.18,
+      "volume": 184441
     },
     {
       "date": "2025-07-10",
       "dividend": 0.253709,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.185,
+      "yield": 29.86,
+      "volume": 180673
     },
     {
       "date": "2025-07-17",
       "dividend": 0.256389,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.08,
+      "yield": 30.25,
+      "volume": 132620
     },
     {
       "date": "2025-07-24",
       "dividend": 0.254026,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.32,
+      "yield": 29.8,
+      "volume": 160746
     },
     {
       "date": "2025-07-31",
       "dividend": 0.254272,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.02,
+      "yield": 30.04,
+      "volume": 316553
     },
     {
       "date": "2025-08-07",
       "dividend": 0.256623,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.695,
+      "yield": 30.54,
+      "volume": 181397
     },
     {
       "date": "2025-08-14",
       "dividend": 0.249843,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.235,
+      "yield": 29.37,
+      "volume": 137392
     },
     {
       "date": "2025-08-21",
       "dividend": 0.25398,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.48,
+      "yield": 30.37,
+      "volume": 533217
     },
     {
       "date": "2025-08-28",
       "dividend": 0.212107,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.07,
+      "yield": 25.03,
+      "volume": 443913
     },
     {
       "date": "2025-09-04",
       "dividend": 0.213094,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.74,
+      "yield": 25.33,
+      "volume": 220188
     },
     {
       "date": "2025-09-11",
       "dividend": 0.210443,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.04,
+      "yield": 24.85,
+      "volume": 153345
     },
     {
       "date": "2025-09-18",
       "dividend": 0.209576,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.28,
+      "yield": 24.61,
+      "volume": 213579
     },
     {
       "date": "2025-09-25",
       "dividend": 0.169314,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.75,
+      "yield": 20.12,
+      "volume": 204050
     },
     {
       "date": "2025-10-02",
       "dividend": 0.171073,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.145,
+      "yield": 20.15,
+      "volume": 171423
     },
     {
       "date": "2025-10-09",
       "dividend": 0.211523,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.04,
+      "yield": 24.98,
+      "volume": 267857
     },
     {
       "date": "2025-10-16",
       "dividend": 0.212182,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.145,
+      "yield": 25.57,
+      "volume": 208891
     },
     {
       "date": "2025-10-23",
       "dividend": 0.205972,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.66,
+      "yield": 24.53,
+      "volume": 167361
     },
     {
       "date": "2025-10-30",
       "dividend": 0.250853,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.07,
+      "yield": 29.6,
+      "volume": 176178
     },
     {
       "date": "2025-11-06",
       "dividend": 0.211416,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.42,
+      "yield": 25.32,
+      "volume": 279565
     },
     {
       "date": "2025-11-13",
       "dividend": 0.21698,
-      "price": null,
-      "yield": 0,
-      "volume": null
-    },
-    {
-      "date": "2025-11-20",
-      "dividend": 0.268876,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.27,
+      "yield": 26.08,
+      "volume": 220789
     }
   ],
   "QDTE": [
     {
       "date": "2024-03-26",
       "dividend": 0.364273,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.83,
+      "yield": 41.33,
+      "volume": 23351
     },
     {
       "date": "2024-04-03",
       "dividend": 0.332,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.352,
+      "yield": 38.07,
+      "volume": 16267
     },
     {
       "date": "2024-04-10",
       "dividend": 0.090284,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.8956,
+      "yield": 10.46,
+      "volume": 21671
     },
     {
       "date": "2024-04-17",
       "dividend": 0.267139,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.4377,
+      "yield": 31.98,
+      "volume": 17169
     },
     {
       "date": "2024-04-24",
       "dividend": 0.333596,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.1536,
+      "yield": 40.2,
+      "volume": 9296
     },
     {
       "date": "2024-05-01",
       "dividend": 0.251747,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.15,
+      "yield": 31.06,
+      "volume": 16400
     },
     {
       "date": "2024-05-08",
       "dividend": 0.311116,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.75,
+      "yield": 36.98,
+      "volume": 23514
     },
     {
       "date": "2024-05-15",
       "dividend": 0.374705,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.64,
+      "yield": 43.65,
+      "volume": 29207
     },
     {
       "date": "2024-05-22",
       "dividend": 0.212041,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.4689,
+      "yield": 24.8,
+      "volume": 24472
     },
     {
       "date": "2024-05-30",
       "dividend": 0.212079,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.0855,
+      "yield": 25.02,
+      "volume": 49306
     },
     {
       "date": "2024-06-06",
       "dividend": 0.142601,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.9336,
+      "yield": 16.5,
+      "volume": 37871
     },
     {
       "date": "2024-06-13",
       "dividend": 0.234412,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.75,
+      "yield": 26.64,
+      "volume": 56758
     },
     {
       "date": "2024-06-20",
       "dividend": 0.29751,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.72,
+      "yield": 33.84,
+      "volume": 185861
     },
     {
       "date": "2024-06-27",
       "dividend": 0.354811,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.47,
+      "yield": 40.58,
+      "volume": 85364
     },
     {
       "date": "2024-07-03",
       "dividend": 0.197169,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.63,
+      "yield": 22.47,
+      "volume": 114205
     },
     {
       "date": "2024-07-11",
       "dividend": 0.346492,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.27,
+      "yield": 39.8,
+      "volume": 223513
     },
     {
       "date": "2024-07-18",
       "dividend": 0.310109,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.18,
+      "yield": 36.5,
+      "volume": 245915
     },
     {
       "date": "2024-07-25",
       "dividend": 0.354109,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.46,
+      "yield": 43.37,
+      "volume": 185271
     },
     {
       "date": "2024-08-01",
       "dividend": 0.568635,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.31,
+      "yield": 69.89,
+      "volume": 361813
     },
     {
       "date": "2024-08-08",
       "dividend": 0.514208,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.04,
+      "yield": 65.15,
+      "volume": 131966
     },
     {
       "date": "2024-08-15",
       "dividend": 0.476485,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.86,
+      "yield": 57.81,
+      "volume": 294232
     },
     {
       "date": "2024-08-22",
       "dividend": 0.475843,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.23,
+      "yield": 58.59,
+      "volume": 616649
     },
     {
       "date": "2024-08-29",
       "dividend": 0.312576,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.86,
+      "yield": 38.83,
+      "volume": 476235
     },
     {
       "date": "2024-09-05",
       "dividend": 0.329389,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.89,
+      "yield": 41.89,
+      "volume": 409191
     },
     {
       "date": "2024-09-12",
       "dividend": 0.445588,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.24,
+      "yield": 56.18,
+      "volume": 422859
     },
     {
       "date": "2024-09-19",
       "dividend": 0.195328,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.16,
+      "yield": 24.09,
+      "volume": 421078
     },
     {
       "date": "2024-09-26",
       "dividend": 0.256747,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.74,
+      "yield": 31.24,
+      "volume": 430050
     },
     {
       "date": "2024-10-03",
       "dividend": 0.217625,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.1,
+      "yield": 26.88,
+      "volume": 245592
     },
     {
       "date": "2024-10-10",
       "dividend": 0.269579,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.62,
+      "yield": 32.89,
+      "volume": 250808
     },
     {
       "date": "2024-10-17",
       "dividend": 0.318116,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.33,
+      "yield": 39.08,
+      "volume": 314982
     },
     {
       "date": "2024-10-24",
       "dividend": 0.208127,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.23,
+      "yield": 25.63,
+      "volume": 201823
     },
     {
       "date": "2024-10-31",
       "dividend": 0.204827,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.37,
+      "yield": 25.75,
+      "volume": 662207
     },
     {
       "date": "2024-11-07",
       "dividend": 0.264636,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.58,
+      "yield": 31.58,
+      "volume": 398651
     },
     {
       "date": "2024-11-14",
       "dividend": 0.252937,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.16,
+      "yield": 30.47,
+      "volume": 295083
     },
     {
       "date": "2024-11-21",
       "dividend": 0.252349,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.48,
+      "yield": 30.89,
+      "volume": 398951
     },
     {
       "date": "2024-11-27",
       "dividend": 0.221139,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.46,
+      "yield": 27.08,
+      "volume": 528277
     },
     {
       "date": "2024-12-05",
       "dividend": 0.235937,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.14,
+      "yield": 28.44,
+      "volume": 329859
     },
     {
       "date": "2024-12-12",
       "dividend": 0.164597,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.07,
+      "yield": 19.87,
+      "volume": 335430
     },
     {
       "date": "2024-12-19",
       "dividend": 0.869508,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.17,
+      "yield": 109.82,
+      "volume": 863382
     },
     {
       "date": "2024-12-26",
       "dividend": 0.803885,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.23,
+      "yield": 101.39,
+      "volume": 515061
     },
     {
       "date": "2025-01-02",
       "dividend": 0.298366,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 39.67,
+      "yield": 39.11,
+      "volume": 709921
     },
     {
       "date": "2025-01-08",
       "dividend": 0.182772,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 39.96,
+      "yield": 23.78,
+      "volume": 721089
     },
     {
       "date": "2025-01-16",
       "dividend": 0.336502,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 39.67,
+      "yield": 44.11,
+      "volume": 401156
     },
     {
       "date": "2025-01-23",
       "dividend": 0.24603,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.92,
+      "yield": 31.26,
+      "volume": 421104
     },
     {
       "date": "2025-01-30",
       "dividend": 0.188007,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 39.88,
+      "yield": 24.51,
+      "volume": 540597
     },
     {
       "date": "2025-02-06",
       "dividend": 0.231345,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.14,
+      "yield": 29.97,
+      "volume": 414503
     },
     {
       "date": "2025-02-13",
       "dividend": 0.250935,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.32,
+      "yield": 32.36,
+      "volume": 462939
     },
     {
       "date": "2025-02-20",
       "dividend": 0.246262,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.23,
+      "yield": 31.83,
+      "volume": 563424
     },
     {
       "date": "2025-02-27",
       "dividend": 0.259556,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 37.42,
+      "yield": 36.07,
+      "volume": 706585
     },
     {
       "date": "2025-03-06",
       "dividend": 0.151438,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 36.38,
+      "yield": 21.65,
+      "volume": 605638
     },
     {
       "date": "2025-03-13",
       "dividend": 0.233161,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.81,
+      "yield": 34.83,
+      "volume": 361992
     },
     {
       "date": "2025-03-20",
       "dividend": 0.277205,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.67,
+      "yield": 40.41,
+      "volume": 262301
     },
     {
       "date": "2025-03-27",
       "dividend": 0.236134,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.78,
+      "yield": 34.32,
+      "volume": 288163
     },
     {
       "date": "2025-04-03",
       "dividend": 0.250455,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 32.9,
+      "yield": 39.59,
+      "volume": 720551
     },
     {
       "date": "2025-04-10",
       "dividend": 0.179537,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 30.44,
+      "yield": 30.67,
+      "volume": 536525
     },
     {
       "date": "2025-04-16",
       "dividend": 0.209337,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 30.28,
+      "yield": 35.95,
+      "volume": 329177
     },
     {
       "date": "2025-04-24",
       "dividend": 0.239917,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 31.41,
+      "yield": 39.72,
+      "volume": 234761
     },
     {
       "date": "2025-05-01",
       "dividend": 0.218172,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 32.05,
+      "yield": 35.4,
+      "volume": 331149
     },
     {
       "date": "2025-05-08",
       "dividend": 0.307516,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 32.41,
+      "yield": 49.34,
+      "volume": 285812
     },
     {
       "date": "2025-05-15",
       "dividend": 0.179609,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.29,
+      "yield": 27.24,
+      "volume": 329174
     },
     {
       "date": "2025-05-22",
       "dividend": 0.172146,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.79,
+      "yield": 26.49,
+      "volume": 275572
     },
     {
       "date": "2025-05-29",
       "dividend": 0.214958,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.02,
+      "yield": 32.86,
+      "volume": 352520
     },
     {
       "date": "2025-06-05",
       "dividend": 0.207747,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.13,
+      "yield": 31.65,
+      "volume": 306301
     },
     {
       "date": "2025-06-12",
       "dividend": 0.145807,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.66,
+      "yield": 21.88,
+      "volume": 354824
     },
     {
       "date": "2025-06-18",
       "dividend": 0.204734,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.2,
+      "yield": 31.13,
+      "volume": 298009
     },
     {
       "date": "2025-06-26",
       "dividend": 0.24664,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.1,
+      "yield": 36.54,
+      "volume": 435868
     },
     {
       "date": "2025-07-02",
       "dividend": 0.228961,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.135,
+      "yield": 33.89,
+      "volume": 551848
     },
     {
       "date": "2025-07-10",
       "dividend": 0.237135,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.235,
+      "yield": 35,
+      "volume": 637806
     },
     {
       "date": "2025-07-17",
       "dividend": 0.238737,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.37,
+      "yield": 35.1,
+      "volume": 444274
     },
     {
       "date": "2025-07-24",
       "dividend": 0.236679,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.385,
+      "yield": 34.78,
+      "volume": 625893
     },
     {
       "date": "2025-07-31",
       "dividend": 0.2379,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.325,
+      "yield": 35.02,
+      "volume": 707008
     },
     {
       "date": "2025-08-07",
       "dividend": 0.238734,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.21,
+      "yield": 35.26,
+      "volume": 1181492
     },
     {
       "date": "2025-08-14",
       "dividend": 0.232944,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.625,
+      "yield": 34,
+      "volume": 494253
     },
     {
       "date": "2025-08-21",
       "dividend": 0.23925,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.55,
+      "yield": 36.01,
+      "volume": 1358326
     },
     {
       "date": "2025-08-28",
       "dividend": 0.204493,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.175,
+      "yield": 30.23,
+      "volume": 869818
     },
     {
       "date": "2025-09-04",
       "dividend": 0.286047,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.76,
+      "yield": 42.79,
+      "volume": 1847814
     },
     {
       "date": "2025-09-11",
       "dividend": 0.200428,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.15,
+      "yield": 29.65,
+      "volume": 688827
     },
     {
       "date": "2025-09-18",
       "dividend": 0.200581,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.66,
+      "yield": 29.25,
+      "volume": 1389940
     },
     {
       "date": "2025-09-25",
       "dividend": 0.203648,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.205,
+      "yield": 30.08,
+      "volume": 1398372
     },
     {
       "date": "2025-10-02",
       "dividend": 0.207181,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.58,
+      "yield": 30.28,
+      "volume": 932334
     },
     {
       "date": "2025-10-09",
       "dividend": 0.204112,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.57,
+      "yield": 29.84,
+      "volume": 662394
     },
     {
       "date": "2025-10-16",
       "dividend": 0.20423,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.79,
+      "yield": 30.53,
+      "volume": 834369
     },
     {
       "date": "2025-10-23",
       "dividend": 0.198232,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.12,
+      "yield": 29.35,
+      "volume": 596914
     },
     {
       "date": "2025-10-30",
       "dividend": 0.235839,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.83,
+      "yield": 34.23,
+      "volume": 573795
     },
     {
       "date": "2025-11-06",
       "dividend": 0.20466,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.91,
+      "yield": 30.49,
+      "volume": 846595
     },
     {
       "date": "2025-11-13",
       "dividend": 0.223004,
-      "price": null,
-      "yield": 0,
-      "volume": null
-    },
-    {
-      "date": "2025-11-20",
-      "dividend": 0.224641,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.68,
+      "yield": 33.44,
+      "volume": 974234
     }
   ],
   "RDTE": [
     {
       "date": "2024-09-26",
       "dividend": 0.360323,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.31,
+      "yield": 42.29,
+      "volume": 107608
     },
     {
       "date": "2024-10-03",
       "dividend": 0.386265,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.51,
+      "yield": 46.16,
+      "volume": 71431
     },
     {
       "date": "2024-10-10",
       "dividend": 0.249786,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.53,
+      "yield": 29.84,
+      "volume": 86463
     },
     {
       "date": "2024-10-17",
       "dividend": 0.306793,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.23,
+      "yield": 36.07,
+      "volume": 67859
     },
     {
       "date": "2024-10-24",
       "dividend": 0.335223,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.92,
+      "yield": 40.61,
+      "volume": 63346
     },
     {
       "date": "2024-10-31",
       "dividend": 0.257541,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 42.49,
+      "yield": 31.52,
+      "volume": 98534
     },
     {
       "date": "2024-11-07",
       "dividend": 0.262856,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.4,
+      "yield": 30.11,
+      "volume": 84842
     },
     {
       "date": "2024-11-14",
       "dividend": 0.334341,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.61,
+      "yield": 38.97,
+      "volume": 89293
     },
     {
       "date": "2024-11-21",
       "dividend": 0.410503,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.23,
+      "yield": 48.26,
+      "volume": 128647
     },
     {
       "date": "2024-11-27",
       "dividend": 0.327406,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 45.28,
+      "yield": 37.6,
+      "volume": 159497
     },
     {
       "date": "2024-12-05",
       "dividend": 0.28264,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 44.58,
+      "yield": 32.97,
+      "volume": 204364
     },
     {
       "date": "2024-12-12",
       "dividend": 0.371052,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 43.84,
+      "yield": 44.01,
+      "volume": 235036
     },
     {
       "date": "2024-12-19",
       "dividend": 0.264902,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.2,
+      "yield": 33.43,
+      "volume": 193795
     },
     {
       "date": "2024-12-26",
       "dividend": 0.273542,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.93,
+      "yield": 33.92,
+      "volume": 75379
     },
     {
       "date": "2025-01-02",
       "dividend": 0.590683,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.84,
+      "yield": 75.21,
+      "volume": 165310
     },
     {
       "date": "2025-01-08",
       "dividend": 0.20576,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.79,
+      "yield": 26.23,
+      "volume": 111507
     },
     {
       "date": "2025-01-16",
       "dividend": 0.375482,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.96,
+      "yield": 47.67,
+      "volume": 72828
     },
     {
       "date": "2025-01-23",
       "dividend": 0.200155,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.49,
+      "yield": 25.09,
+      "volume": 65072
     },
     {
       "date": "2025-01-30",
       "dividend": 0.215479,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.32,
+      "yield": 27.12,
+      "volume": 88775
     },
     {
       "date": "2025-02-06",
       "dividend": 0.279654,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 41.06,
+      "yield": 35.42,
+      "volume": 94774
     },
     {
       "date": "2025-02-13",
       "dividend": 0.253721,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.51,
+      "yield": 32.57,
+      "volume": 99442
     },
     {
       "date": "2025-02-20",
       "dividend": 0.202667,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 40.17,
+      "yield": 26.24,
+      "volume": 92897
     },
     {
       "date": "2025-02-27",
       "dividend": 0.193473,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 37.93,
+      "yield": 26.52,
+      "volume": 101766
     },
     {
       "date": "2025-03-06",
       "dividend": 0.149736,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 36.75,
+      "yield": 21.19,
+      "volume": 59499
     },
     {
       "date": "2025-03-13",
       "dividend": 0.300946,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 35.34,
+      "yield": 44.28,
+      "volume": 49634
     },
     {
       "date": "2025-03-20",
       "dividend": 0.326605,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 36.34,
+      "yield": 46.73,
+      "volume": 28760
     },
     {
       "date": "2025-03-27",
       "dividend": 0.192276,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 36.21,
+      "yield": 27.61,
+      "volume": 33443
     },
     {
       "date": "2025-04-03",
       "dividend": 0.322066,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 32.83,
+      "yield": 51.01,
+      "volume": 99705
     },
     {
       "date": "2025-04-10",
       "dividend": 0.24647,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 30.15,
+      "yield": 42.51,
+      "volume": 104451
     },
     {
       "date": "2025-04-16",
       "dividend": 0.235906,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 30.57,
+      "yield": 40.13,
+      "volume": 60986
     },
     {
       "date": "2025-04-24",
       "dividend": 0.311538,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 31.7,
+      "yield": 51.1,
+      "volume": 29211
     },
     {
       "date": "2025-05-01",
       "dividend": 0.252788,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 31.9444,
+      "yield": 41.15,
+      "volume": 44296
     },
     {
       "date": "2025-05-08",
       "dividend": 0.238059,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 32.87,
+      "yield": 37.66,
+      "volume": 51271
     },
     {
       "date": "2025-05-15",
       "dividend": 0.236833,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.06,
+      "yield": 36.16,
+      "volume": 39129
     },
     {
       "date": "2025-05-22",
       "dividend": 0.24942,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.19,
+      "yield": 39.08,
+      "volume": 57801
     },
     {
       "date": "2025-05-29",
       "dividend": 0.267197,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.44,
+      "yield": 41.55,
+      "volume": 58793
     },
     {
       "date": "2025-06-05",
       "dividend": 0.300745,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.55,
+      "yield": 46.61,
+      "volume": 49844
     },
     {
       "date": "2025-06-12",
       "dividend": 0.134876,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.25,
+      "yield": 20.48,
+      "volume": 43304
     },
     {
       "date": "2025-06-18",
       "dividend": 0.24399,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.79,
+      "yield": 37.55,
+      "volume": 73749
     },
     {
       "date": "2025-06-26",
       "dividend": 0.274655,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.09,
+      "yield": 41.9,
+      "volume": 62328
     },
     {
       "date": "2025-07-02",
       "dividend": 0.258902,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.25,
+      "yield": 39.31,
+      "volume": 38543
     },
     {
       "date": "2025-07-10",
       "dividend": 0.26196,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.6,
+      "yield": 39.37,
+      "volume": 78771
     },
     {
       "date": "2025-07-17",
       "dividend": 0.265376,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.24,
+      "yield": 40.3,
+      "volume": 74329
     },
     {
       "date": "2025-07-24",
       "dividend": 0.307538,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.99,
+      "yield": 47.05,
+      "volume": 83664
     },
     {
       "date": "2025-07-31",
       "dividend": 0.28879,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.38,
+      "yield": 44.99,
+      "volume": 158023
     },
     {
       "date": "2025-08-07",
       "dividend": 0.262322,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.05,
+      "yield": 41.27,
+      "volume": 88920
     },
     {
       "date": "2025-08-14",
       "dividend": 0.313832,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.47,
+      "yield": 48.76,
+      "volume": 120190
     },
     {
       "date": "2025-08-21",
       "dividend": 0.254822,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.01,
+      "yield": 40.14,
+      "volume": 72093
     },
     {
       "date": "2025-08-28",
       "dividend": 0.223943,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.835,
+      "yield": 34.42,
+      "volume": 71670
     },
     {
       "date": "2025-09-04",
       "dividend": 0.3236,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.49,
+      "yield": 50.25,
+      "volume": 73315
     },
     {
       "date": "2025-09-11",
       "dividend": 0.22642,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.75,
+      "yield": 34.89,
+      "volume": 65892
     },
     {
       "date": "2025-09-18",
       "dividend": 0.226543,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 34.1,
+      "yield": 34.55,
+      "volume": 109560
     },
     {
       "date": "2025-09-25",
       "dividend": 0.192618,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.11,
+      "yield": 30.25,
+      "volume": 105490
     },
     {
       "date": "2025-10-02",
       "dividend": 0.366052,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.48,
+      "yield": 56.85,
+      "volume": 97404
     },
     {
       "date": "2025-10-09",
       "dividend": 0.224722,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 33.425,
+      "yield": 34.96,
+      "volume": 117207
     },
     {
       "date": "2025-10-16",
       "dividend": 0.226984,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 32.96,
+      "yield": 35.81,
+      "volume": 89909
     },
     {
       "date": "2025-10-23",
       "dividend": 0.225063,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 32.81,
+      "yield": 35.67,
+      "volume": 91959
     },
     {
       "date": "2025-10-30",
       "dividend": 0.245287,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 32.7,
+      "yield": 39.01,
+      "volume": 101932
     },
     {
       "date": "2025-11-06",
       "dividend": 0.223498,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 31.98,
+      "yield": 36.34,
+      "volume": 134642
     },
     {
       "date": "2025-11-13",
       "dividend": 0.386957,
-      "price": null,
-      "yield": 0,
-      "volume": null
-    },
-    {
-      "date": "2025-11-20",
-      "dividend": 0.253221,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 31,
+      "yield": 64.91,
+      "volume": 167993
     }
   ],
   "WPAY": [
     {
       "date": "2025-09-16",
       "dividend": 0.543674,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 53.87,
+      "yield": 52.48,
+      "volume": 175254
     },
     {
       "date": "2025-09-23",
       "dividend": 0.513709,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 53.65,
+      "yield": 49.79,
+      "volume": 249701
     },
     {
       "date": "2025-09-30",
       "dividend": 0.881079,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 53.45,
+      "yield": 85.72,
+      "volume": 417028
     },
     {
       "date": "2025-10-07",
       "dividend": 0.733904,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 54.57,
+      "yield": 69.93,
+      "volume": 628190
     },
     {
       "date": "2025-10-14",
       "dividend": 0.856935,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.44,
+      "yield": 84.97,
+      "volume": 634153
     },
     {
       "date": "2025-10-21",
       "dividend": 0.733547,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 52.8,
+      "yield": 72.24,
+      "volume": 815139
     },
     {
       "date": "2025-10-28",
       "dividend": 0.625522,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 54.2,
+      "yield": 60.01,
+      "volume": 643904
     },
     {
       "date": "2025-11-04",
       "dividend": 0.567709,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 51.41,
+      "yield": 57.42,
+      "volume": 1251751
     },
     {
       "date": "2025-11-12",
       "dividend": 0.573057,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 50.49,
+      "yield": 59.02,
+      "volume": 480796
     },
     {
       "date": "2025-11-18",
       "dividend": 0.398924,
-      "price": null,
-      "yield": 0,
-      "volume": null
-    },
-    {
-      "date": "2025-11-25",
-      "dividend": 0.447253,
-      "price": null,
-      "yield": 0,
-      "volume": null
+      "price": 46.29,
+      "yield": 44.81,
+      "volume": 738750
     }
   ]
 }
