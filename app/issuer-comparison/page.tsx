@@ -1,22 +1,25 @@
-"use client"
+"use client";
 
 import { FinancialChart } from "@/components/financial-chart";
 import { useFinancialData } from "@/hooks/useFinancialData";
-import { useLanguage } from '@/context/language-context';
+import { useLanguage } from "@/context/language-context";
 import { CombinedData } from "@/lib/types";
 import { ComparisonStatsChart } from "@/components/comparison-stats-chart";
 
 export default function IssuerComparisonPage() {
   const { language, t } = useLanguage();
-  const { chartData: roundhillData, dividendStats: roundhillStats } = useFinancialData(language, "roundhill");
-  const { chartData: yieldmaxData, dividendStats: yieldmaxStats } = useFinancialData(language, "yieldmax");
+  const { chartData: roundhillData, dividendStats: roundhillStats } =
+    useFinancialData(language, "roundhill");
+  const { chartData: yieldmaxData, dividendStats: yieldmaxStats } =
+    useFinancialData(language, "yieldmax");
 
   // Create a Map to store combined data, using the date as the key for efficient lookups.
   const combinedChartDataMap = new Map<string, CombinedData>();
 
   // --- Step 1: Add all data from roundhillData to the map ---
   roundhillData?.forEach((item) => {
-    if (item.date) { // Ensure date exists
+    if (item.date) {
+      // Ensure date exists
       // Initialize an object for this date, including all expected fields from both sources.
       // Set YieldMax fields to null initially, as they will be merged later.
       combinedChartDataMap.set(item.date, {
@@ -31,13 +34,13 @@ export default function IssuerComparisonPage() {
         RDTE_price: item.RDTE_price,
         RDTE_dividend: item.RDTE_dividend,
         RDTE_yield: item.RDTE_yield,
-        WPAY_price: item.WPAY_price,
-        WPAY_dividend: item.WPAY_dividend,
-        WPAY_yield: item.WPAY_yield,
+        TOPW_price: item.TOPW_price,
+        TOPW_dividend: item.TOPW_dividend,
+        TOPW_yield: item.TOPW_yield,
 
         // YieldMax fields (initialized to null, will be populated if found)
-        SDTY_price: null, 
-        SDTY_dividend: null, 
+        SDTY_price: null,
+        SDTY_dividend: null,
         SDTY_yield: null,
         QDTY_price: null,
         QDTY_dividend: null,
@@ -55,7 +58,8 @@ export default function IssuerComparisonPage() {
 
   // --- Step 2: Merge data from yieldmaxData into the map ---
   yieldmaxData?.forEach((item) => {
-    if (item.date) { // Ensure date exists
+    if (item.date) {
+      // Ensure date exists
       const existingEntry = combinedChartDataMap.get(item.date);
 
       if (existingEntry) {
@@ -75,17 +79,21 @@ export default function IssuerComparisonPage() {
         // Also update QDTE/RDTE if they exist in YieldMax and Roundhill has null for them,
         // or if YieldMax data should take precedence for these
         existingEntry.QDTE_price = item.QDTE_price || existingEntry.QDTE_price;
-        existingEntry.QDTE_dividend = item.QDTE_dividend || existingEntry.QDTE_dividend;
+        existingEntry.QDTE_dividend =
+          item.QDTE_dividend || existingEntry.QDTE_dividend;
         existingEntry.QDTE_yield = item.QDTE_yield || existingEntry.QDTE_yield;
         existingEntry.RDTE_price = item.RDTE_price || existingEntry.RDTE_price;
-        existingEntry.RDTE_dividend = item.RDTE_dividend || existingEntry.RDTE_dividend;
+        existingEntry.RDTE_dividend =
+          item.RDTE_dividend || existingEntry.RDTE_dividend;
         existingEntry.RDTE_yield = item.RDTE_yield || existingEntry.RDTE_yield;
         existingEntry.XDTE_price = item.XDTE_price || existingEntry.XDTE_price;
-        existingEntry.XDTE_dividend = item.XDTE_dividend || existingEntry.XDTE_dividend;
+        existingEntry.XDTE_dividend =
+          item.XDTE_dividend || existingEntry.XDTE_dividend;
         existingEntry.XDTE_yield = item.XDTE_yield || existingEntry.XDTE_yield;
-        existingEntry.WPAY_price = item.WPAY_price || existingEntry.WPAY_price;
-        existingEntry.WPAY_dividend = item.WPAY_dividend || existingEntry.WPAY_dividend;
-        existingEntry.WPAY_yield = item.WPAY_yield || existingEntry.WPAY_yield;
+        existingEntry.TOPW_price = item.TOPW_price || existingEntry.TOPW_price;
+        existingEntry.TOPW_dividend =
+          item.TOPW_dividend || existingEntry.TOPW_dividend;
+        existingEntry.TOPW_yield = item.TOPW_yield || existingEntry.TOPW_yield;
 
         // If there are other YieldMax specific symbols, merge them here
       } else {
@@ -102,9 +110,9 @@ export default function IssuerComparisonPage() {
           RDTE_price: null,
           RDTE_dividend: null,
           RDTE_yield: null,
-          WPAY_price: null,
-          WPAY_dividend: null,
-          WPAY_yield: null,
+          TOPW_price: null,
+          TOPW_dividend: null,
+          TOPW_yield: null,
           // YieldMax fields (from the current item)
           SDTY_price: item.SDTY_price,
           SDTY_dividend: item.SDTY_dividend,
@@ -126,7 +134,9 @@ export default function IssuerComparisonPage() {
 
   // --- Step 3: Convert the Map to an array and sort by date ---
   // Assuming 'date' is in a sortable string format (e.g., "YYYY-MM-DD")
-  const combinedChartData = Array.from(combinedChartDataMap.values()).sort((a, b) => a.date.localeCompare(b.date));
+  const combinedChartData = Array.from(combinedChartDataMap.values()).sort(
+    (a, b) => a.date.localeCompare(b.date),
+  );
 
   const SDTYXDTEData = combinedChartData.map((item) => ({
     date: item.date,
@@ -136,25 +146,31 @@ export default function IssuerComparisonPage() {
     XDTE_dividend: item.XDTE_dividend,
   }));
 
-  const WPAYYMAXData = combinedChartData.map((item) => ({
+  const TOPWYMAXData = combinedChartData.map((item) => ({
     date: item.date,
-    WPAY_price: item.WPAY_price,
-    WPAY_dividend: item.WPAY_dividend,
+    TOPW_price: item.TOPW_price,
+    TOPW_dividend: item.TOPW_dividend,
     YMAX_price: item.YMAX_price,
     YMAX_dividend: item.YMAX_dividend,
   }));
 
-  const QDTYQDTEData = combinedChartData.map(({ date, QDTY_price, QDTY_dividend, QDTE_price, QDTE_dividend }) => ({
-    date,
-    QDTY_price,
-    QDTY_dividend,
-    QDTE_price,
-    QDTE_dividend,
-  }));
+  const QDTYQDTEData = combinedChartData.map(
+    ({ date, QDTY_price, QDTY_dividend, QDTE_price, QDTE_dividend }) => ({
+      date,
+      QDTY_price,
+      QDTY_dividend,
+      QDTE_price,
+      QDTE_dividend,
+    }),
+  );
 
   // Filter and map RDTYRDTEData
   const RDTYRDTEData = combinedChartData
-    .filter(({ RDTY_price, RDTY_dividend, RDTE_price, RDTE_dividend }) => (RDTY_price !== null && RDTY_dividend !== null) || (RDTE_price !== null && RDTE_dividend !== null))
+    .filter(
+      ({ RDTY_price, RDTY_dividend, RDTE_price, RDTE_dividend }) =>
+        (RDTY_price !== null && RDTY_dividend !== null) ||
+        (RDTE_price !== null && RDTE_dividend !== null),
+    )
     .map(({ date, RDTY_price, RDTY_dividend, RDTE_price, RDTE_dividend }) => ({
       date,
       RDTY_price,
@@ -163,27 +179,36 @@ export default function IssuerComparisonPage() {
       RDTE_dividend,
     }));
 
-  const SDTYXDTEYieldData = combinedChartData.map(({ date, SDTY_yield, XDTE_yield }) => ({
-    date,
-    SDTY_yield,
-    XDTE_yield,
-  }));
+  const SDTYXDTEYieldData = combinedChartData.map(
+    ({ date, SDTY_yield, XDTE_yield }) => ({
+      date,
+      SDTY_yield,
+      XDTE_yield,
+    }),
+  );
 
-  const WPAYYMAXYieldData = combinedChartData.map(({ date, WPAY_yield, YMAX_yield }) => ({
-    date,
-    WPAY_yield,
-    YMAX_yield,
-  }));
+  const TOPWYMAXYieldData = combinedChartData.map(
+    ({ date, TOPW_yield, YMAX_yield }) => ({
+      date,
+      TOPW_yield,
+      YMAX_yield,
+    }),
+  );
 
-  const QDTYQDTEYieldData = combinedChartData.map(({ date, QDTY_yield, QDTE_yield }) => ({
-    date,
-    QDTY_yield,
-    QDTE_yield,
-  }));
+  const QDTYQDTEYieldData = combinedChartData.map(
+    ({ date, QDTY_yield, QDTE_yield }) => ({
+      date,
+      QDTY_yield,
+      QDTE_yield,
+    }),
+  );
 
   // Filter and map RDTYRDTEYieldData
   const RDTYRDTEYieldData = combinedChartData
-    .filter(({ RDTY_yield, RDTE_yield }) => RDTY_yield !== null || RDTE_yield !== null)
+    .filter(
+      ({ RDTY_yield, RDTE_yield }) =>
+        RDTY_yield !== null || RDTE_yield !== null,
+    )
     .map(({ date, RDTY_yield, RDTE_yield }) => ({
       date,
       RDTY_yield,
@@ -192,39 +217,42 @@ export default function IssuerComparisonPage() {
 
   return (
     <div className="container mx-auto p-4 pt-16 space-y-6">
-      {WPAYYMAXData.length > 0 && (
+      {TOPWYMAXData.length > 0 && (
         <FinancialChart
-          chartData={WPAYYMAXData}
+          chartData={TOPWYMAXData}
           t={{
-            chartTitle: "WPAY vs YMAX",
+            chartTitle: "TOPW vs YMAX",
             chartDescription: t.comparison.priceDivComparison,
             tooltipText: t.comparison.lineDiscontinous,
           }}
         />
       )}
-      {WPAYYMAXYieldData.length > 0 && (
+      {TOPWYMAXYieldData.length > 0 && (
         <FinancialChart
-          chartData={WPAYYMAXYieldData}
+          chartData={TOPWYMAXYieldData}
           t={{
-            chartTitle: "WPAY vs YMAX Yield",
-            chartDescription: "Comparison of WPAY and YMAX yields",
+            chartTitle: "TOPW vs YMAX Yield",
+            chartDescription: "Comparison of TOPW and YMAX yields",
             tooltipText: t.comparison.lineDiscontinous,
           }}
-          dataKeys={["WPAY_yield", "YMAX_yield"]}
+          dataKeys={["TOPW_yield", "YMAX_yield"]}
           unit="percent"
         />
       )}
-      {roundhillStats && yieldmaxStats && roundhillStats.WPAY && yieldmaxStats.YMAX && (
+      {roundhillStats &&
+        yieldmaxStats &&
+        roundhillStats.TOPW &&
+        yieldmaxStats.YMAX && (
           <ComparisonStatsChart
             stats1={yieldmaxStats.YMAX}
-            stats2={roundhillStats.WPAY}
+            stats2={roundhillStats.TOPW}
             symbol1="YMAX"
-            symbol2="WPAY"
-            chartTitle="YMAX vs WPAY Stats"
+            symbol2="TOPW"
+            chartTitle="YMAX vs TOPW Stats"
             chartDescription={t.comparison.statsComparison}
             tooltipText={t.comparison.avgStats}
           />
-      )}
+        )}
       {SDTYXDTEData.length > 0 && (
         <FinancialChart
           chartData={SDTYXDTEData}
@@ -248,15 +276,15 @@ export default function IssuerComparisonPage() {
         />
       )}
       {roundhillStats && yieldmaxStats && (
-          <ComparisonStatsChart
-            stats1={yieldmaxStats.SDTY}
-            stats2={roundhillStats.XDTE}
-            symbol1="SDTY"
-            symbol2="XDTE"
-            chartTitle="SDTY vs XDTE Stats"
-            chartDescription={t.comparison.statsComparison}
-            tooltipText={t.comparison.avgStats}
-          />
+        <ComparisonStatsChart
+          stats1={yieldmaxStats.SDTY}
+          stats2={roundhillStats.XDTE}
+          symbol1="SDTY"
+          symbol2="XDTE"
+          chartTitle="SDTY vs XDTE Stats"
+          chartDescription={t.comparison.statsComparison}
+          tooltipText={t.comparison.avgStats}
+        />
       )}
       {QDTYQDTEData.length > 0 && (
         <FinancialChart
@@ -281,15 +309,15 @@ export default function IssuerComparisonPage() {
         />
       )}
       {roundhillStats && yieldmaxStats && (
-          <ComparisonStatsChart
-            stats1={yieldmaxStats.QDTY}
-            stats2={roundhillStats.QDTE}
-            symbol1="QDTY"
-            symbol2="QDTE"
-            chartTitle="QDTY vs QDTE Stats"
-            chartDescription={t.comparison.statsComparison}
-            tooltipText={t.comparison.avgStats}
-          />
+        <ComparisonStatsChart
+          stats1={yieldmaxStats.QDTY}
+          stats2={roundhillStats.QDTE}
+          symbol1="QDTY"
+          symbol2="QDTE"
+          chartTitle="QDTY vs QDTE Stats"
+          chartDescription={t.comparison.statsComparison}
+          tooltipText={t.comparison.avgStats}
+        />
       )}
       {RDTYRDTEData.length > 0 && (
         <FinancialChart
@@ -314,15 +342,15 @@ export default function IssuerComparisonPage() {
         />
       )}
       {roundhillStats && yieldmaxStats && (
-          <ComparisonStatsChart
-            stats1={yieldmaxStats.RDTY}
-            stats2={roundhillStats.RDTE}
-            symbol1="RDTY"
-            symbol2="RDTE"
-            chartTitle="RDTY vs RDTE Stats"
-            chartDescription={t.comparison.statsComparison}
-            tooltipText={t.comparison.avgStats}
-          />
+        <ComparisonStatsChart
+          stats1={yieldmaxStats.RDTY}
+          stats2={roundhillStats.RDTE}
+          symbol1="RDTY"
+          symbol2="RDTE"
+          chartTitle="RDTY vs RDTE Stats"
+          chartDescription={t.comparison.statsComparison}
+          tooltipText={t.comparison.avgStats}
+        />
       )}
 
       {/* <NotesSection notes={[
