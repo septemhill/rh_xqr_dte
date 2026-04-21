@@ -81,13 +81,3 @@ jobs:
             git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}
             git push
           fi
-
-      - name: Trigger build-and-deploy workflow via API
-        if: success() && steps.schedule.outcome == 'success'
-        run: |
-          set -e
-          curl -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.GH_PAT }}" \
-            https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches \
-            -d '{"ref":"main"}'
