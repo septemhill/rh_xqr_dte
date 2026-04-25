@@ -426,6 +426,13 @@
       "price": 41.26,
       "yield": 34.66,
       "volume": 6500
+    },
+    {
+      "date": "2026-04-22",
+      "dividend": 0.272,
+      "price": 41.59,
+      "yield": 34.01,
+      "volume": 9100
     }
   ],
   "QDTY": [
@@ -848,6 +855,13 @@
       "price": 39.14,
       "yield": 39.99,
       "volume": 10400
+    },
+    {
+      "date": "2026-04-22",
+      "dividend": 0.25,
+      "price": 39.89,
+      "yield": 32.59,
+      "volume": 17900
     }
   ],
   "RDTY": [
@@ -1249,6 +1263,13 @@
       "price": 37.4,
       "yield": 47.13,
       "volume": 5100
+    },
+    {
+      "date": "2026-04-22",
+      "dividend": 0.315,
+      "price": 38.01,
+      "yield": 43.09,
+      "volume": 7100
     }
   ],
   "YMAX": [
@@ -1881,6 +1902,13 @@
       "price": 8.27,
       "yield": 57.85,
       "volume": 989500
+    },
+    {
+      "date": "2026-04-22",
+      "dividend": 0.1,
+      "price": 8.56,
+      "yield": 60.75,
+      "volume": 699300
     }
   ]
 }
