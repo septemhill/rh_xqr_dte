@@ -50,6 +50,33 @@ def get_ticker_dividends(ticker_symbol: str) -> List[Dict[str, Any]]:
     return results
 
 
+def get_dividend_multiplier(dividends: pd.Series) -> int:
+    """
+    根據配息日期間隔自動判斷年化乘數
+    """
+    if len(dividends) < 2:
+        # 如果配息紀錄不足，預設為 52 (維持原本週配息假設)
+        return 52
+
+    # 取得排序後的日期並計算間隔天數
+    dates = pd.Series(dividends.index).sort_values()
+    intervals = dates.diff().dt.days.dropna()
+    median_interval = intervals.median()
+
+    if median_interval <= 8:
+        return 52  # 每週
+    elif median_interval <= 16:
+        return 26  # 雙週
+    elif median_interval <= 35:
+        return 12  # 每月
+    elif median_interval <= 100:
+        return 4  # 每季
+    elif median_interval <= 200:
+        return 2  # 半年
+    else:
+        return 1  # 每年
+
+
 def get_full_distribution_data(ticker_symbol: str) -> List[Dict[str, Any]]:
     """
     整合功能，整理出指定 ticker 的所有歷史 distribution 資料
@@ -63,6 +90,9 @@ def get_full_distribution_data(ticker_symbol: str) -> List[Dict[str, Any]]:
 
     if dividends.empty:
         return []
+
+    # 動態取得年化乘數
+    multiplier = get_dividend_multiplier(dividends)
 
     final_results = []
     for date, dividend in dividends.items():
@@ -80,8 +110,10 @@ def get_full_distribution_data(ticker_symbol: str) -> List[Dict[str, Any]]:
         price = float(row["Close"])
         volume = int(row["Volume"])
 
-        # yield = 當次股息 / 當時收盤價
-        yield_val = float(dividend_val / price) * 52 * 100 if price > 0 else 0.0
+        # yield = (當次股息 / 當時收盤價) * 年化乘數 * 100
+        yield_val = (
+            float(dividend_val / price) * multiplier * 100 if price > 0 else 0.0
+        )
 
         final_results.append(
             {
@@ -92,12 +124,7 @@ def get_full_distribution_data(ticker_symbol: str) -> List[Dict[str, Any]]:
                 "volume": volume,
             }
         )
-
-        # }
-        # )
     return final_results
-
-    # return final_results
 
 
 if __name__ == "__main__":
