@@ -150,7 +150,8 @@ export const translations = {
 
         issuer: {
             roundhill: "Roundhill",
-            yieldmax: "Yieldmax"
+            yieldmax: "Yieldmax",
+            neos: "NEOS"
         }
     },
 }

@@ -38,6 +38,7 @@ if __name__ == "__main__":
     ticker_config = {
         "public/data/roundhill.json": ["XDTE", "QDTE", "RDTE", "TOPW"],
         "public/data/yieldmax.json": ["SDTY", "QDTY", "RDTY", "YMAX"],
+        "public/data/neos.json": ["SPYI", "QQQI", "IWMI", "XQQI"],
     }
 
     update_ticker_files(ticker_config)

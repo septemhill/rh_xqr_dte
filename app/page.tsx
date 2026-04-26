@@ -53,7 +53,7 @@ export default function FinancialDashboard() {
           <DataSourceSelector
             selectedDataSource={selectedDataSource}
             onDataSourceChange={handleDataSourceChange}
-            dataSources={["roundhill", "yieldmax"]}
+            dataSources={["roundhill", "yieldmax", "neos"]}
             t={t}
           />
         </div>

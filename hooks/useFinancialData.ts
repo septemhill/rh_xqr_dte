@@ -3,7 +3,7 @@ import { translations, type Language } from "@/lib/translations";
 import { calculateAverage, calculateAllStats } from "@/lib/utils";
 import type { StockData, FinancialData, DividendStats, CombinedData } from "@/lib/types";
 
-export type DataSource = "roundhill" | "yieldmax";
+export type DataSource = "roundhill" | "yieldmax" | "neos";
 
 export function useFinancialData(language: Language, dataSource: DataSource = "roundhill") {
     const [stocksData, setStocksData] = useState<StockData[]>([]);
