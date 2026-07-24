@@ -320,7 +320,7 @@
       "dividend": 0.53,
       "price": 52.84,
       "yield": 12.04,
-      "volume": 2247558
+      "volume": 2286400
     }
   ],
   "QQQI": [
@@ -532,7 +532,7 @@
       "dividend": 0.635,
       "price": 54.34,
       "yield": 14.02,
-      "volume": 3859744
+      "volume": 3986300
     }
   ],
   "IWMI": [
@@ -710,6 +710,13 @@
       "price": 52.21,
       "yield": 14.43,
       "volume": 312600
+    },
+    {
+      "date": "2026-07-22",
+      "dividend": 0.625,
+      "price": 52.18,
+      "yield": 14.37,
+      "volume": 397200
     }
   ],
   "XQQI": [
