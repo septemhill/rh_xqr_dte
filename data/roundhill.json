@@ -859,7 +859,7 @@
       "dividend": 0.09,
       "price": 38.31,
       "yield": 12.22,
-      "volume": 172824
+      "volume": 176200
     }
   ],
   "QDTE": [
@@ -1722,7 +1722,7 @@
       "dividend": 0.137,
       "price": 28.49,
       "yield": 25.01,
-      "volume": 577338
+      "volume": 651900
     }
   ],
   "RDTE": [
@@ -2403,7 +2403,7 @@
       "dividend": 0.229,
       "price": 28.33,
       "yield": 42.03,
-      "volume": 85261
+      "volume": 86000
     }
   ],
   "TOPW": [
