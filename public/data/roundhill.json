@@ -2739,9 +2739,9 @@
     {
       "date": "2026-07-21",
       "dividend": 0.31,
-      "price": 34.1,
-      "yield": 47.27,
-      "volume": 49100
+      "price": NaN,
+      "yield": 0.0,
+      "volume": 0
     },
     {
       "date": "2026-07-28",
@@ -2762,7 +2762,7 @@
       "dividend": 0.228,
       "price": 34.5,
       "yield": 34.37,
-      "volume": 69224
+      "volume": 69400
     }
   ]
 }
