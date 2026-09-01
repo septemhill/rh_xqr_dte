@@ -867,6 +867,27 @@
       "price": 39.19,
       "yield": 14.6,
       "volume": 68500
+    },
+    {
+      "date": "2026-08-13",
+      "dividend": 0.204,
+      "price": 39.53,
+      "yield": 26.84,
+      "volume": 130700
+    },
+    {
+      "date": "2026-08-20",
+      "dividend": 0.184,
+      "price": 38.63,
+      "yield": 24.77,
+      "volume": 86800
+    },
+    {
+      "date": "2026-08-27",
+      "dividend": 0.098,
+      "price": 39.01,
+      "yield": 13.06,
+      "volume": 70300
     }
   ],
   "QDTE": [
@@ -1737,6 +1758,27 @@
       "price": 29.34,
       "yield": 24.28,
       "volume": 319900
+    },
+    {
+      "date": "2026-08-13",
+      "dividend": 0.208,
+      "price": 29.88,
+      "yield": 36.2,
+      "volume": 357400
+    },
+    {
+      "date": "2026-08-20",
+      "dividend": 0.279,
+      "price": 28.82,
+      "yield": 50.34,
+      "volume": 442500
+    },
+    {
+      "date": "2026-08-27",
+      "dividend": 0.121,
+      "price": 29.1,
+      "yield": 21.62,
+      "volume": 357700
     }
   ],
   "RDTE": [
@@ -2425,6 +2467,27 @@
       "price": 28.57,
       "yield": 24.57,
       "volume": 75800
+    },
+    {
+      "date": "2026-08-13",
+      "dividend": 0.217,
+      "price": 29.0,
+      "yield": 38.91,
+      "volume": 69800
+    },
+    {
+      "date": "2026-08-20",
+      "dividend": 0.222,
+      "price": 28.22,
+      "yield": 40.91,
+      "volume": 211100
+    },
+    {
+      "date": "2026-08-27",
+      "dividend": 0.136,
+      "price": 28.41,
+      "yield": 24.89,
+      "volume": 86500
     }
   ],
   "TOPW": [
@@ -2756,6 +2819,27 @@
       "price": 35.16,
       "yield": 30.61,
       "volume": 75000
+    },
+    {
+      "date": "2026-08-11",
+      "dividend": 0.228,
+      "price": 34.5,
+      "yield": 34.37,
+      "volume": 69400
+    },
+    {
+      "date": "2026-08-18",
+      "dividend": 0.293,
+      "price": 33.21,
+      "yield": 45.88,
+      "volume": 35000
+    },
+    {
+      "date": "2026-08-25",
+      "dividend": 0.204,
+      "price": 33.04,
+      "yield": 32.11,
+      "volume": 38500
     }
   ]
 }
