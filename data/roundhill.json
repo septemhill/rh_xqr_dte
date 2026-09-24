@@ -2924,6 +2924,13 @@
       "price": 33.0,
       "yield": 34.67,
       "volume": 28400
+    },
+    {
+      "date": "2026-09-22",
+      "dividend": 0.23,
+      "price": NaN,
+      "yield": 0.0,
+      "volume": 33720
     }
   ]
 }
